@@ -285,25 +285,26 @@ function fmtRange(startMs, endMs){
   const d2=DATE_FMT.format(endMs), t2=TIME_FMT.format(endMs);
   return d1===d2 ? `${d1} · ${t1}–${t2}` : `${d1} ${t1} → ${d2} ${t2}`;
 }
-// Esri's public World Imagery export endpoint (same host the live map tiles
-// already come from) — a static crop centered on a point, fetched on demand
-// instead of shipping satellite PNGs in the repo.
-function satUrl(lat, lng, spanM, px){
+// Builds an ArcGIS MapServer export URL against whichever base is passed in
+// (Metro Nashville's own imagery, or the Esri fallback below) — a static
+// crop centered on a point, fetched on demand instead of shipping satellite
+// PNGs in the repo.
+function satUrl(base, lat, lng, spanM, px){
   spanM = spanM || SAT_SPAN_M;
   const dLat = spanM/111320, dLng = spanM/(111320*Math.cos(lat*Math.PI/180));
   const bbox = [lng-dLng,lat-dLat,lng+dLng,lat+dLat].join(',');
-  return `https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/export?bbox=${bbox}&bboxSR=4326&imageSR=4326&size=${px},${px}&format=png24&f=image`;
+  return `${base}/export?bbox=${bbox}&bboxSR=4326&imageSR=4326&size=${px},${px}&format=png24&f=image`;
 }
-// Sized to roughly match what the Skydio X10's wide camera (46mm-equiv,
-// ~41 deg horizontal FOV -- the actual DFR hardware) sees straight down
-// from 100 ft: 2*100ft*tan(20.6 deg) ~= 23 m across. Esri's export op 500s
-// past ~0.23 m/px in this area regardless of how the crop is framed (that's
-// this source imagery's real resolution, confirmed across several sites at
-// several spans) -- at a 23 m span that ceiling is only ~100px, well below
-// what a wider, less accurate crop could safely render. Chose accuracy to
-// the 100 ft framing over sharpness; a soft close-in crop reads more like
-// low-altitude footage than a crisp wide one would anyway.
-const SAT_SPAN_M = 11.5, SAT_PX_HI = 100, SAT_PX_LO = 80;
+// Metro Nashville's own 2023-published orthoimagery (captured Dec 2020-Jan
+// 2021, per its service description) is 6in GSD (~0.15 m/px) -- meaningfully
+// sharper than Esri World Imagery's ~0.23 m/px in this area, and it's the
+// same public Metro GIS trust tier this project already pulls addresses
+// from. Coverage confirmed across all 24 sensitive sites and a spread
+// sample of addresses before switching to it. Esri stays as a fallback for
+// the rare gap in the local flyover's coverage.
+const SAT_BASE_PRIMARY = 'https://maps.nashville.gov/arcgis/rest/services/Imagery/2023Imagery_WGS84/MapServer';
+const SAT_BASE_FALLBACK = 'https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer';
+const SAT_SPAN_M = 25, SAT_PX_HI = 400, SAT_PX_LO = 200;
 
 /* ---------- data ---------- */
 function coordPairs(g){
@@ -359,12 +360,12 @@ function redraw(){ clearTimeout(drawT); drawT=setTimeout(()=>{drawFlights();draw
 /* ---------- detail drawer ---------- */
 function satImg(lat, lng){
   if (lat==null || lng==null) return '';
-  const hi = satUrl(lat, lng, SAT_SPAN_M, SAT_PX_HI);
-  const lo = satUrl(lat, lng, SAT_SPAN_M, SAT_PX_LO);
+  const primary = satUrl(SAT_BASE_PRIMARY, lat, lng, SAT_SPAN_M, SAT_PX_HI);
+  const fallback = satUrl(SAT_BASE_FALLBACK, lat, lng, SAT_SPAN_M, SAT_PX_LO);
   return `<div class="dt-sat-wrap">
-    <img class="dt-sat" src="${hi}" data-fallback="${lo}" alt="satellite view, framed to roughly match a 100 ft drone shot" loading="lazy"
+    <img class="dt-sat" src="${primary}" data-fallback="${fallback}" alt="aerial view of the site" loading="lazy"
       onerror="if(this.dataset.fallback){this.src=this.dataset.fallback;this.dataset.fallback='';}else{this.parentElement.remove()}">
-    <div class="dt-sat-cap">Satellite: Esri World Imagery, ~23 m across — framed to roughly match the drone's own camera from 100 ft. Actual drone video footage is likely 12x sharper than this satellite crop.</div>
+    <div class="dt-sat-cap">Aerial: Metro Nashville GIS orthoimagery, ~50 m across — actual drone video footage is likely 12x sharper.</div>
   </div>`;
 }
 function openDrawer(it){
