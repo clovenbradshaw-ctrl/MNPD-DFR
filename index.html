@@ -316,7 +316,7 @@ function fmtRange(startMs, endMs){
 // already come from) — a static crop centered on a point, fetched on demand
 // instead of shipping satellite PNGs in the repo.
 function satUrl(lat, lng, spanM){
-  spanM = spanM || 40;
+  spanM = spanM || 25;
   const dLat = spanM/111320, dLng = spanM/(111320*Math.cos(lat*Math.PI/180));
   const bbox = [lng-dLng,lat-dLat,lng+dLng,lat+dLat].join(',');
   // Esri's export op 500s past ~0.23 m/px at this zoom (measured directly
@@ -382,7 +382,7 @@ function satImg(lat, lng){
   if (lat==null || lng==null) return '';
   return `<div class="dt-sat-wrap">
     <img class="dt-sat" src="${satUrl(lat,lng)}" alt="satellite view" loading="lazy" onerror="this.parentElement.remove()">
-    <div class="dt-sat-cap">Satellite: Esri World Imagery, ~80 m across</div>
+    <div class="dt-sat-cap">Satellite: Esri World Imagery, ~50 m across — actual drone video footage is likely sharper</div>
   </div>`;
 }
 function openDrawer(it){
