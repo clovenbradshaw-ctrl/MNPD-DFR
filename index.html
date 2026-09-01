@@ -216,12 +216,14 @@
     16,029 address figure was also re-queried live against Metro's own GIS
     endpoint — it returned 16,028, one lower, which is ordinary drift in a
     government database that's edited continuously rather than an error in
-    either number.</p>
-    <p>One gap found in the process: this repo's documented reproduce steps
-    skip the tool that actually pulls flights from Skydio's feed
-    (<code>scripts/dfr.py</code>) — <code>analyze_api.py</code> only reads a
-    local file <code>dfr.py</code> already produced. That's noted in the
-    README now so a from-scratch reproduction doesn't stall on step one.</p>
+    either number. The flight count was re-pulled live from MNPD's Skydio
+    feed the same way — 409 rows, 395 unique flights, an exact match against
+    what's shipped here down to the last coordinate.</p>
+    <p><code>scripts/fetch_nashville_flights.py</code> now does that pull —
+    it hardcodes this trial's one FeatureServer (credited below) rather than
+    running <code>scripts/dfr.py</code>'s full 900-agency crawl just to reach
+    it, so reproducing this repo's data doesn't require standing up
+    infrastructure for cities this project doesn't cover.</p>
 
     <h3>Sources</h3>
     <ul class="src">
