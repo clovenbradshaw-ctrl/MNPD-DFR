@@ -7,5 +7,10 @@ __pycache__/
 /nashville_flights.geojson
 /nashville_addresses.json
 /overflown_addresses.json
+/overflown_addresses.csv
+/overflights_by_site.json
+/dfr_addresses.json
+/dfr_sensitive.json
+/sensitive_sites.json
 /dfr_export/
 /dfr_state/

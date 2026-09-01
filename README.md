@@ -22,7 +22,8 @@ python3 -m http.server
 
 Two tabs:
 
-- **Sensitive locations** (17 sites overflown) — schools, worship, playgrounds.
+- **Sensitive locations** (25 sites overflown) — 19 places of worship, 5
+  schools, 1 playground.
 - **Every address** (10,536 of the 16,029 Metro address points in the trial
   area were within 82 m of at least one flight). Addresses lazy-load: a light
   ~3 MB list renders instantly, then full per-flight detail is fetched from a
@@ -32,12 +33,12 @@ Two tabs:
 
 | Path | What it is |
 |---|---|
-| `data/dfr_sensitive.json` | 17 sensitive locations overflown, with per-flight detail |
+| `data/dfr_sensitive.json` | 25 sensitive locations overflown, with per-flight detail |
 | `data/dfr_addresses_light.json` | 10,536 overflown addresses (summary; loads first) |
 | `data/dfr_addresses.json.gz` | **Binary (gzip)** full address dataset — 10,536 records × per-flight detail (**29 MB JSON, 2.5 MB gz**) |
 | `data/nashville_flights.geojson.gz` | Binary (gzip) 409-row deduped flight-path geometry (395 unique flights) |
 | `data/sensitive_sites.json` | All 1,743 Metro/OSM sensitive sites in the area |
-| `satellite/*.png` | 500×500 m satellite crops (Esri World Imagery) of each overflown sensitive site, annotated with flight IDs; `manifest.json` ties images → flights |
+| `satellite/*.png` | 500×500 m satellite crops (Esri World Imagery), annotated with flight IDs; `manifest.json` ties images → flights. Predates the 17→25 correction below — covers the original 17, not the 8 sites found since. The live app no longer uses these; it fetches a satellite crop live per-record instead. |
 
 The address data is stored **gzipped binary** to keep the repo lean; the
 explorer decompresses it in-browser with `DecompressionStream('gzip')`.
@@ -49,6 +50,17 @@ explorer decompresses it in-browser with `DecompressionStream('gzip')`.
 - Flights deduplicated by `flight_id` (the upstream feed double-logs some rows).
 - Addresses: Metro Nashville GIS **Addressing/AddressPoints** layer, filtered
   to the trial bounding box, intersected with the deduped flight paths.
+- Sensitive sites: the same intersection against `data/sensitive_sites.json`'s
+  1,743 candidate schools/childcare/playgrounds/houses of worship.
+
+**Correction (Sep 2026):** earlier published counts said 17 sensitive sites
+were overflown. Re-running the intersection end to end — the previous run
+had never been fully scripted, see Reproduce below — found **25**: the same
+17 plus 8 real sites the original pass missed, including two schools
+(Amqui Elementary, Madison High) at 7.7 m and 11.5 m. Independently
+cross-checked with a second, simpler distance calculation before publishing
+the correction. All eight are 280 m+ from the nearest already-published
+site, so this is missed sites, not duplicates.
 
 ## Reproduce
 
@@ -57,11 +69,18 @@ explorer decompresses it in-browser with `DecompressionStream('gzip')`.
 python3 scripts/fetch_nashville_flights.py   # writes nashville_flights.geojson
 # 2. pull Metro address points in the flight area
 python3 scripts/get_addresses.py   # writes nashville_addresses.json
-# 3. intersect addresses (or sensitive sites) against 82 m swaths
+# 3. intersect addresses against 82 m swaths
 python3 scripts/intersect_addresses.py   # writes overflown_addresses.json
-# 4. rebuild explorer data + gzip binary
-python3 scripts/build_explorer_data.py   # writes dfr_*.json (+ .gz)
+# 4. intersect sensitive sites against 82 m swaths
+python3 scripts/intersect_sites.py   # writes overflights_by_site.json
+# 5. combine both intersections into the explorer's raw shape
+python3 scripts/build_explorer_data.py   # writes dfr_sensitive.json, dfr_addresses.json
+# 6. split/gzip into what data/ actually ships
+python3 scripts/package_data.py      # writes data/dfr_*.json(.gz), copies sensitive_sites.json
 ```
+
+Steps 3 and 4 need `numpy`; steps 1, 2, 5, and 6 are stdlib-only. `python3 -m
+venv .venv && .venv/bin/pip install numpy requests` covers it.
 
 `scripts/fetch_nashville_flights.py` talks to one specific, already-known
 FeatureServer (the same one credited below) — it's the hardcoded, single-agency
@@ -71,12 +90,21 @@ broader DFR-transparency effort. That's the right tool if you're standing up
 coverage for a new city; it's overkill for reproducing this one trial's data,
 which is why step 1 above skips straight to the one service this repo needs.
 
+`scripts/intersect_sites.py` is `intersect_addresses.py`'s counterpart for
+`data/sensitive_sites.json` instead of address points — same distance math,
+same threshold. Nothing in this repo fetches that candidate pool itself yet
+(no committed source for the underlying Metro GIS + OSM layers it was built
+from); the shipped file is reused as-is since schools and churches don't
+move. That's the one real gap still open in this pipeline.
+
 `scripts/analyze_api.py` is a separate, later-stage script — it reads an
 already-built `nashville_flights.geojson` (not the live API, despite the
 name) to cross-check sensitive-site overflights outside the main explorer
 pipeline. It isn't part of the reproduce steps above.
 
-Adjust the threshold by changing `SWATH_M` at the top of `intersect_addresses.py`.
+Adjust the threshold by changing `SWATH_M` at the top of `intersect_addresses.py`
+**and** `intersect_sites.py` — the two aren't linked, so a threshold change
+needs both edited to stay consistent.
 
 ## Credits
 

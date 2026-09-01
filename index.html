@@ -205,7 +205,8 @@
       <li><strong>Sensitive sites</strong> — schools, childcare, playgrounds, and
         places of worship from Metro GIS + OpenStreetMap: <strong>1,743</strong>
         candidates (380 schools · 26 childcare · 352 playgrounds · 985 worship),
-        of which <strong>17</strong> fall within 82 m of a flight.</li>
+        of which <strong>25</strong> fall within 82 m of a flight (19 worship ·
+        5 schools · 1 playground).</li>
       <li><strong>Satellite crops</strong> — fetched live per-record from Esri's
         public World Imagery export service when you open a record; nothing is
         stored in this repo.</li>
@@ -225,6 +226,18 @@
     running <code>scripts/dfr.py</code>'s full 900-agency crawl just to reach
     it, so reproducing this repo's data doesn't require standing up
     infrastructure for cities this project doesn't cover.</p>
+
+    <h3>Correction (Sep 2026)</h3>
+    <p>Earlier versions of this page said 17 sensitive sites were overflown.
+    The sensitive-site intersection had never actually been scripted in this
+    repo — re-running it end to end found <strong>25</strong>: the original
+    17, plus <strong>8 real sites the first pass missed</strong>, including
+    two schools (Amqui Elementary, Madison High) at 7.7 m and 11.5 m. Each
+    new site was cross-checked with a second, independent distance
+    calculation before this correction went up, and all eight sit 280 m or
+    more from the nearest previously-published site — missed sites, not
+    duplicates. <code>scripts/intersect_sites.py</code> now does that
+    intersection for good.</p>
 
     <h3>Sources</h3>
     <ul class="src">
