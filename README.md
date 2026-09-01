@@ -53,8 +53,12 @@ explorer decompresses it in-browser with `DecompressionStream('gzip')`.
 ## Reproduce
 
 ```bash
-# 1. pull all Nashville/Madison flights from the live Skydio ArcGIS feed
-python3 scripts/analyze_api.py     # fetches nashville_flights.geojson from the live API
+# 1. pull flights from Skydio's public ArcGIS org (all agencies it hosts,
+#    not just MNPD/Nashville) into an append-only local archive
+python3 scripts/dfr.py --once      # writes dfr_export/flights.jsonl, dfr_export/agencies.jsonl
+# 1b. filter that archive down to this trial's flights and reshape into
+#     nashville_flights.geojson — not currently scripted in this repo;
+#     do this by hand before step 2 until a conversion script lands
 # 2. pull Metro address points in the flight area
 python3 scripts/get_addresses.py   # writes nashville_addresses.json
 # 3. intersect addresses (or sensitive sites) against 82 m swaths
@@ -62,6 +66,11 @@ python3 scripts/intersect_addresses.py   # writes overflown_addresses.json
 # 4. rebuild explorer data + gzip binary
 python3 scripts/build_explorer_data.py   # writes dfr_*.json (+ .gz)
 ```
+
+`scripts/analyze_api.py` is a separate, later-stage script — it reads an
+already-built `nashville_flights.geojson` (not the live API, despite the
+name) to cross-check sensitive-site overflights outside the main explorer
+pipeline. It isn't part of the reproduce steps above.
 
 Adjust the threshold by changing `SWATH_M` at the top of `intersect_addresses.py`.
 
