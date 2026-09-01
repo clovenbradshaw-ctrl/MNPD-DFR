@@ -19,6 +19,7 @@
   .tabs { display:flex; border-bottom:1px solid var(--line); background:#fafafa; }
   .tab { flex:1; padding:12px 10px; text-align:center; cursor:pointer; border:none; background:transparent; font:inherit; font-weight:700; font-size:14px; color:var(--mut); border-bottom:3px solid transparent; }
   .tab.active { color:var(--acc); border-bottom-color:var(--acc); background:#fff; }
+  .split { display:flex; flex-direction:column; flex:1; min-height:0; }
   .panel { display:flex; flex-direction:column; flex:1 1 auto; min-width:0; min-height:0; }
   .controls { padding:10px 12px; border-bottom:1px solid var(--line); background:#fff; display:flex; flex-direction:column; gap:8px; }
   .c1 { display:flex; gap:8px; }
@@ -67,8 +68,21 @@
   .drawer .addrline { color:var(--mut); font-size:13px; margin-bottom:10px; }
   .dt-sat { display:block; width:100%; max-width:100%; height:auto; border-radius:10px; border:1px solid var(--line); margin-bottom:12px; background:#f3f4f6; }
   .dt-sat-cap { font-size:11px; color:var(--mut); margin:-6px 0 12px; }
+  .method { flex:1; min-height:0; overflow:auto; -webkit-overflow-scrolling:touch; padding:20px 20px 40px; }
+  .method > * { max-width:640px; margin-left:auto; margin-right:auto; }
+  .method h2 { font-size:19px; margin:0 auto 14px; }
+  .method h3 { font-size:14px; margin:26px auto 8px; }
+  .method p, .method li { font-size:14px; line-height:1.6; color:#374151; }
+  .method .lede { color:var(--mut); }
+  .method ul { padding-left:20px; margin:8px auto; }
+  .method li + li { margin-top:8px; }
+  .method code { background:#f3f4f6; border-radius:4px; padding:1px 5px; font-size:12.5px; }
+  .method a { color:var(--acc); }
+  .method ul.src { padding-left:0; list-style:none; }
+  .method ul.src li { font-size:12.5px; }
+  .method ul.src li + li { margin-top:6px; }
   @media (min-width: 900px) {
-    .layout { flex-direction:row; }
+    .split { flex-direction:row; }
     .tabs, .panels, .tablewrap { min-width:0; }
     .panel { flex:1 1 46%; border-right:1px solid var(--line); }
     .map { flex:1 1 54%; height:auto; border-bottom:none; }
@@ -118,6 +132,7 @@
   <div class="tabs">
     <button class="tab active" id="tabSens">Sensitive locations</button>
     <button class="tab" id="tabAddr">Every address</button>
+    <button class="tab" id="tabMeth">Methodology</button>
   </div>
 
   <div class="view-tabs" id="viewTabs">
@@ -125,6 +140,7 @@
     <button class="vtab" id="vtMap" type="button">🗺 Map</button>
   </div>
 
+  <div class="split" id="split">
   <div class="panel" id="panelSens">
     <div class="controls">
       <div class="c1">
@@ -150,6 +166,71 @@
     <div id="map"></div>
     <div class="legend" id="legend"></div>
     <div class="marker-note" id="mkNote"></div>
+  </div>
+  </div>
+
+  <div class="method" id="panelMeth" style="display:none">
+    <h2>Methodology</h2>
+    <p class="lede">This is a citizen-verification project, not an official government
+    source. Everything below is either drawn directly from the shipped dataset —
+    counts you can re-check yourself via the CSV export on the other two tabs —
+    or cited to a primary source.</p>
+
+    <h3>The trial</h3>
+    <p>Metro Nashville Police Department's <strong>Drone-as-First-Responder (DFR)</strong>
+    pilot began <strong>May 26, 2026</strong> in the Madison precinct — a 30–45
+    flight-day trial within a 2 mile radius of the precinct, using three drones
+    loaned by Skydio and flown by four FAA-certified officers. Drones respond to
+    emergency calls, active investigations, missing-person calls, and significant
+    crashes; MNPD states none carry weapons and video is deleted within 7 days.
+    The trial began under a temporary code exemption, without a Metro Council
+    vote — the Council was weighing restrictions on the program as of August 2026.</p>
+
+    <h3>The 82 m threshold</h3>
+    <p>"Flew over" means a site is within <strong>82 m (<code>SWATH_M</code>)</strong>
+    of any flight-path segment. That number isn't ours — it's reused from the
+    sibling <a href="https://github.com/clovenbradshaw-ctrl/DFR" target="_blank" rel="noopener">clovenbradshaw-ctrl/DFR</a>
+    project's published map, so the two stay comparable instead of each
+    picking its own threshold.</p>
+
+    <h3>Data pipeline</h3>
+    <ul>
+      <li><strong>Flights</strong> — MNPD's feed on Skydio's public ArcGIS
+        FeatureServer, deduplicated by <code>flight_id</code> (the feed
+        double-logs some rows): 409 raw rows → <strong>395 unique flights</strong>.</li>
+      <li><strong>Addresses</strong> — Metro Nashville GIS Addressing/AddressPoints,
+        filtered to the trial's bounding box: <strong>16,029</strong> candidate
+        points, of which <strong>10,536</strong> fall within 82 m of a flight.</li>
+      <li><strong>Sensitive sites</strong> — schools, childcare, playgrounds, and
+        places of worship from Metro GIS + OpenStreetMap: <strong>1,743</strong>
+        candidates (380 schools · 26 childcare · 352 playgrounds · 985 worship),
+        of which <strong>17</strong> fall within 82 m of a flight.</li>
+      <li><strong>Satellite crops</strong> — fetched live per-record from Esri's
+        public World Imagery export service when you open a record; nothing is
+        stored in this repo.</li>
+    </ul>
+
+    <h3>What we double-checked</h3>
+    <p>Every count above was verified directly against the shipped data files
+    (not just the prose describing them) before this panel was written. The
+    16,029 address figure was also re-queried live against Metro's own GIS
+    endpoint — it returned 16,028, one lower, which is ordinary drift in a
+    government database that's edited continuously rather than an error in
+    either number.</p>
+    <p>One gap found in the process: this repo's documented reproduce steps
+    skip the tool that actually pulls flights from Skydio's feed
+    (<code>scripts/dfr.py</code>) — <code>analyze_api.py</code> only reads a
+    local file <code>dfr.py</code> already produced. That's noted in the
+    README now so a from-scratch reproduction doesn't stall on step one.</p>
+
+    <h3>Sources</h3>
+    <ul class="src">
+      <li><a href="https://www.nashville.gov/departments/police/news/mnpd-begin-limited-drone-first-responder-trial-may-26" target="_blank" rel="noopener">Nashville.gov — "MNPD to Begin Limited Drone as First Responder Trial on May 26"</a></li>
+      <li><a href="https://www.wsmv.com/2026/05/25/metro-nashville-police-launch-drone-pilot-program-madison/" target="_blank" rel="noopener">WSMV — "Metro Nashville police to launch drone pilot program in Madison"</a></li>
+      <li><a href="https://www.wsmv.com/2026/08/04/metro-nashville-council-vote-restricting-police-drone-use-following-unapproved-pilot-program/" target="_blank" rel="noopener">WSMV — "Council to vote on restricting police drone use following unapproved pilot program"</a></li>
+      <li><a href="https://nashvillebanner.com/2026/08/18/metro-council-nashville-police-drones-bill/" target="_blank" rel="noopener">Nashville Banner — "Metro Council to weigh limits on Nashville police drone use"</a></li>
+      <li><a href="https://github.com/clovenbradshaw-ctrl/DFR" target="_blank" rel="noopener">clovenbradshaw-ctrl/DFR — source of the 82 m threshold and sensitive-site methodology</a></li>
+    </ul>
   </div>
 </div>
 
@@ -389,8 +470,23 @@ function setMode(m){
   redraw();
   if (m==='addr') ensureAddr();
 }
-document.getElementById('tabSens').onclick=()=>setMode('sens');
-document.getElementById('tabAddr').onclick=()=>setMode('addr');
+document.getElementById('tabSens').onclick=()=>{ setMethOpen(false); setMode('sens'); };
+document.getElementById('tabAddr').onclick=()=>{ setMethOpen(false); setMode('addr'); };
+// Methodology sits outside the sens/addr `mode` state entirely — it just
+// covers the panel+map with a prose view and restores whatever `mode` was
+// showing underneath when closed, so it can't disturb sort/filter/scroll
+// state in the data tabs.
+function setMethOpen(open){
+  document.getElementById('tabMeth').classList.toggle('active', open);
+  document.getElementById('tabSens').classList.toggle('active', !open && mode==='sens');
+  document.getElementById('tabAddr').classList.toggle('active', !open && mode==='addr');
+  document.getElementById('panelMeth').style.display = open ? 'block' : 'none';
+  document.getElementById('split').style.display = open ? 'none' : '';
+  document.getElementById('viewTabs').style.display = open ? 'none' : '';
+  if (open) closeDrawer();
+  else setTimeout(()=>map.invalidateSize(), 60);
+}
+document.getElementById('tabMeth').onclick=()=>setMethOpen(true);
 function setView(v){
   document.body.dataset.view = v;
   document.getElementById('vtList').classList.toggle('active', v==='list');
