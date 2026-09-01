@@ -20,7 +20,7 @@
   .tabs { display:flex; border-bottom:1px solid var(--line); background:#fafafa; }
   .tab { flex:1; padding:12px 10px; text-align:center; cursor:pointer; border:none; background:transparent; font:inherit; font-weight:700; font-size:14px; color:var(--mut); border-bottom:3px solid transparent; }
   .tab.active { color:var(--acc); border-bottom-color:var(--acc); background:#fff; }
-  .split { display:flex; flex-direction:column; flex:1; min-height:0; }
+  .split { display:flex; flex-direction:column; flex:1; min-height:0; position:relative; }
   .panel { display:flex; flex-direction:column; flex:1 1 auto; min-width:0; min-height:0; }
   .controls { padding:10px 12px; border-bottom:1px solid var(--line); background:#fff; display:flex; flex-direction:column; gap:8px; }
   .c1 { display:flex; gap:8px; }
@@ -85,9 +85,17 @@
   @media (min-width: 900px) {
     .split { flex-direction:row; }
     .tabs, .panels, .tablewrap { min-width:0; }
-    .panel { flex:1 1 46%; border-right:1px solid var(--line); }
-    .map { flex:1 1 54%; height:auto; border-bottom:none; }
-    .drawer { width:440px; left:auto; right:12px; bottom:12px; top:12px; max-height:none; border-radius:12px; border:1px solid var(--line); }
+    .panel { flex:1 1 46%; min-width:0; border-right:1px solid var(--line); }
+    .map { flex:1 1 54%; min-width:0; height:auto; border-bottom:none; }
+    /* A floating overlay at a fixed 440px covered most of the map at any
+       width under ~1400px (82% of it at 1024px). Make the drawer a real
+       third column instead — panel and map both shrink (flex-shrink:1
+       above) to make room, so nothing sits on top of anything else. */
+    .drawer {
+      position:static; flex:0 0 clamp(300px, 30vw, 400px); width:auto;
+      max-height:none; border-radius:0; border:none; border-left:1px solid var(--line);
+      box-shadow:none;
+    }
   }
 
   /* Below 900px the panel and map stack instead of sitting side by side, so
@@ -167,6 +175,11 @@
     <div id="map"></div>
     <div class="legend" id="legend"></div>
     <div class="marker-note" id="mkNote"></div>
+  </div>
+
+  <div class="drawer" id="drawer">
+    <button class="close" id="drawerClose">✕</button>
+    <div id="drawerBody"></div>
   </div>
   </div>
 
@@ -248,11 +261,6 @@
       <li><a href="https://github.com/clovenbradshaw-ctrl/DFR" target="_blank" rel="noopener">clovenbradshaw-ctrl/DFR — source of the 82 m threshold and sensitive-site methodology</a></li>
     </ul>
   </div>
-</div>
-
-<div class="drawer" id="drawer">
-  <button class="close" id="drawerClose">✕</button>
-  <div id="drawerBody"></div>
 </div>
 
 <script>
