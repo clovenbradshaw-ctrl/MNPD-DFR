@@ -1,0 +1,613 @@
+[
+ {
+  "name": "Madison Park Playground",
+  "type": "playground",
+  "lat": 36.2671064,
+  "lng": -86.7018365,
+  "n_flights": 6,
+  "n_flights_unique": 6,
+  "closest_pass_m": 5.62,
+  "first_overflight_ct": "2026-05-26 14:03",
+  "last_overflight_ct": "2026-08-06 18:34",
+  "flights": [
+   {
+    "flight_id": "04dc6f30-8911-4a26-b6e8-1fc047629206",
+    "purpose": "PERSON WITH WEAPON",
+    "external": "PD202600390493",
+    "takeoff_ms": 1779822198672,
+    "landing_ms": 1779823115642,
+    "takeoff_ct": "2026-05-26 14:03",
+    "landing_ct": "2026-05-26 14:18",
+    "min_dist_m": 77.67
+   },
+   {
+    "flight_id": "ff59bbd1-c052-40cf-b0b1-f9da36bd5b9b",
+    "purpose": "SAFETY HAZARD",
+    "external": "PD202600408592 / PD202600408612",
+    "takeoff_ms": 1780403685479,
+    "landing_ms": 1780404504653,
+    "takeoff_ct": "2026-06-02 07:34",
+    "landing_ct": "2026-06-02 07:48",
+    "min_dist_m": 73.71
+   },
+   {
+    "flight_id": "698637b4-c19f-43a9-b2fe-570855213eec",
+    "purpose": "FIGHT / ASSAULT",
+    "external": "PD202600415672",
+    "takeoff_ms": 1780627875820,
+    "landing_ms": 1780628418438,
+    "takeoff_ct": "2026-06-04 21:51",
+    "landing_ct": "2026-06-04 22:00",
+    "min_dist_m": 5.62
+   },
+   {
+    "flight_id": "3b2346f7-7a12-400b-a7ca-de606a5e6b98",
+    "purpose": "DOMESTIC DISTURBANCE",
+    "external": "PD202600523183",
+    "takeoff_ms": 1784208491217,
+    "landing_ms": 1784209659204,
+    "takeoff_ct": "2026-07-16 08:28",
+    "landing_ct": "2026-07-16 08:47",
+    "min_dist_m": 58.44
+   },
+   {
+    "flight_id": "e0d9e3ab-d486-4f20-9c7b-7c2f27aa8ebf",
+    "purpose": "HOLDUP / ROBBERY",
+    "external": "PD202600574268",
+    "takeoff_ms": 1786050613558,
+    "landing_ms": 1786050944449,
+    "takeoff_ct": "2026-08-06 16:10",
+    "landing_ct": "2026-08-06 16:15",
+    "min_dist_m": 61.32
+   },
+   {
+    "flight_id": "55e9c5c4-5bc1-416a-963c-827949150b90",
+    "purpose": "PERSON WITH WEAPON",
+    "external": "PD202600574551",
+    "takeoff_ms": 1786058228356,
+    "landing_ms": 1786059242780,
+    "takeoff_ct": "2026-08-06 18:17",
+    "landing_ct": "2026-08-06 18:34",
+    "min_dist_m": 8.96
+   }
+  ]
+ },
+ {
+  "name": "Madison Academy",
+  "type": "school",
+  "lat": 36.2553312,
+  "lng": -86.6794411,
+  "n_flights": 1,
+  "n_flights_unique": 1,
+  "closest_pass_m": 68.18,
+  "first_overflight_ct": "2026-07-10 20:10",
+  "last_overflight_ct": "2026-07-10 20:28",
+  "flights": [
+   {
+    "flight_id": "6869bd1a-b93f-4f31-b75f-8d85fd96b5c7",
+    "purpose": "DISORDERLY PERSON",
+    "external": "PD202600509952",
+    "takeoff_ms": 1783732243904,
+    "landing_ms": 1783733327724,
+    "takeoff_ct": "2026-07-10 20:10",
+    "landing_ct": "2026-07-10 20:28",
+    "min_dist_m": 68.18
+   }
+  ]
+ },
+ {
+  "name": "Stratton School",
+  "type": "school",
+  "lat": 36.2578313,
+  "lng": -86.7147194,
+  "n_flights": 3,
+  "n_flights_unique": 3,
+  "closest_pass_m": 0.94,
+  "first_overflight_ct": "2026-05-26 14:03",
+  "last_overflight_ct": "2026-08-06 18:34",
+  "flights": [
+   {
+    "flight_id": "04dc6f30-8911-4a26-b6e8-1fc047629206",
+    "purpose": "PERSON WITH WEAPON",
+    "external": "PD202600390493",
+    "takeoff_ms": 1779822198672,
+    "landing_ms": 1779823115642,
+    "takeoff_ct": "2026-05-26 14:03",
+    "landing_ct": "2026-05-26 14:18",
+    "min_dist_m": 0.94
+   },
+   {
+    "flight_id": "05aa33fa-fd8f-4e54-8998-0c4c44750f04",
+    "purpose": "DISORDERLY PERSON",
+    "external": "PD202600503785",
+    "takeoff_ms": 1783529958624,
+    "landing_ms": 1783530578391,
+    "takeoff_ct": "2026-07-08 11:59",
+    "landing_ct": "2026-07-08 12:09",
+    "min_dist_m": 21.58
+   },
+   {
+    "flight_id": "55e9c5c4-5bc1-416a-963c-827949150b90",
+    "purpose": "PERSON WITH WEAPON",
+    "external": "PD202600574551",
+    "takeoff_ms": 1786058228356,
+    "landing_ms": 1786059242780,
+    "takeoff_ct": "2026-08-06 18:17",
+    "landing_ct": "2026-08-06 18:34",
+    "min_dist_m": 4.49
+   }
+  ]
+ },
+ {
+  "name": "Alta Loma Church",
+  "type": "worship",
+  "lat": 36.2941099,
+  "lng": -86.7027065,
+  "n_flights": 1,
+  "n_flights_unique": 1,
+  "closest_pass_m": 81.96,
+  "first_overflight_ct": "2026-08-04 19:32",
+  "last_overflight_ct": "2026-08-04 19:44",
+  "flights": [
+   {
+    "flight_id": "3f7eb2f3-bd7b-4e0f-afd3-52305e74695d",
+    "purpose": "DISORDERLY PERSON",
+    "external": "PD202600569612",
+    "takeoff_ms": 1785889941327,
+    "landing_ms": 1785890648989,
+    "takeoff_ct": "2026-08-04 19:32",
+    "landing_ct": "2026-08-04 19:44",
+    "min_dist_m": 81.96
+   }
+  ]
+ },
+ {
+  "name": "Bethel Full Gospel Church",
+  "type": "worship",
+  "lat": 36.2625532,
+  "lng": -86.6852746,
+  "n_flights": 1,
+  "n_flights_unique": 1,
+  "closest_pass_m": 56.39,
+  "first_overflight_ct": "2026-07-10 20:10",
+  "last_overflight_ct": "2026-07-10 20:28",
+  "flights": [
+   {
+    "flight_id": "6869bd1a-b93f-4f31-b75f-8d85fd96b5c7",
+    "purpose": "DISORDERLY PERSON",
+    "external": "PD202600509952",
+    "takeoff_ms": 1783732243904,
+    "landing_ms": 1783733327724,
+    "takeoff_ct": "2026-07-10 20:10",
+    "landing_ct": "2026-07-10 20:28",
+    "min_dist_m": 56.39
+   }
+  ]
+ },
+ {
+  "name": "Boulevard Seventh-day Adventist Church",
+  "type": "worship",
+  "lat": 36.262905,
+  "lng": -86.7083672,
+  "n_flights": 4,
+  "n_flights_unique": 4,
+  "closest_pass_m": 24.4,
+  "first_overflight_ct": "2026-05-26 14:03",
+  "last_overflight_ct": "2026-08-06 18:34",
+  "flights": [
+   {
+    "flight_id": "04dc6f30-8911-4a26-b6e8-1fc047629206",
+    "purpose": "PERSON WITH WEAPON",
+    "external": "PD202600390493",
+    "takeoff_ms": 1779822198672,
+    "landing_ms": 1779823115642,
+    "takeoff_ct": "2026-05-26 14:03",
+    "landing_ct": "2026-05-26 14:18",
+    "min_dist_m": 81.01
+   },
+   {
+    "flight_id": "ff59bbd1-c052-40cf-b0b1-f9da36bd5b9b",
+    "purpose": "SAFETY HAZARD",
+    "external": "PD202600408592 / PD202600408612",
+    "takeoff_ms": 1780403685479,
+    "landing_ms": 1780404504653,
+    "takeoff_ct": "2026-06-02 07:34",
+    "landing_ct": "2026-06-02 07:48",
+    "min_dist_m": 41.51
+   },
+   {
+    "flight_id": "698637b4-c19f-43a9-b2fe-570855213eec",
+    "purpose": "FIGHT / ASSAULT",
+    "external": "PD202600415672",
+    "takeoff_ms": 1780627875820,
+    "landing_ms": 1780628418438,
+    "takeoff_ct": "2026-06-04 21:51",
+    "landing_ct": "2026-06-04 22:00",
+    "min_dist_m": 24.4
+   },
+   {
+    "flight_id": "55e9c5c4-5bc1-416a-963c-827949150b90",
+    "purpose": "PERSON WITH WEAPON",
+    "external": "PD202600574551",
+    "takeoff_ms": 1786058228356,
+    "landing_ms": 1786059242780,
+    "takeoff_ct": "2026-08-06 18:17",
+    "landing_ct": "2026-08-06 18:34",
+    "min_dist_m": 60.42
+   }
+  ]
+ },
+ {
+  "name": "City Road Chapel United Methodist Church",
+  "type": "worship",
+  "lat": 36.2558868,
+  "lng": -86.7138861,
+  "n_flights": 2,
+  "n_flights_unique": 2,
+  "closest_pass_m": 36.76,
+  "first_overflight_ct": "2026-05-26 14:03",
+  "last_overflight_ct": "2026-06-02 07:48",
+  "flights": [
+   {
+    "flight_id": "04dc6f30-8911-4a26-b6e8-1fc047629206",
+    "purpose": "PERSON WITH WEAPON",
+    "external": "PD202600390493",
+    "takeoff_ms": 1779822198672,
+    "landing_ms": 1779823115642,
+    "takeoff_ct": "2026-05-26 14:03",
+    "landing_ct": "2026-05-26 14:18",
+    "min_dist_m": 62.72
+   },
+   {
+    "flight_id": "ff59bbd1-c052-40cf-b0b1-f9da36bd5b9b",
+    "purpose": "SAFETY HAZARD",
+    "external": "PD202600408592 / PD202600408612",
+    "takeoff_ms": 1780403685479,
+    "landing_ms": 1780404504653,
+    "takeoff_ct": "2026-06-02 07:34",
+    "landing_ct": "2026-06-02 07:48",
+    "min_dist_m": 36.76
+   }
+  ]
+ },
+ {
+  "name": "Dry Creek Church",
+  "type": "worship",
+  "lat": 36.2836636,
+  "lng": -86.7072192,
+  "n_flights": 1,
+  "n_flights_unique": 1,
+  "closest_pass_m": 21.94,
+  "first_overflight_ct": "2026-07-23 22:06",
+  "last_overflight_ct": "2026-07-23 22:24",
+  "flights": [
+   {
+    "flight_id": "27b5ef98-fc3f-42c2-a71a-3711d0b5bf7c",
+    "purpose": "PERSON WITH WEAPON",
+    "external": "PD202600541224",
+    "takeoff_ms": 1784862392402,
+    "landing_ms": 1784863480467,
+    "takeoff_ct": "2026-07-23 22:06",
+    "landing_ct": "2026-07-23 22:24",
+    "min_dist_m": 21.94
+   }
+  ]
+ },
+ {
+  "name": "First Baptist Church",
+  "type": "worship",
+  "lat": 36.2550536,
+  "lng": -86.7144416,
+  "n_flights": 1,
+  "n_flights_unique": 1,
+  "closest_pass_m": 72.91,
+  "first_overflight_ct": "2026-05-26 14:03",
+  "last_overflight_ct": "2026-05-26 14:18",
+  "flights": [
+   {
+    "flight_id": "04dc6f30-8911-4a26-b6e8-1fc047629206",
+    "purpose": "PERSON WITH WEAPON",
+    "external": "PD202600390493",
+    "takeoff_ms": 1779822198672,
+    "landing_ms": 1779823115642,
+    "takeoff_ct": "2026-05-26 14:03",
+    "landing_ct": "2026-05-26 14:18",
+    "min_dist_m": 72.91
+   }
+  ]
+ },
+ {
+  "name": "Madison Church of Christ",
+  "type": "worship",
+  "lat": 36.2638914,
+  "lng": -86.7107781,
+  "n_flights": 4,
+  "n_flights_unique": 4,
+  "closest_pass_m": 9.4,
+  "first_overflight_ct": "2026-05-26 15:34",
+  "last_overflight_ct": "2026-07-24 16:52",
+  "flights": [
+   {
+    "flight_id": "5ad6cf0e-8f8b-4d77-9edb-ef552265635e",
+    "purpose": "VEHICLE ACCIDENT - PROPERTY DAMAGE",
+    "external": "PD202600390721",
+    "takeoff_ms": 1779827677858,
+    "landing_ms": 1779828162697,
+    "takeoff_ct": "2026-05-26 15:34",
+    "landing_ct": "2026-05-26 15:42",
+    "min_dist_m": 32.85
+   },
+   {
+    "flight_id": "3b2346f7-7a12-400b-a7ca-de606a5e6b98",
+    "purpose": "DOMESTIC DISTURBANCE",
+    "external": "PD202600523183",
+    "takeoff_ms": 1784208491217,
+    "landing_ms": 1784209659204,
+    "takeoff_ct": "2026-07-16 08:28",
+    "landing_ct": "2026-07-16 08:47",
+    "min_dist_m": 23.2
+   },
+   {
+    "flight_id": "27b5ef98-fc3f-42c2-a71a-3711d0b5bf7c",
+    "purpose": "PERSON WITH WEAPON",
+    "external": "PD202600541224",
+    "takeoff_ms": 1784862392402,
+    "landing_ms": 1784863480467,
+    "takeoff_ct": "2026-07-23 22:06",
+    "landing_ct": "2026-07-23 22:24",
+    "min_dist_m": 76.6
+   },
+   {
+    "flight_id": "5bca327b-49ee-4ce5-aead-9982c0e3d1cf",
+    "purpose": "DISORDERLY PERSON",
+    "external": "PD202600543010",
+    "takeoff_ms": 1784929223765,
+    "landing_ms": 1784929956580,
+    "takeoff_ct": "2026-07-24 16:40",
+    "landing_ct": "2026-07-24 16:52",
+    "min_dist_m": 9.4
+   }
+  ]
+ },
+ {
+  "name": "Madison Church of the Nazarene",
+  "type": "worship",
+  "lat": 36.2553313,
+  "lng": -86.7011082,
+  "n_flights": 2,
+  "n_flights_unique": 2,
+  "closest_pass_m": 13.85,
+  "first_overflight_ct": "2026-05-27 14:34",
+  "last_overflight_ct": "2026-07-23 22:24",
+  "flights": [
+   {
+    "flight_id": "513d9d69-8932-4b43-9ea0-5d6f83665499",
+    "purpose": "DOMESTIC DISTURBANCE",
+    "external": "PD202600393377",
+    "takeoff_ms": 1779910483775,
+    "landing_ms": 1779911785128,
+    "takeoff_ct": "2026-05-27 14:34",
+    "landing_ct": "2026-05-27 14:56",
+    "min_dist_m": 13.85
+   },
+   {
+    "flight_id": "27b5ef98-fc3f-42c2-a71a-3711d0b5bf7c",
+    "purpose": "PERSON WITH WEAPON",
+    "external": "PD202600541224",
+    "takeoff_ms": 1784862392402,
+    "landing_ms": 1784863480467,
+    "takeoff_ct": "2026-07-23 22:06",
+    "landing_ct": "2026-07-23 22:24",
+    "min_dist_m": 81.27
+   }
+  ]
+ },
+ {
+  "name": "Madison Freewill Baptist Church",
+  "type": "worship",
+  "lat": 36.2697751,
+  "lng": -86.6916636,
+  "n_flights": 8,
+  "n_flights_unique": 8,
+  "closest_pass_m": 31.94,
+  "first_overflight_ct": "2026-06-04 12:53",
+  "last_overflight_ct": "2026-07-30 17:05",
+  "flights": [
+   {
+    "flight_id": "596e6b83-d5fc-495b-a18a-c1cfc765d62f",
+    "purpose": "THEFT",
+    "external": "PD202600414802",
+    "takeoff_ms": 1780595581335,
+    "landing_ms": 1780595841286,
+    "takeoff_ct": "2026-06-04 12:53",
+    "landing_ct": "2026-06-04 12:57",
+    "min_dist_m": 37.53
+   },
+   {
+    "flight_id": "75f9d69e-4077-4f52-b529-0d8ff58837a7",
+    "purpose": "BURGLARY - RESIDENCE",
+    "external": "PD202600430434",
+    "takeoff_ms": 1781109945638,
+    "landing_ms": 1781110357243,
+    "takeoff_ct": "2026-06-10 11:45",
+    "landing_ct": "2026-06-10 11:52",
+    "min_dist_m": 38.33
+   },
+   {
+    "flight_id": "1bd5ebff-75e0-40d1-a211-fe8dea9455ae",
+    "purpose": "DISORDERLY PERSON",
+    "external": "PD202600501720",
+    "takeoff_ms": 1783460268305,
+    "landing_ms": 1783460820252,
+    "takeoff_ct": "2026-07-07 16:37",
+    "landing_ct": "2026-07-07 16:47",
+    "min_dist_m": 35.68
+   },
+   {
+    "flight_id": "f6288ac4-73f1-4872-b43e-4289ff7be47b",
+    "purpose": "SUSPICIOUS PERSON",
+    "external": "PD202600502282",
+    "takeoff_ms": 1783474220579,
+    "landing_ms": 1783474899776,
+    "takeoff_ct": "2026-07-07 20:30",
+    "landing_ct": "2026-07-07 20:41",
+    "min_dist_m": 59.05
+   },
+   {
+    "flight_id": "3b2346f7-7a12-400b-a7ca-de606a5e6b98",
+    "purpose": "DOMESTIC DISTURBANCE",
+    "external": "PD202600523183",
+    "takeoff_ms": 1784208491217,
+    "landing_ms": 1784209659204,
+    "takeoff_ct": "2026-07-16 08:28",
+    "landing_ct": "2026-07-16 08:47",
+    "min_dist_m": 31.94
+   },
+   {
+    "flight_id": "27b5ef98-fc3f-42c2-a71a-3711d0b5bf7c",
+    "purpose": "PERSON WITH WEAPON",
+    "external": "PD202600541224",
+    "takeoff_ms": 1784862392402,
+    "landing_ms": 1784863480467,
+    "takeoff_ct": "2026-07-23 22:06",
+    "landing_ct": "2026-07-23 22:24",
+    "min_dist_m": 64.39
+   },
+   {
+    "flight_id": "5a85c359-ce09-4475-967b-327ae4cce771",
+    "purpose": "DOMESTIC DISTURBANCE",
+    "external": "PD202600542872",
+    "takeoff_ms": 1784925017836,
+    "landing_ms": 1784925386435,
+    "takeoff_ct": "2026-07-24 15:30",
+    "landing_ct": "2026-07-24 15:36",
+    "min_dist_m": 44.12
+   },
+   {
+    "flight_id": "8cfa7d9b-7b3a-49d1-a82f-e9a41b19d59b",
+    "purpose": "WANT OFFICER FOR INVESTIGATION / ASSISTANCE",
+    "external": "PD202600557192",
+    "takeoff_ms": 1785448584654,
+    "landing_ms": 1785449147190,
+    "takeoff_ct": "2026-07-30 16:56",
+    "landing_ct": "2026-07-30 17:05",
+    "min_dist_m": 32.42
+   }
+  ]
+ },
+ {
+  "name": "Madison Wesleyan Church",
+  "type": "worship",
+  "lat": 36.2644975,
+  "lng": -86.687219,
+  "n_flights": 1,
+  "n_flights_unique": 1,
+  "closest_pass_m": 36.78,
+  "first_overflight_ct": "2026-07-16 08:28",
+  "last_overflight_ct": "2026-07-16 08:47",
+  "flights": [
+   {
+    "flight_id": "3b2346f7-7a12-400b-a7ca-de606a5e6b98",
+    "purpose": "DOMESTIC DISTURBANCE",
+    "external": "PD202600523183",
+    "takeoff_ms": 1784208491217,
+    "landing_ms": 1784209659204,
+    "takeoff_ct": "2026-07-16 08:28",
+    "landing_ct": "2026-07-16 08:47",
+    "min_dist_m": 36.78
+   }
+  ]
+ },
+ {
+  "name": "Rivergate Calvary Temple",
+  "type": "worship",
+  "lat": 36.3000951,
+  "lng": -86.6947689,
+  "n_flights": 1,
+  "n_flights_unique": 1,
+  "closest_pass_m": 48.55,
+  "first_overflight_ct": "2026-07-31 20:47",
+  "last_overflight_ct": "2026-07-31 20:59",
+  "flights": [
+   {
+    "flight_id": "2b61ef07-9404-403c-9410-134273770903",
+    "purpose": "BURGLARY - NON-RESIDENCE",
+    "external": "PD202600560431",
+    "takeoff_ms": 1785548846655,
+    "landing_ms": 1785549582042,
+    "takeoff_ct": "2026-07-31 20:47",
+    "landing_ct": "2026-07-31 20:59",
+    "min_dist_m": 48.55
+   }
+  ]
+ },
+ {
+  "name": "Salvation Army Church",
+  "type": "worship",
+  "lat": 36.2631087,
+  "lng": -86.6788856,
+  "n_flights": 1,
+  "n_flights_unique": 1,
+  "closest_pass_m": 64.65,
+  "first_overflight_ct": "2026-07-16 08:28",
+  "last_overflight_ct": "2026-07-16 08:47",
+  "flights": [
+   {
+    "flight_id": "3b2346f7-7a12-400b-a7ca-de606a5e6b98",
+    "purpose": "DOMESTIC DISTURBANCE",
+    "external": "PD202600523183",
+    "takeoff_ms": 1784208491217,
+    "landing_ms": 1784209659204,
+    "takeoff_ct": "2026-07-16 08:28",
+    "landing_ct": "2026-07-16 08:47",
+    "min_dist_m": 64.65
+   }
+  ]
+ },
+ {
+  "name": "Shepherd Hills United Methodist Church",
+  "type": "worship",
+  "lat": 36.3000518,
+  "lng": -86.6938857,
+  "n_flights": 1,
+  "n_flights_unique": 1,
+  "closest_pass_m": 11.82,
+  "first_overflight_ct": "2026-07-31 20:47",
+  "last_overflight_ct": "2026-07-31 20:59",
+  "flights": [
+   {
+    "flight_id": "2b61ef07-9404-403c-9410-134273770903",
+    "purpose": "BURGLARY - NON-RESIDENCE",
+    "external": "PD202600560431",
+    "takeoff_ms": 1785548846655,
+    "landing_ms": 1785549582042,
+    "takeoff_ct": "2026-07-31 20:47",
+    "landing_ct": "2026-07-31 20:59",
+    "min_dist_m": 11.82
+   }
+  ]
+ },
+ {
+  "name": "Jehovah's Witnesses Kingdom Hall (Slayton Dr)",
+  "type": "worship",
+  "lat": 36.2796864,
+  "lng": -86.7152419,
+  "n_flights": 1,
+  "n_flights_unique": 1,
+  "closest_pass_m": 58.2,
+  "first_overflight_ct": "2026-08-04 15:36",
+  "last_overflight_ct": "2026-08-04 15:48",
+  "flights": [
+   {
+    "flight_id": "3204e4af-0d45-41af-a854-6e2734bea0f9",
+    "purpose": "BURGLARY - RESIDENCE",
+    "external": "PD202600569155",
+    "takeoff_ms": 1785875761475,
+    "landing_ms": 1785876506374,
+    "takeoff_ct": "2026-08-04 15:36",
+    "landing_ct": "2026-08-04 15:48",
+    "min_dist_m": 58.2
+   }
+  ]
+ }
+]

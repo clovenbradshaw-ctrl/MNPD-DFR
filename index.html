@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nashville DFR — Overflight Explorer</title>
+<link rel="stylesheet" href="leaflet.css">
+<script src="leaflet.js"></script>
+<style>
+  :root { --ink:#111827; --mut:#6b7280; --line:#e5e7eb; --acc:#dc2626; }
+  * { box-sizing:border-box; }
+  body { margin:0; font:16px/1.45 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif; color:var(--ink); background:#fff; }
+  header { padding:12px 16px; border-bottom:1px solid var(--line); background:#fafafa; }
+  header h1 { font-size:15px; margin:0 0 2px; }
+  header h1 small { color:var(--mut); font-weight:400; margin-left:6px; font-size:12px; }
+  .stats { font-size:12px; color:var(--mut); line-height:1.5; }
+  .stats b { color:var(--ink); }
+  .layout { display:flex; flex-direction:column; height:calc(100vh - 74px); }
+  .tabs { display:flex; border-bottom:1px solid var(--line); background:#fafafa; }
+  .tab { flex:1; padding:12px 10px; text-align:center; cursor:pointer; border:none; background:transparent; font:inherit; font-weight:700; font-size:14px; color:var(--mut); border-bottom:3px solid transparent; }
+  .tab.active { color:var(--acc); border-bottom-color:var(--acc); background:#fff; }
+  .controls { padding:10px 12px; border-bottom:1px solid var(--line); background:#fff; display:flex; flex-direction:column; gap:8px; }
+  .c1 { display:flex; gap:8px; }
+  .c1 input[type=text] { flex:1; padding:9px 10px; border:1px solid var(--line); border-radius:8px; font-size:15px; }
+  .c2 { display:flex; gap:18px; align-items:center; font-size:14px; }
+  .check { display:flex; gap:6px; align-items:center; }
+  .check input { width:18px; height:18px; accent-color:var(--acc); }
+  .btn { padding:9px 14px; border:1px solid var(--line); background:#fff; border-radius:8px; font:inherit; font-size:14px; cursor:pointer; }
+  .btn:hover { background:#f9fafb; }
+  .tablewrap { flex:1; overflow:auto; -webkit-overflow-scrolling:touch; }
+  table { border-collapse:collapse; font-size:13px; white-space:nowrap; min-width:100%; }
+  th, td { padding:8px 10px; border-bottom:1px solid var(--line); text-align:left; vertical-align:top; }
+  th { position:sticky; top:0; background:#fafafa; cursor:pointer; user-select:none; z-index:2; font-size:12px; }
+  tr { cursor:pointer; }
+  tr:hover td, tr.active td { background:#fff7ed; }
+  .nm { font-variant-numeric:tabular-nums; }
+  .dst { color:var(--mut); font-size:12px; }
+  .pill { display:inline-block; padding:2px 9px; border-radius:999px; font-size:11px; font-weight:700; }
+  .sc-school{background:#d1fae5;color:#065f46}
+  .sc-childcare{background:#ede9fe;color:#5b21b6}
+  .sc-playground{background:#ccfbf1;color:#115e59}
+  .sc-worship{background:#fef3c7;color:#92400e}
+  .empty { padding:40px 20px; text-align:center; color:var(--mut); }
+  .when { max-height:150px; overflow:auto; -webkit-overflow-scrolling:touch; display:block; }
+  .when .ln { display:block; }
+  .more { color:var(--acc); font-size:12px; font-weight:600; }
+  .foot { padding:8px 12px; font-size:11.5px; color:var(--mut); border-top:1px solid var(--line); display:flex; justify-content:space-between; gap:8px; }
+  .map { position:relative; height:42vh; min-height:240px; border-bottom:1px solid var(--line); flex:none; }
+  #map { position:absolute; inset:0; z-index:0; }
+  .legend { position:absolute; top:8px; right:8px; z-index:500; background:#fff; border:1px solid var(--line); border-radius:8px; padding:8px 10px; font-size:11.5px; box-shadow:0 1px 4px rgba(0,0,0,.15); }
+  .legend b { display:block; margin-bottom:4px; }
+  .legend .li { display:flex; align-items:center; gap:6px; margin:2px 0; color:#374151; }
+  .sw { width:11px; height:11px; border-radius:50%; }
+  .sw.flt { background:#3b82f6; width:20px; height:4px; border-radius:2px; }
+  .marker-note { position:absolute; bottom:8px; left:8px; z-index:500; background:#fff; border:1px solid var(--line); border-radius:8px; padding:5px 8px; font-size:11.5px; color:#374151; box-shadow:0 1px 3px rgba(0,0,0,.12); }
+  /* detail drawer */
+  .drawer { position:fixed; left:0; right:0; bottom:0; z-index:800; max-height:80vh; overflow:auto; background:#fff; border-top:2px solid var(--acc); box-shadow:0 -6px 24px rgba(0,0,0,.25); padding:14px 16px 18px; display:none; -webkit-overflow-scrolling:touch; }
+  .drawer.open { display:block; }
+  .drawer h3 { margin:0 0 10px; font-size:16px; }
+  .drawer .close { position:absolute; top:10px; right:12px; border:none; background:#f3f4f6; border-radius:50%; width:30px; height:30px; font-size:16px; cursor:pointer; }
+  .drawer dl { margin:0; }
+  .flightrow { border-top:1px solid var(--line); padding:8px 0; }
+  .flightrow .p { font-weight:600; }
+  .flightrow .m { font-size:13px; color:#374151; }
+  .flightrow .t { font-size:13px; color:var(--mut); }
+  .drawer .addrline { color:var(--mut); font-size:13px; margin-bottom:10px; }
+  @media (min-width: 900px) {
+    .layout { flex-direction:row; }
+    .tabs, .panels, .tablewrap { min-width:0; }
+    .panel { display:flex; flex-direction:column; flex:1 1 46%; min-width:0; border-right:1px solid var(--line); }
+    .map { flex:1 1 54%; height:auto; border-bottom:none; }
+    .drawer { width:440px; left:auto; right:12px; bottom:12px; top:12px; max-height:none; border-radius:12px; border:1px solid var(--line); }
+  }
+</style>
+</head>
+<body>
+<header>
+  <h1>Nashville DFR · Overflight Explorer <small>MNPD DFR · Madison pilot</small></h1>
+  <div class="stats">Flights <b id="stFlights">–</b> · Sensitive sites <b id="stSens">–</b> · Addresses overflown <b id="stAddr">–</b> · Threshold <b id="stSwath">82 m</b></div>
+</header>
+
+<div class="layout">
+  <div class="tabs">
+    <button class="tab active" id="tabSens">Sensitive locations</button>
+    <button class="tab" id="tabAddr">Every address</button>
+  </div>
+
+  <div class="panel" id="panelSens">
+    <div class="controls">
+      <div class="c1">
+        <input type="text" id="q" placeholder="Search site / address / street…">
+        <button class="btn" id="exp">CSV</button>
+      </div>
+      <div class="c2">
+        <label class="check"><input type="checkbox" id="showFlights" checked> Flight paths</label>
+        <label class="check"><input type="checkbox" id="fitArea" checked> Fit results</label>
+      </div>
+    </div>
+    <div class="tablewrap">
+      <table id="tbl">
+        <thead><tr id="thRow"></tr></thead>
+        <tbody id="tb"></tbody>
+      </table>
+      <div class="empty" id="loading">Loading…</div>
+    </div>
+    <div class="foot"><span id="footL">–</span><span>≤ 82 m of flight path (project <code>SWATH_M</code>)</span></div>
+  </div>
+
+  <div class="map">
+    <div id="map"></div>
+    <div class="legend" id="legend"></div>
+    <div class="marker-note" id="mkNote"></div>
+  </div>
+</div>
+
+<div class="drawer" id="drawer">
+  <button class="close" id="drawerClose">✕</button>
+  <div id="drawerBody"></div>
+</div>
+
+<script>
+const SWATH_M = 82;
+const TYPE_COLORS = {school:'#0f766e', childcare:'#6d28d9', playground:'#0d9488', worship:'#d97706'};
+const TYPE_PILL = {school:'sc-school', childcare:'sc-childcare', playground:'sc-playground', worship:'sc-worship'};
+
+let SENS=[], ADDR=[], ADDR_FULL=[], FLIGHTS=[];
+let mode='sens';
+let q='', showFlights=true, fitArea=true;
+let tableRows=[];
+let ptLayer=null, lineLayer=null;
+let addrLoaded=false;
+
+const map = L.map('map',{zoomControl:false, minZoom:10, maxZoom:19}).setView([36.27,-86.70],13);
+L.control.zoom({position:'bottomright'}).addTo(map);
+L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}',{maxZoom:19,maxNativeZoom:19,attribution:'Imagery © Esri'}).addTo(map);
+
+function esc(s){return String(s==null?'':s).replace(/[<>&"]/g,c=>({'<':'&lt;','>':'&gt;','&':'&amp;','"':'&quot;'}[c]))}
+function fmtAMPM(ms){ if(!ms) return ''; return new Intl.DateTimeFormat('en-US',{timeZone:'America/Chicago',year:'numeric',month:'2-digit',day:'2-digit',hour:'numeric',minute:'2-digit',hour12:true}).format(ms).toUpperCase(); }
+function fmtAMPMshort(ms){ if(!ms) return ''; return new Intl.DateTimeFormat('en-US',{timeZone:'America/Chicago',month:'short',day:'numeric',hour:'numeric',minute:'2-digit',hour12:true}).format(ms); }
+
+/* ---------- data ---------- */
+function coordPairs(g){
+  if (!g) return [];
+  if (g.type==='LineString') return g.coordinates;
+  if (g.type==='MultiLineString') return g.coordinates.flat();
+  return [];
+}
+function loadFlights(features){
+  const seen={};
+  for (const f of features){
+    const p=f.properties||{}; const fid=p.flight_id;
+    if (!fid || seen[fid]) continue;
+    seen[fid]=1;
+    const pairs=coordPairs(f.geometry);
+    if (!pairs.length) continue;
+    FLIGHTS.push({path:pairs.map(c=>[c[1],c[0]]), title:p.flight_purpose||'Unknown',
+                  takeoff:p.takeoff, landing:p.landing});
+  }
+}
+
+/* ---------- map layers ---------- */
+function drawFlights(){
+  if (lineLayer) map.removeLayer(lineLayer);
+  lineLayer = L.layerGroup();
+  if (showFlights){
+    for (const f of FLIGHTS){
+      const l = L.polyline([f.path],{color:'#3b82f6',weight:2,opacity:.5,clickable:false});
+      l.bindTooltip(`<b>${esc(f.title)}</b><br>${fmtAMPMshort(f.takeoff)} → ${fmtAMPMshort(f.landing)} (CT)`,{sticky:true});
+      lineLayer.addLayer(l);
+    }
+  }
+  map.addLayer(lineLayer);
+}
+function drawPoints(){
+  if (ptLayer) map.removeLayer(ptLayer);
+  ptLayer = L.layerGroup();
+  const pts=[];
+  for (const it of tableRows){
+    if (it.lat==null||it.lng==null) continue;
+    pts.push([it.lat,it.lng]);
+    const c = mode==='addr' ? '#dc2626' : (TYPE_COLORS[it.type]||'#6b7280');
+    const m = L.circleMarker([it.lat,it.lng],{radius:6,color:'#fff',weight:1.5,fillColor:c,fillOpacity:.9});
+    m.on('click',()=>openDrawer(it));
+    ptLayer.addLayer(m);
+  }
+  map.addLayer(ptLayer);
+  mkNote.textContent = pts.length ? `${pts.length.toLocaleString()} point(s)` : 'No results match filters';
+  if (fitArea && pts.length) map.fitBounds(pts,{padding:[20,20],maxZoom:16});
+}
+let drawT;
+function redraw(){ clearTimeout(drawT); drawT=setTimeout(()=>{drawFlights();drawPoints();},40); }
+
+/* ---------- detail drawer ---------- */
+function openDrawer(it){
+  const isAddr = mode==='addr';
+  const body = document.getElementById('drawerBody');
+  let fl = it.flights;
+  let full = false;
+  if (isAddr){
+    if (!fl && ADDR_FULL.length){
+      const fullRec = ADDR_FULL.find(a=>a.apn===it.apn && a.full_address===it.full_address && a.lat===it.lat && a.lng===it.lng);
+      if (fullRec) fl = fullRec.flights;
+      full = !!fl;
+    }
+    body.innerHTML = `
+      <h3>${esc(it.full_address||'—')}</h3>
+      <div class="addrline">${esc(it.city||'')}, ${esc(it.zip||'')} · closest ${it.closest_pass_m} m · ${it.n_flights} flight(s)${full?'':' (loading detail…)'}</div>
+      ${flightList(fl||[], full)}`;
+  } else {
+    body.innerHTML = `
+      <h3><span class="pill ${TYPE_PILL[it.type]}">${esc(it.type)}</span> ${esc(it.name)}</h3>
+      <div class="addrline">closest ${it.closest_pass_m} m · ${it.n_flights} flight(s)</div>
+      ${flightList(fl||[], true)}`;
+  }
+  document.getElementById('drawer').classList.add('open');
+}
+function flightList(fl, full){
+  if (!fl.length) return '<p class="empty" style="padding:20px">No flight detail loaded yet.</p>';
+  return '<dl>'+fl.map(f=>`
+    <div class="flightrow">
+      <div class="p">${esc(f.purpose||'Unknown')} ${esc(f.external?'· '+f.external:'')}</div>
+      <div class="m">${fmtAMPM(f.takeoff_ms)} → ${fmtAMPM(f.landing_ms)} (CT)</div>
+      <div class="t">flight <code>${esc(f.flight_id)}</code> · ${f.min_dist_m} m from here</div>
+    </div>`).join('')+'</dl>';
+}
+function closeDrawer(){ document.getElementById('drawer').classList.remove('open'); }
+document.getElementById('drawerClose').onclick=closeDrawer;
+document.getElementById('drawer').addEventListener('click',e=>{ if(e.target.id==='drawer') closeDrawer(); });
+
+/* ---------- table ---------- */
+const COLS = {
+  sens: [
+    {k:'name', label:'Site', render:d=>`<span class="${TYPE_PILL[d.type]} pill">${esc(d.type)}</span> ${esc(d.name)}`},
+    {k:'closest_pass_m', label:'Closest', num:1, render:d=>d.closest_pass_m.toFixed(1)+' m'},
+    {k:'n_flights', label:'Flights', num:1, render:d=>d.n_flights},
+    {k:'when', label:'Date &amp; time (Central)', render:d=>whenCell(d)},
+  ],
+  addr: [
+    {k:'full_address', label:'Address', render:d=>esc(d.full_address||'—')},
+    {k:'closest_pass_m', label:'Closest', num:1, render:d=>d.closest_pass_m.toFixed(1)+' m'},
+    {k:'n_flights', label:'Flights', num:1, render:d=>d.n_flights},
+    {k:'when', label:'Date &amp; time (Central)', render:d=>whenCell(d)},
+  ],
+};
+function whenCell(d){
+  const fl = d.flights||[];
+  if (!fl.length) return esc(d.first_overflight_ct||'—') + ' … ' + esc(d.last_overflight_ct||'');
+  const lines = fl.slice(0,8).map(f=>`<span class="ln">${fmtAMPM(f.takeoff_ms)} → ${fmtAMPM(f.landing_ms)} <span class="dst">(${f.min_dist_m} m)</span></span>`);
+  const more = fl.length>8 ? `<span class="more">+${fl.length-8} more — tap for all</span>` : '';
+  return `<span class="when">${lines.join('')}${more}</span>`;
+}
+function sortRows(rows, col){
+  const a=rows.slice();
+  a.sort((x,y)=>{
+    const c=COLS[mode].find(cc=>cc.k===col);
+    if (!c) return 0;
+    const av=x[c.k], bv=y[c.k];
+    if (c.num) return (av-bv);
+    return String(av).localeCompare(String(bv));
+  });
+  return a;
+}
+function renderTable(rows){
+  tableRows=rows;
+  const cols=COLS[mode];
+  thRow.innerHTML=cols.map((c,i)=>`<th data-i="${i}">${c.label}</th>`).join('');
+  document.getElementById('loading').style.display='none';
+  tb.innerHTML=rows.map((it,i)=>'<tr data-i="'+i+'">'+cols.map(c=>`<td class="${c.num?'nm':''}">${c.render?c.render(it):esc(it[c.k])}</td>`).join('')+'</tr>').join('');
+  footL.textContent=`${rows.length.toLocaleString()} of ${(mode==='addr'?ADDR:SENS).length.toLocaleString()}`;
+  thRow.querySelectorAll('th').forEach(th=>th.onclick=()=>{
+    const i=+th.dataset.i;
+    renderTable(sortRows(tableRows, COLS[mode][i].k));
+  });
+  tb.querySelectorAll('tr').forEach((tr,ri)=>tr.addEventListener('click',()=>{
+    openDrawer(rows[ri]);
+  }));
+}
+function filtered(){
+  const src = mode==='addr' ? ADDR : SENS;
+  const ql=q.toLowerCase();
+  if (!ql) return src;
+  return src.filter(it=>((mode==='addr'? it.full_address : it.name+' '+it.type)||'').toLowerCase().includes(ql));
+}
+function refresh(){ renderTable(filtered()); redraw(); }
+
+/* lazy address load */
+async function ensureAddr(){
+  if (addrLoaded) return;
+  addrLoaded=true;
+  document.getElementById('loading').textContent='Loading addresses (10,536)…';
+  document.getElementById('loading').style.display='block';
+  // load light list first
+  try{
+    const light = await fetchJSON('data/dfr_addresses_light.json',false);
+    ADDR = light.map(a=>({...a, flights:[]}));
+    stAddr.textContent = ADDR.length.toLocaleString();
+    if (mode==='addr'){ renderTable(filtered()); redraw(); }
+  }catch(e){}
+  // then full detail in background (binary gz)
+  try{
+    const full = await fetchJSON('data/dfr_addresses.json.gz',true);
+    ADDR_FULL = full;
+    // merge into light so taps work
+    const byKey = new Map();
+    full.forEach(a=>byKey.set(a.apn+'|'+a.full_address+'|'+a.lat+'|'+a.lng, a));
+    ADDR = ADDR.map(a=>{ const k=a.apn+'|'+a.full_address+'|'+a.lat+'|'+a.lng; const f=byKey.get(k); return f?f:a; });
+    if (mode==='addr'){ renderTable(filtered()); redraw(); }
+  }catch(e){}
+}
+
+/* ---------- controls ---------- */
+function setMode(m){
+  mode=m;
+  document.getElementById('tabSens').classList.toggle('active',m==='sens');
+  document.getElementById('tabAddr').classList.toggle('active',m==='addr');
+  closeDrawer();
+  buildLegend();
+  renderTable(filtered());
+  redraw();
+  if (m==='addr') ensureAddr();
+}
+document.getElementById('tabSens').onclick=()=>setMode('sens');
+document.getElementById('tabAddr').onclick=()=>setMode('addr');
+let qT;
+document.getElementById('q').addEventListener('input',e=>{q=e.target.value.trim();clearTimeout(qT);qT=setTimeout(()=>{renderTable(filtered());redraw();},200);});
+document.getElementById('showFlights').onchange=e=>{showFlights=e.target.checked;drawFlights();};
+document.getElementById('fitArea').onchange=e=>{fitArea=e.target.checked;if(fitArea)drawPoints();};
+
+document.getElementById('exp').onclick=()=>{
+  const cols=COLS[mode];
+  const lines=[['lat','lng','name','type','closest_pass_m','n_flights','when'].join(',')];
+  for (const it of tableRows){
+    const wh = (it.flights||[]).length
+      ? it.flights.map(f=>`${fmtAMPM(f.takeoff_ms)}-${fmtAMPM(f.landing_ms)} ${f.min_dist_m}m`).join('; ')
+      : `${it.first_overflight_ct} .. ${it.last_overflight_ct}`;
+    lines.push([it.lat,it.lng, mode==='addr'?it.full_address:it.name, mode==='addr'?'address':it.type,
+      it.closest_pass_m, it.n_flights, wh].map(v=>`"${String(v==null?'':v).replace(/"/g,'""')}"`).join(','));
+  }
+  const a=document.createElement('a');
+  a.href=URL.createObjectURL(new Blob([lines.join('\n')],{type:'text/csv'}));
+  a.download=`dfr_${mode}_overflights.csv`; a.click(); URL.revokeObjectURL(a.href);
+};
+
+function buildLegend(){
+  const lg=document.getElementById('legend');
+  lg.innerHTML = mode==='addr'
+    ? `<b>Legend</b><div class="li"><span class="sw" style="background:#dc2626"></span> address (≤82 m)</div><div class="li"><span class="sw flt"></span> flight path</div>`
+    : `<b>Types</b>`+Object.keys(TYPE_COLORS).map(t=>`<div class="li"><span class="sw" style="background:${TYPE_COLORS[t]}"></span> ${t}</div>`).join('')+`<div class="li"><span class="sw flt"></span> flight path</div>`;
+}
+
+/* ---------- load ---------- */
+async function fetchJSON(url, gz){
+  const r=await fetch(url);
+  if(!r.ok) throw new Error('HTTP '+r.status);
+  if(!gz) return r.json();
+  const buf=await r.arrayBuffer();
+  const ds=new DecompressionStream('gzip');
+  const stream=new Blob([buf]).stream().pipeThrough(ds);
+  return JSON.parse(await new Response(stream).text());
+}
+async function load(){
+  const [s,f] = await Promise.all([
+    fetchJSON('data/dfr_sensitive.json',false).then(x=>x).catch(()=>null),
+    fetchJSON('data/nashville_flights.geojson.gz',true).then(x=>x).catch(()=>null),
+  ]);
+  SENS=s||[];
+  if (f) loadFlights(f.features);
+  stSens.textContent=SENS.length;
+  stFlights.textContent=FLIGHTS.length;
+  stSwath.textContent=SWATH_M+' m';
+  if (!SENS.length){ document.getElementById('loading').textContent='Could not load data. Serve this folder: <code>python3 -m http.server</code>'; return; }
+  setMode(new URLSearchParams(location.search).get('tab')==='addr' ? 'addr' : 'sens');
+}
+load();
+</script>
+</body>
+</html>
