@@ -9,16 +9,17 @@
 <style>
   :root { --ink:#111827; --mut:#6b7280; --line:#e5e7eb; --acc:#dc2626; }
   * { box-sizing:border-box; }
-  body { margin:0; font:16px/1.45 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif; color:var(--ink); background:#fff; }
+  body { margin:0; font:16px/1.45 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif; color:var(--ink); background:#fff; display:flex; flex-direction:column; height:100vh; height:100dvh; overflow:hidden; }
   header { padding:12px 16px; border-bottom:1px solid var(--line); background:#fafafa; }
   header h1 { font-size:15px; margin:0 0 2px; }
   header h1 small { color:var(--mut); font-weight:400; margin-left:6px; font-size:12px; }
   .stats { font-size:12px; color:var(--mut); line-height:1.5; }
   .stats b { color:var(--ink); }
-  .layout { display:flex; flex-direction:column; height:calc(100vh - 74px); }
+  .layout { display:flex; flex-direction:column; flex:1; min-height:0; }
   .tabs { display:flex; border-bottom:1px solid var(--line); background:#fafafa; }
   .tab { flex:1; padding:12px 10px; text-align:center; cursor:pointer; border:none; background:transparent; font:inherit; font-weight:700; font-size:14px; color:var(--mut); border-bottom:3px solid transparent; }
   .tab.active { color:var(--acc); border-bottom-color:var(--acc); background:#fff; }
+  .panel { display:flex; flex-direction:column; flex:1 1 auto; min-width:0; min-height:0; }
   .controls { padding:10px 12px; border-bottom:1px solid var(--line); background:#fff; display:flex; flex-direction:column; gap:8px; }
   .c1 { display:flex; gap:8px; }
   .c1 input[type=text] { flex:1; padding:9px 10px; border:1px solid var(--line); border-radius:8px; font-size:15px; }
@@ -27,9 +28,9 @@
   .check input { width:18px; height:18px; accent-color:var(--acc); }
   .btn { padding:9px 14px; border:1px solid var(--line); background:#fff; border-radius:8px; font:inherit; font-size:14px; cursor:pointer; }
   .btn:hover { background:#f9fafb; }
-  .tablewrap { flex:1; overflow:auto; -webkit-overflow-scrolling:touch; }
-  table { border-collapse:collapse; font-size:13px; white-space:nowrap; min-width:100%; }
-  th, td { padding:8px 10px; border-bottom:1px solid var(--line); text-align:left; vertical-align:top; }
+  .tablewrap { flex:1; min-height:0; overflow:auto; -webkit-overflow-scrolling:touch; }
+  table { border-collapse:collapse; font-size:13px; width:100%; }
+  th, td { padding:8px 10px; border-bottom:1px solid var(--line); text-align:left; vertical-align:top; word-break:break-word; }
   th { position:sticky; top:0; background:#fafafa; cursor:pointer; user-select:none; z-index:2; font-size:12px; }
   tr { cursor:pointer; }
   tr:hover td, tr.active td { background:#fff7ed; }
@@ -64,16 +65,50 @@
   .flightrow .m { font-size:13px; color:#374151; }
   .flightrow .t { font-size:13px; color:var(--mut); }
   .drawer .addrline { color:var(--mut); font-size:13px; margin-bottom:10px; }
+  .dt-sat { display:block; width:100%; max-width:100%; height:auto; border-radius:10px; border:1px solid var(--line); margin-bottom:12px; background:#f3f4f6; }
+  .dt-sat-cap { font-size:11px; color:var(--mut); margin:-6px 0 12px; }
   @media (min-width: 900px) {
     .layout { flex-direction:row; }
     .tabs, .panels, .tablewrap { min-width:0; }
-    .panel { display:flex; flex-direction:column; flex:1 1 46%; min-width:0; border-right:1px solid var(--line); }
+    .panel { flex:1 1 46%; border-right:1px solid var(--line); }
     .map { flex:1 1 54%; height:auto; border-bottom:none; }
     .drawer { width:440px; left:auto; right:12px; bottom:12px; top:12px; max-height:none; border-radius:12px; border:1px solid var(--line); }
   }
+
+  /* Below 900px the panel and map stack instead of sitting side by side, so
+     each only gets a fair share of a short viewport if both show at once.
+     A small view toggle (prior art: Zillow/Yelp/Google Maps' "Map"/"List"
+     pill, the lightweight cousin of Airbnb's draggable map sheet) lets one
+     take the full height instead — no drag/snap physics to build for an app
+     this size. */
+  .view-tabs { display:none; }
+  @media (max-width: 899px) {
+    .view-tabs { display:flex; gap:8px; padding:8px 12px; border-bottom:1px solid var(--line); background:#fafafa; }
+    .vtab { flex:1; padding:8px 10px; border:1px solid var(--line); background:#fff; border-radius:8px; font:inherit; font-weight:700; font-size:13px; color:var(--mut); cursor:pointer; }
+    .vtab.active { background:var(--acc); border-color:var(--acc); color:#fff; }
+    body[data-view="list"] .map { display:none; }
+    body[data-view="map"] .panel { display:none; }
+    body[data-view="map"] .map { flex:1; height:auto; min-height:0; border-bottom:none; }
+  }
+
+  /* Phone-width rows: a real <table> stops working once "Address" and
+     "Date & time" both need real room, so rows become stacked cards and the
+     header becomes a small wrapping row of the same sort taps. */
+  @media (max-width: 560px) {
+    #thRow { display:flex; flex-wrap:wrap; gap:2px 16px; }
+    #thRow th { padding:7px 4px; font-size:11px; }
+    tbody tr { display:block; padding:10px 0; }
+    tbody tr:hover td { background:none; }
+    tbody tr.active { background:#fff7ed; }
+    tbody td { display:block; border:none; padding:1px 0; }
+    tbody td:first-child { font-weight:700; font-size:14.5px; color:var(--ink); margin-bottom:2px; }
+    tbody td.nm { display:inline-block; margin-right:14px; font-size:12.5px; color:var(--mut); }
+    tbody td.nm::before { content: attr(data-label) ": "; }
+    tbody td:last-child { margin-top:4px; }
+  }
 </style>
 </head>
-<body>
+<body data-view="list">
 <header>
   <h1>Nashville DFR · Overflight Explorer <small>MNPD DFR · Madison pilot</small></h1>
   <div class="stats">Flights <b id="stFlights">–</b> · Sensitive sites <b id="stSens">–</b> · Addresses overflown <b id="stAddr">–</b> · Threshold <b id="stSwath">82 m</b></div>
@@ -83,6 +118,11 @@
   <div class="tabs">
     <button class="tab active" id="tabSens">Sensitive locations</button>
     <button class="tab" id="tabAddr">Every address</button>
+  </div>
+
+  <div class="view-tabs" id="viewTabs">
+    <button class="vtab active" id="vtList" type="button">☰ List</button>
+    <button class="vtab" id="vtMap" type="button">🗺 Map</button>
   </div>
 
   <div class="panel" id="panelSens">
@@ -135,8 +175,31 @@ L.control.zoom({position:'bottomright'}).addTo(map);
 L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}',{maxZoom:19,maxNativeZoom:19,attribution:'Imagery © Esri'}).addTo(map);
 
 function esc(s){return String(s==null?'':s).replace(/[<>&"]/g,c=>({'<':'&lt;','>':'&gt;','&':'&amp;','"':'&quot;'}[c]))}
-function fmtAMPM(ms){ if(!ms) return ''; return new Intl.DateTimeFormat('en-US',{timeZone:'America/Chicago',year:'numeric',month:'2-digit',day:'2-digit',hour:'numeric',minute:'2-digit',hour12:true}).format(ms).toUpperCase(); }
-function fmtAMPMshort(ms){ if(!ms) return ''; return new Intl.DateTimeFormat('en-US',{timeZone:'America/Chicago',month:'short',day:'numeric',hour:'numeric',minute:'2-digit',hour12:true}).format(ms); }
+const DATE_FMT = new Intl.DateTimeFormat('en-US',{timeZone:'America/Chicago',month:'short',day:'numeric',year:'numeric'});
+const TIME_FMT = new Intl.DateTimeFormat('en-US',{timeZone:'America/Chicago',hour:'numeric',minute:'2-digit',hour12:true});
+// One date on a line when takeoff/landing share a day (the common case) — the
+// old format spelled the full date out twice per flight and pushed every
+// table cell wide enough to force horizontal scrolling.
+function fmtRange(startMs, endMs){
+  if (!startMs) return '';
+  const d1=DATE_FMT.format(startMs), t1=TIME_FMT.format(startMs);
+  if (!endMs) return `${d1} · ${t1}`;
+  const d2=DATE_FMT.format(endMs), t2=TIME_FMT.format(endMs);
+  return d1===d2 ? `${d1} · ${t1}–${t2}` : `${d1} ${t1} → ${d2} ${t2}`;
+}
+// Esri's public World Imagery export endpoint (same host the live map tiles
+// already come from) — a static crop centered on a point, fetched on demand
+// instead of shipping satellite PNGs in the repo.
+function satUrl(lat, lng, spanM){
+  spanM = spanM || 40;
+  const dLat = spanM/111320, dLng = spanM/(111320*Math.cos(lat*Math.PI/180));
+  const bbox = [lng-dLng,lat-dLat,lng+dLng,lat+dLat].join(',');
+  // Esri's export op 500s past ~0.23 m/px at this zoom (measured directly
+  // against the live service) — size to the span instead of a fixed 480,
+  // or a close-in crop 500s while a wide one works fine.
+  const px = Math.max(200, Math.min(480, Math.round((spanM*2) / 0.25)));
+  return `https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/export?bbox=${bbox}&bboxSR=4326&imageSR=4326&size=${px},${px}&format=png24&f=image`;
+}
 
 /* ---------- data ---------- */
 function coordPairs(g){
@@ -153,8 +216,7 @@ function loadFlights(features){
     seen[fid]=1;
     const pairs=coordPairs(f.geometry);
     if (!pairs.length) continue;
-    FLIGHTS.push({path:pairs.map(c=>[c[1],c[0]]), title:p.flight_purpose||'Unknown',
-                  takeoff:p.takeoff, landing:p.landing});
+    FLIGHTS.push({path:pairs.map(c=>[c[1],c[0]]), takeoff:p.takeoff, landing:p.landing});
   }
 }
 
@@ -165,7 +227,7 @@ function drawFlights(){
   if (showFlights){
     for (const f of FLIGHTS){
       const l = L.polyline([f.path],{color:'#3b82f6',weight:2,opacity:.5,clickable:false});
-      l.bindTooltip(`<b>${esc(f.title)}</b><br>${fmtAMPMshort(f.takeoff)} → ${fmtAMPMshort(f.landing)} (CT)`,{sticky:true});
+      l.bindTooltip(`${fmtRange(f.takeoff, f.landing)} (CT)`,{sticky:true});
       lineLayer.addLayer(l);
     }
   }
@@ -191,6 +253,13 @@ let drawT;
 function redraw(){ clearTimeout(drawT); drawT=setTimeout(()=>{drawFlights();drawPoints();},40); }
 
 /* ---------- detail drawer ---------- */
+function satImg(lat, lng){
+  if (lat==null || lng==null) return '';
+  return `<div class="dt-sat-wrap">
+    <img class="dt-sat" src="${satUrl(lat,lng)}" alt="satellite view" loading="lazy" onerror="this.parentElement.remove()">
+    <div class="dt-sat-cap">Satellite: Esri World Imagery, ~80 m across</div>
+  </div>`;
+}
 function openDrawer(it){
   const isAddr = mode==='addr';
   const body = document.getElementById('drawerBody');
@@ -203,11 +272,13 @@ function openDrawer(it){
       full = !!fl;
     }
     body.innerHTML = `
+      ${satImg(it.lat, it.lng)}
       <h3>${esc(it.full_address||'—')}</h3>
       <div class="addrline">${esc(it.city||'')}, ${esc(it.zip||'')} · closest ${it.closest_pass_m} m · ${it.n_flights} flight(s)${full?'':' (loading detail…)'}</div>
       ${flightList(fl||[], full)}`;
   } else {
     body.innerHTML = `
+      ${satImg(it.lat, it.lng)}
       <h3><span class="pill ${TYPE_PILL[it.type]}">${esc(it.type)}</span> ${esc(it.name)}</h3>
       <div class="addrline">closest ${it.closest_pass_m} m · ${it.n_flights} flight(s)</div>
       ${flightList(fl||[], true)}`;
@@ -218,9 +289,8 @@ function flightList(fl, full){
   if (!fl.length) return '<p class="empty" style="padding:20px">No flight detail loaded yet.</p>';
   return '<dl>'+fl.map(f=>`
     <div class="flightrow">
-      <div class="p">${esc(f.purpose||'Unknown')} ${esc(f.external?'· '+f.external:'')}</div>
-      <div class="m">${fmtAMPM(f.takeoff_ms)} → ${fmtAMPM(f.landing_ms)} (CT)</div>
-      <div class="t">flight <code>${esc(f.flight_id)}</code> · ${f.min_dist_m} m from here</div>
+      <div class="m">${fmtRange(f.takeoff_ms, f.landing_ms)} (CT)</div>
+      <div class="t">flight <code>${esc(f.flight_id)}</code>${f.external?' · case '+esc(f.external):''} · ${f.min_dist_m} m from here</div>
     </div>`).join('')+'</dl>';
 }
 function closeDrawer(){ document.getElementById('drawer').classList.remove('open'); }
@@ -245,7 +315,7 @@ const COLS = {
 function whenCell(d){
   const fl = d.flights||[];
   if (!fl.length) return esc(d.first_overflight_ct||'—') + ' … ' + esc(d.last_overflight_ct||'');
-  const lines = fl.slice(0,8).map(f=>`<span class="ln">${fmtAMPM(f.takeoff_ms)} → ${fmtAMPM(f.landing_ms)} <span class="dst">(${f.min_dist_m} m)</span></span>`);
+  const lines = fl.slice(0,8).map(f=>`<span class="ln">${fmtRange(f.takeoff_ms, f.landing_ms)} <span class="dst">(${f.min_dist_m} m)</span></span>`);
   const more = fl.length>8 ? `<span class="more">+${fl.length-8} more — tap for all</span>` : '';
   return `<span class="when">${lines.join('')}${more}</span>`;
 }
@@ -265,7 +335,7 @@ function renderTable(rows){
   const cols=COLS[mode];
   thRow.innerHTML=cols.map((c,i)=>`<th data-i="${i}">${c.label}</th>`).join('');
   document.getElementById('loading').style.display='none';
-  tb.innerHTML=rows.map((it,i)=>'<tr data-i="'+i+'">'+cols.map(c=>`<td class="${c.num?'nm':''}">${c.render?c.render(it):esc(it[c.k])}</td>`).join('')+'</tr>').join('');
+  tb.innerHTML=rows.map((it,i)=>'<tr data-i="'+i+'">'+cols.map(c=>`<td class="${c.num?'nm':''}" data-label="${c.label}">${c.render?c.render(it):esc(it[c.k])}</td>`).join('')+'</tr>').join('');
   footL.textContent=`${rows.length.toLocaleString()} of ${(mode==='addr'?ADDR:SENS).length.toLocaleString()}`;
   thRow.querySelectorAll('th').forEach(th=>th.onclick=()=>{
     const i=+th.dataset.i;
@@ -321,6 +391,16 @@ function setMode(m){
 }
 document.getElementById('tabSens').onclick=()=>setMode('sens');
 document.getElementById('tabAddr').onclick=()=>setMode('addr');
+function setView(v){
+  document.body.dataset.view = v;
+  document.getElementById('vtList').classList.toggle('active', v==='list');
+  document.getElementById('vtMap').classList.toggle('active', v==='map');
+  // the map was hidden (display:none) while the list was showing, so Leaflet
+  // needs a nudge to remeasure its container once it's visible again
+  if (v==='map') setTimeout(()=>map.invalidateSize(), 60);
+}
+document.getElementById('vtList').onclick=()=>setView('list');
+document.getElementById('vtMap').onclick=()=>setView('map');
 let qT;
 document.getElementById('q').addEventListener('input',e=>{q=e.target.value.trim();clearTimeout(qT);qT=setTimeout(()=>{renderTable(filtered());redraw();},200);});
 document.getElementById('showFlights').onchange=e=>{showFlights=e.target.checked;drawFlights();};
@@ -331,7 +411,7 @@ document.getElementById('exp').onclick=()=>{
   const lines=[['lat','lng','name','type','closest_pass_m','n_flights','when'].join(',')];
   for (const it of tableRows){
     const wh = (it.flights||[]).length
-      ? it.flights.map(f=>`${fmtAMPM(f.takeoff_ms)}-${fmtAMPM(f.landing_ms)} ${f.min_dist_m}m`).join('; ')
+      ? it.flights.map(f=>`${fmtRange(f.takeoff_ms,f.landing_ms)} (${f.min_dist_m}m)`).join('; ')
       : `${it.first_overflight_ct} .. ${it.last_overflight_ct}`;
     lines.push([it.lat,it.lng, mode==='addr'?it.full_address:it.name, mode==='addr'?'address':it.type,
       it.closest_pass_m, it.n_flights, wh].map(v=>`"${String(v==null?'':v).replace(/"/g,'""')}"`).join(','));
