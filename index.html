@@ -60,7 +60,11 @@
   .drawer { position:fixed; left:0; right:0; bottom:0; z-index:800; max-height:80vh; overflow:auto; background:#fff; border-top:2px solid var(--acc); box-shadow:0 -6px 24px rgba(0,0,0,.25); padding:14px 16px 18px; display:none; -webkit-overflow-scrolling:touch; }
   .drawer.open { display:block; }
   .drawer h3 { margin:0 0 10px; font-size:16px; }
-  .drawer .close { position:absolute; top:10px; right:12px; border:none; background:#f3f4f6; border-radius:50%; width:30px; height:30px; font-size:16px; cursor:pointer; }
+  /* z-index above the satellite image below: both it and this button are
+     absolutely/relatively positioned with the drawer as their stacking
+     context, so without an explicit z-index the image (later in the DOM)
+     painted over the button and made it uncloseable. */
+  .drawer .close { position:absolute; top:10px; right:12px; z-index:2; border:none; background:#f3f4f6; border-radius:50%; width:34px; height:34px; font-size:16px; cursor:pointer; box-shadow:0 1px 4px rgba(0,0,0,.35); }
   .drawer dl { margin:0; }
   .flightrow { border-top:1px solid var(--line); padding:8px 0; }
   .flightrow .p { font-weight:600; }
@@ -285,6 +289,29 @@ function fmtRange(startMs, endMs){
   const d2=DATE_FMT.format(endMs), t2=TIME_FMT.format(endMs);
   return d1===d2 ? `${d1} · ${t1}–${t2}` : `${d1} ${t1} → ${d2} ${t2}`;
 }
+// Per-flight takeoff/landing in the sensitive-site and address records come
+// pre-formatted as "YYYY-MM-DD HH:MM" Central-time strings (see
+// build_explorer_data.py), not epoch ms — so they're formatted directly
+// rather than through fmtRange/Intl, which expect an actual instant.
+function fmtCtDate(ymd){
+  const [y,m,d] = ymd.split('-').map(Number);
+  return DATE_FMT.format(new Date(Date.UTC(y,m-1,d,12)));
+}
+function fmtCtTime(hm){
+  let [h,m] = hm.split(':').map(Number);
+  const ap = h>=12 ? 'PM' : 'AM';
+  h = h%12 || 12;
+  return `${h}:${String(m).padStart(2,'0')} ${ap}`;
+}
+function fmtRangeCt(startCt, endCt){
+  if (!startCt) return '';
+  const [sd,st] = startCt.split(' ');
+  const d1=fmtCtDate(sd), t1=fmtCtTime(st);
+  if (!endCt) return `${d1} · ${t1}`;
+  const [ed,et] = endCt.split(' ');
+  const d2=fmtCtDate(ed), t2=fmtCtTime(et);
+  return d1===d2 ? `${d1} · ${t1}–${t2}` : `${d1} ${t1} → ${d2} ${t2}`;
+}
 // Builds an ArcGIS MapServer export URL against whichever base is passed in
 // (Metro Nashville's own imagery, or the Esri fallback below) — a static
 // crop centered on a point, fetched on demand instead of shipping satellite
@@ -397,7 +424,7 @@ function flightList(fl, full){
   if (!fl.length) return '<p class="empty" style="padding:20px">No flight detail loaded yet.</p>';
   return '<dl>'+fl.map(f=>`
     <div class="flightrow">
-      <div class="m">${fmtRange(f.takeoff_ms, f.landing_ms)} (CT)</div>
+      <div class="m">${fmtRangeCt(f.takeoff_ct, f.landing_ct)} (CT)</div>
       <div class="t">flight <code>${esc(f.flight_id)}</code>${f.external?' · case '+esc(f.external):''} · ${f.min_dist_m} m from here</div>
     </div>`).join('')+'</dl>';
 }
@@ -423,7 +450,7 @@ const COLS = {
 function whenCell(d){
   const fl = d.flights||[];
   if (!fl.length) return esc(d.first_overflight_ct||'—') + ' … ' + esc(d.last_overflight_ct||'');
-  const lines = fl.slice(0,8).map(f=>`<span class="ln">${fmtRange(f.takeoff_ms, f.landing_ms)} <span class="dst">(${f.min_dist_m} m)</span></span>`);
+  const lines = fl.slice(0,8).map(f=>`<span class="ln">${fmtRangeCt(f.takeoff_ct, f.landing_ct)} <span class="dst">(${f.min_dist_m} m)</span></span>`);
   const more = fl.length>8 ? `<span class="more">+${fl.length-8} more — tap for all</span>` : '';
   return `<span class="when">${lines.join('')}${more}</span>`;
 }
@@ -534,7 +561,7 @@ document.getElementById('exp').onclick=()=>{
   const lines=[['lat','lng','name','type','closest_pass_m','n_flights','when'].join(',')];
   for (const it of tableRows){
     const wh = (it.flights||[]).length
-      ? it.flights.map(f=>`${fmtRange(f.takeoff_ms,f.landing_ms)} (${f.min_dist_m}m)`).join('; ')
+      ? it.flights.map(f=>`${fmtRangeCt(f.takeoff_ct,f.landing_ct)} (${f.min_dist_m}m)`).join('; ')
       : `${it.first_overflight_ct} .. ${it.last_overflight_ct}`;
     lines.push([it.lat,it.lng, mode==='addr'?it.full_address:it.name, mode==='addr'?'address':it.type,
       it.closest_pass_m, it.n_flights, wh].map(v=>`"${String(v==null?'':v).replace(/"/g,'""')}"`).join(','));
