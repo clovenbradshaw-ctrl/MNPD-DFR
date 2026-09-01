@@ -387,7 +387,7 @@ function satImg(lat, lng){
   if (lat==null || lng==null) return '';
   return `<div class="dt-sat-wrap">
     <img class="dt-sat" src="${satUrl(lat,lng)}" alt="satellite view" loading="lazy" onerror="this.parentElement.remove()">
-    <div class="dt-sat-cap">Satellite: Esri World Imagery, ~50 m across — actual drone video footage is likely sharper</div>
+    <div class="dt-sat-cap">Satellite: Esri World Imagery, ~50 m across — actual drone video footage is likely 12x sharper</div>
   </div>`;
 }
 function openDrawer(it){
