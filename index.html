@@ -245,38 +245,6 @@
     it, so reproducing this repo's data doesn't require standing up
     infrastructure for cities this project doesn't cover.</p>
 
-    <h3>Correction (Sep 2026)</h3>
-    <p>Earlier versions of this page said 17 sensitive sites were overflown.
-    The sensitive-site intersection had never actually been scripted in this
-    repo — writing <code>scripts/intersect_sites.py</code> to do that for the
-    first time found <strong>25</strong>: the original 17, plus 8 real sites
-    the first pass missed, including two schools (Amqui Elementary, Madison
-    High) at 7.7 m and 11.5 m. All eight sit 280 m or more from the nearest
-    previously-published site — missed sites, not duplicates.</p>
-    <p>Checking that result surfaced a second bug, this time in the new
-    script itself: it measured distance by flattening each flight's path
-    into one array before comparing, but 370 of 409 flights actually have
-    multiple <em>disconnected</em> path segments (GPS gaps mid-flight).
-    Flattening them created phantom "teleport" segments bridging the end of
-    one real segment to the start of the next — segments the drone never
-    actually flew. Fixing that (checking each real segment on its own)
-    dropped one of the 25 — Jehovah's Witnesses Kingdom Hall on Slayton
-    Drive, whose reported 58 m pass turned out to be entirely a phantom
-    segment — and pushed several other sites' distances farther out (never
-    closer: a phantom segment can only make a path look closer than it
-    really was, never farther, so fixing it only ever corrects in one
-    direction). Three sites previously shown within a few meters were
-    actually 40–66 m out. <strong>24</strong> is the verified number.</p>
-    <p>The same bug had been in <code>intersect_addresses.py</code> from the
-    start — this repo's original script, copied into
-    <code>intersect_sites.py</code> rather than the other way around — so it
-    affected the address dataset too. Fixed the same way:
-    <strong>10,240</strong> addresses overflown, down from 10,536. 296 false
-    positives removed, zero added. Checked the same way as the sites
-    correction: picked a dropped address, confirmed by brute force that the
-    nearest real point on any of the 395 flights is 121 m away, against a
-    previously-reported 0.28 m.</p>
-
     <h3>Sources</h3>
     <ul class="src">
       <li><a href="https://www.nashville.gov/departments/police/news/mnpd-begin-limited-drone-first-responder-trial-may-26" target="_blank" rel="noopener">Nashville.gov — "MNPD to Begin Limited Drone as First Responder Trial on May 26"</a></li>
