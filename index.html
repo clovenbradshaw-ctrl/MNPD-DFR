@@ -214,11 +214,11 @@
         double-logs some rows): 409 raw rows → <strong>395 unique flights</strong>.</li>
       <li><strong>Addresses</strong> — Metro Nashville GIS Addressing/AddressPoints,
         filtered to the trial's bounding box: <strong>16,029</strong> candidate
-        points, of which <strong>10,536</strong> fall within 82 m of a flight.</li>
+        points, of which <strong>10,240</strong> fall within 82 m of a flight.</li>
       <li><strong>Sensitive sites</strong> — schools, childcare, playgrounds, and
         places of worship from Metro GIS + OpenStreetMap: <strong>1,743</strong>
         candidates (380 schools · 26 childcare · 352 playgrounds · 985 worship),
-        of which <strong>25</strong> fall within 82 m of a flight (19 worship ·
+        of which <strong>24</strong> fall within 82 m of a flight (18 worship ·
         5 schools · 1 playground).</li>
       <li><strong>Satellite crops</strong> — fetched live per-record from Esri's
         public World Imagery export service when you open a record; nothing is
@@ -243,14 +243,34 @@
     <h3>Correction (Sep 2026)</h3>
     <p>Earlier versions of this page said 17 sensitive sites were overflown.
     The sensitive-site intersection had never actually been scripted in this
-    repo — re-running it end to end found <strong>25</strong>: the original
-    17, plus <strong>8 real sites the first pass missed</strong>, including
-    two schools (Amqui Elementary, Madison High) at 7.7 m and 11.5 m. Each
-    new site was cross-checked with a second, independent distance
-    calculation before this correction went up, and all eight sit 280 m or
-    more from the nearest previously-published site — missed sites, not
-    duplicates. <code>scripts/intersect_sites.py</code> now does that
-    intersection for good.</p>
+    repo — writing <code>scripts/intersect_sites.py</code> to do that for the
+    first time found <strong>25</strong>: the original 17, plus 8 real sites
+    the first pass missed, including two schools (Amqui Elementary, Madison
+    High) at 7.7 m and 11.5 m. All eight sit 280 m or more from the nearest
+    previously-published site — missed sites, not duplicates.</p>
+    <p>Checking that result surfaced a second bug, this time in the new
+    script itself: it measured distance by flattening each flight's path
+    into one array before comparing, but 370 of 409 flights actually have
+    multiple <em>disconnected</em> path segments (GPS gaps mid-flight).
+    Flattening them created phantom "teleport" segments bridging the end of
+    one real segment to the start of the next — segments the drone never
+    actually flew. Fixing that (checking each real segment on its own)
+    dropped one of the 25 — Jehovah's Witnesses Kingdom Hall on Slayton
+    Drive, whose reported 58 m pass turned out to be entirely a phantom
+    segment — and pushed several other sites' distances farther out (never
+    closer: a phantom segment can only make a path look closer than it
+    really was, never farther, so fixing it only ever corrects in one
+    direction). Three sites previously shown within a few meters were
+    actually 40–66 m out. <strong>24</strong> is the verified number.</p>
+    <p>The same bug had been in <code>intersect_addresses.py</code> from the
+    start — this repo's original script, copied into
+    <code>intersect_sites.py</code> rather than the other way around — so it
+    affected the address dataset too. Fixed the same way:
+    <strong>10,240</strong> addresses overflown, down from 10,536. 296 false
+    positives removed, zero added. Checked the same way as the sites
+    correction: picked a dropped address, confirmed by brute force that the
+    nearest real point on any of the 395 flights is 121 m away, against a
+    previously-reported 0.28 m.</p>
 
     <h3>Sources</h3>
     <ul class="src">
@@ -462,7 +482,7 @@ function refresh(){ renderTable(filtered()); redraw(); }
 async function ensureAddr(){
   if (addrLoaded) return;
   addrLoaded=true;
-  document.getElementById('loading').textContent='Loading addresses (10,536)…';
+  document.getElementById('loading').textContent='Loading addresses (10,240)…';
   document.getElementById('loading').style.display='block';
   // load light list first
   try{

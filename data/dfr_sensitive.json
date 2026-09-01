@@ -32,7 +32,7 @@
     "external": "PD202600409380",
     "takeoff_ct": "2026-06-02 14:21",
     "landing_ct": "2026-06-02 14:41",
-    "min_dist_m": 1.99
+    "min_dist_m": 22.32
    },
    {
     "flight_id": "6bcee961-c690-4d38-9068-79598a986fa4",
@@ -145,8 +145,8 @@
   "type": "worship",
   "lat": 36.2638914,
   "lng": -86.7107781,
-  "n_flights": 35,
-  "n_flights_unique": 35,
+  "n_flights": 30,
+  "n_flights_unique": 30,
   "closest_pass_m": 0.15,
   "first_overflight_ct": "2026-05-26 15:34",
   "last_overflight_ct": "2026-08-07 10:51",
@@ -205,7 +205,7 @@
     "external": "PD202600396979",
     "takeoff_ct": "2026-05-28 19:56",
     "landing_ct": "2026-05-28 20:11",
-    "min_dist_m": 41.34
+    "min_dist_m": 59.94
    },
    {
     "flight_id": "17bc3b8e-ccd7-494d-ad41-3c510993ab20",
@@ -256,14 +256,6 @@
     "min_dist_m": 4.89
    },
    {
-    "flight_id": "31cb8725-ecc6-42f4-a26a-9bd15c64378b",
-    "purpose": "ITEM / VEHICLE IS STOLEN",
-    "external": "PD202600427294",
-    "takeoff_ct": "2026-06-09 08:30",
-    "landing_ct": "2026-06-09 08:52",
-    "min_dist_m": 76.86
-   },
-   {
     "flight_id": "ef7c84d5-374b-485b-80c6-0ea916d99dd6",
     "purpose": "BURGLARY - NON-RESIDENCE",
     "external": "PD202600430165",
@@ -280,20 +272,12 @@
     "min_dist_m": 7.06
    },
    {
-    "flight_id": "04beb45e-ada4-4b08-bd6f-6f872016ee37",
-    "purpose": "VEHICLE ACCIDENT-PERSONAL INJURY",
-    "external": "PD202600504433",
-    "takeoff_ct": "2026-07-08 17:28",
-    "landing_ct": "2026-07-08 17:46",
-    "min_dist_m": 10.81
-   },
-   {
     "flight_id": "c2006e86-13fa-4d66-a858-f586fa420a32",
     "purpose": "FIGHT / ASSAULT",
     "external": "PD202600507537",
     "takeoff_ct": "2026-07-09 21:41",
     "landing_ct": "2026-07-09 21:58",
-    "min_dist_m": 15.08
+    "min_dist_m": 36.19
    },
    {
     "flight_id": "72caa89e-9f76-4614-bb44-12b33831b031",
@@ -301,15 +285,7 @@
     "external": "PD202600518654",
     "takeoff_ct": "2026-07-14 13:02",
     "landing_ct": "2026-07-14 13:16",
-    "min_dist_m": 11.91
-   },
-   {
-    "flight_id": "3b2346f7-7a12-400b-a7ca-de606a5e6b98",
-    "purpose": "DOMESTIC DISTURBANCE",
-    "external": "PD202600523183",
-    "takeoff_ct": "2026-07-16 08:28",
-    "landing_ct": "2026-07-16 08:47",
-    "min_dist_m": 23.2
+    "min_dist_m": 15.17
    },
    {
     "flight_id": "4f51a86c-4fff-4c59-915c-1cc126121810",
@@ -328,14 +304,6 @@
     "min_dist_m": 38.55
    },
    {
-    "flight_id": "754b5418-2521-4408-8c28-d7a28ecfca7b",
-    "purpose": "FIGHT / ASSAULT",
-    "external": "PD202600526171",
-    "takeoff_ct": "2026-07-17 12:06",
-    "landing_ct": "2026-07-17 12:23",
-    "min_dist_m": 10.52
-   },
-   {
     "flight_id": "d7abd4fa-29bc-4356-bc2c-a83dfcc33a75",
     "purpose": "HOLDUP / ROBBERY",
     "external": "PD202600526357",
@@ -349,7 +317,7 @@
     "external": "PD202600537315",
     "takeoff_ct": "2026-07-22 09:21",
     "landing_ct": "2026-07-22 09:38",
-    "min_dist_m": 24.76
+    "min_dist_m": 28.44
    },
    {
     "flight_id": "27b5ef98-fc3f-42c2-a71a-3711d0b5bf7c",
@@ -373,7 +341,7 @@
     "external": "PD202600542105",
     "takeoff_ct": "2026-07-24 07:50",
     "landing_ct": "2026-07-24 08:12",
-    "min_dist_m": 1.44
+    "min_dist_m": 2.36
    },
    {
     "flight_id": "5bca327b-49ee-4ce5-aead-9982c0e3d1cf",
@@ -389,7 +357,7 @@
     "external": "PD202600548944",
     "takeoff_ct": "2026-07-27 10:01",
     "landing_ct": "2026-07-27 10:20",
-    "min_dist_m": 28.23
+    "min_dist_m": 50.19
    },
    {
     "flight_id": "01ed1b98-7a75-4da1-8add-1659f0dcf020",
@@ -405,7 +373,7 @@
     "external": "PD202600556279",
     "takeoff_ct": "2026-07-30 08:22",
     "landing_ct": "2026-07-30 08:34",
-    "min_dist_m": 1.27
+    "min_dist_m": 36.65
    },
    {
     "flight_id": "ac8c76ea-2ab9-4a06-afcc-36113a34f8ed",
@@ -413,15 +381,7 @@
     "external": "PD202600559226",
     "takeoff_ct": "2026-07-31 11:10",
     "landing_ct": "2026-07-31 11:28",
-    "min_dist_m": 16.75
-   },
-   {
-    "flight_id": "03f1b2af-ddf0-4f75-b7d2-7c42ac7a506c",
-    "purpose": "BURGLARY - NON-RESIDENCE",
-    "external": "PD202600560434/PD202600560464",
-    "takeoff_ct": "2026-07-31 20:49",
-    "landing_ct": "2026-07-31 21:05",
-    "min_dist_m": 60.84
+    "min_dist_m": 34.79
    },
    {
     "flight_id": "13693a91-c8aa-47bc-bb29-670d42b9fd3c",
@@ -438,8 +398,8 @@
   "type": "worship",
   "lat": 36.262905,
   "lng": -86.7083672,
-  "n_flights": 42,
-  "n_flights_unique": 42,
+  "n_flights": 37,
+  "n_flights_unique": 37,
   "closest_pass_m": 0.25,
   "first_overflight_ct": "2026-05-26 14:03",
   "last_overflight_ct": "2026-08-07 20:43",
@@ -490,7 +450,7 @@
     "external": "PD202600399347",
     "takeoff_ct": "2026-05-29 16:21",
     "landing_ct": "2026-05-29 16:40",
-    "min_dist_m": 12.43
+    "min_dist_m": 79.6
    },
    {
     "flight_id": "ff59bbd1-c052-40cf-b0b1-f9da36bd5b9b",
@@ -514,7 +474,7 @@
     "external": "PD202600415672",
     "takeoff_ct": "2026-06-04 21:51",
     "landing_ct": "2026-06-04 22:00",
-    "min_dist_m": 24.4
+    "min_dist_m": 42.77
    },
    {
     "flight_id": "4ac4436e-e492-42e2-9401-c5bbf1434c97",
@@ -525,44 +485,12 @@
     "min_dist_m": 24.31
    },
    {
-    "flight_id": "ef7c84d5-374b-485b-80c6-0ea916d99dd6",
-    "purpose": "BURGLARY - NON-RESIDENCE",
-    "external": "PD202600430165",
-    "takeoff_ct": "2026-06-10 09:24",
-    "landing_ct": "2026-06-10 09:44",
-    "min_dist_m": 31.56
-   },
-   {
-    "flight_id": "04beb45e-ada4-4b08-bd6f-6f872016ee37",
-    "purpose": "VEHICLE ACCIDENT-PERSONAL INJURY",
-    "external": "PD202600504433",
-    "takeoff_ct": "2026-07-08 17:28",
-    "landing_ct": "2026-07-08 17:46",
-    "min_dist_m": 8.71
-   },
-   {
-    "flight_id": "207ab979-9a9a-41b2-b50a-29949fd95480",
-    "purpose": "FIGHT / ASSAULT",
-    "external": "PD202600506338",
-    "takeoff_ct": "2026-07-09 12:54",
-    "landing_ct": "2026-07-09 13:13",
-    "min_dist_m": 80.1
-   },
-   {
     "flight_id": "c2006e86-13fa-4d66-a858-f586fa420a32",
     "purpose": "FIGHT / ASSAULT",
     "external": "PD202600507537",
     "takeoff_ct": "2026-07-09 21:41",
     "landing_ct": "2026-07-09 21:58",
     "min_dist_m": 81.53
-   },
-   {
-    "flight_id": "ca7a19b4-bf5a-406e-b64e-40e2d66f948f",
-    "purpose": "PERSON WITH WEAPON",
-    "external": "PD202600508784",
-    "takeoff_ct": "2026-07-10 11:43",
-    "landing_ct": "2026-07-10 12:00",
-    "min_dist_m": 50.15
    },
    {
     "flight_id": "15c2743b-e2cd-4c35-a206-46ab8e77a361",
@@ -586,7 +514,7 @@
     "external": "PD202600522005",
     "takeoff_ct": "2026-07-15 19:31",
     "landing_ct": "2026-07-15 19:50",
-    "min_dist_m": 38.29
+    "min_dist_m": 51.09
    },
    {
     "flight_id": "ac828447-d66c-4306-b5c1-46fff80d2237",
@@ -595,14 +523,6 @@
     "takeoff_ct": "2026-07-15 20:38",
     "landing_ct": "2026-07-15 20:52",
     "min_dist_m": 15.21
-   },
-   {
-    "flight_id": "deb78e70-e3f7-4860-b119-07590239898d",
-    "purpose": "DISORDERLY PERSON",
-    "external": "PD202600523108",
-    "takeoff_ct": "2026-07-16 08:02",
-    "landing_ct": "2026-07-16 08:12",
-    "min_dist_m": 74.17
    },
    {
     "flight_id": "cc5999e7-7b57-40d5-ae8b-766ce690967c",
@@ -634,7 +554,7 @@
     "external": "PD202600526822",
     "takeoff_ct": "2026-07-17 17:27",
     "landing_ct": "2026-07-17 17:39",
-    "min_dist_m": 12.14
+    "min_dist_m": 31.07
    },
    {
     "flight_id": "fad4fa39-4021-41b0-bc65-59aa2d158dd2",
@@ -642,7 +562,7 @@
     "external": "PD202600537551",
     "takeoff_ct": "2026-07-22 11:35",
     "landing_ct": "2026-07-22 11:54",
-    "min_dist_m": 13.18
+    "min_dist_m": 18.08
    },
    {
     "flight_id": "98097b9d-5086-4620-a436-49717ba4af23",
@@ -690,7 +610,7 @@
     "external": "PD202600548811",
     "takeoff_ct": "2026-07-27 09:32",
     "landing_ct": "2026-07-27 09:51",
-    "min_dist_m": 40.09
+    "min_dist_m": 73.34
    },
    {
     "flight_id": "01ed1b98-7a75-4da1-8add-1659f0dcf020",
@@ -762,7 +682,7 @@
     "external": "PD202600574551",
     "takeoff_ct": "2026-08-06 18:04",
     "landing_ct": "2026-08-06 18:21",
-    "min_dist_m": 22.75
+    "min_dist_m": 24.14
    },
    {
     "flight_id": "55e9c5c4-5bc1-416a-963c-827949150b90",
@@ -770,7 +690,7 @@
     "external": "PD202600574551",
     "takeoff_ct": "2026-08-06 18:17",
     "landing_ct": "2026-08-06 18:34",
-    "min_dist_m": 60.42
+    "min_dist_m": 67.39
    },
    {
     "flight_id": "f248e3f6-a207-4893-a865-a1244657298f",
@@ -778,7 +698,484 @@
     "external": "PD202600577227",
     "takeoff_ct": "2026-08-07 20:29",
     "landing_ct": "2026-08-07 20:43",
-    "min_dist_m": 6.97
+    "min_dist_m": 55.08
+   }
+  ]
+ },
+ {
+  "name": "Madison Park Playground",
+  "type": "playground",
+  "lat": 36.2671064,
+  "lng": -86.7018365,
+  "n_flights": 58,
+  "n_flights_unique": 58,
+  "closest_pass_m": 0.75,
+  "first_overflight_ct": "2026-05-26 14:03",
+  "last_overflight_ct": "2026-08-07 20:43",
+  "flights": [
+   {
+    "flight_id": "04dc6f30-8911-4a26-b6e8-1fc047629206",
+    "purpose": "PERSON WITH WEAPON",
+    "external": "PD202600390493",
+    "takeoff_ct": "2026-05-26 14:03",
+    "landing_ct": "2026-05-26 14:18",
+    "min_dist_m": 77.67
+   },
+   {
+    "flight_id": "c4ee5275-12ee-46fc-9614-7d26be687a07",
+    "purpose": "PERSON WITH WEAPON",
+    "external": "PD202600390493",
+    "takeoff_ct": "2026-05-26 14:12",
+    "landing_ct": "2026-05-26 14:24",
+    "min_dist_m": 66.95
+   },
+   {
+    "flight_id": "e9b9b7d9-c682-4010-a878-c7bab142c7d4",
+    "purpose": "VEHICLE ACCIDENT - PROPERTY DAMAGE",
+    "external": "PD202600391211",
+    "takeoff_ct": "2026-05-26 18:51",
+    "landing_ct": "2026-05-26 19:05",
+    "min_dist_m": 58.67
+   },
+   {
+    "flight_id": "3adae817-5396-4d53-a40f-d315332eacc4",
+    "purpose": "SUSPICIOUS PERSON",
+    "external": "PD202600393042",
+    "takeoff_ct": "2026-05-27 12:01",
+    "landing_ct": "2026-05-27 12:21",
+    "min_dist_m": 0.75
+   },
+   {
+    "flight_id": "7cce8ded-bf3a-4571-b7f9-d889d46ab6c7",
+    "purpose": "DISORDERLY PERSON",
+    "external": "PD202600393114",
+    "takeoff_ct": "2026-05-27 12:47",
+    "landing_ct": "2026-05-27 13:07",
+    "min_dist_m": 78.23
+   },
+   {
+    "flight_id": "31fd8040-1f2d-41e0-9941-a5488cb3f158",
+    "purpose": "PERSON WITH WEAPON",
+    "external": "PD202600395605",
+    "takeoff_ct": "2026-05-28 10:55",
+    "landing_ct": "2026-05-28 11:13",
+    "min_dist_m": 8.25
+   },
+   {
+    "flight_id": "2cd5bd75-071f-46a1-b848-5fad175837a7",
+    "purpose": "FIGHT / ASSAULT",
+    "external": "PD202600396917",
+    "takeoff_ct": "2026-05-28 19:14",
+    "landing_ct": "2026-05-28 19:34",
+    "min_dist_m": 6.24
+   },
+   {
+    "flight_id": "3fa69387-24ec-43ab-a0c6-4c3d4dc12660",
+    "purpose": "DISORDERLY PERSON",
+    "external": "PD202600396979",
+    "takeoff_ct": "2026-05-28 19:40",
+    "landing_ct": "2026-05-28 20:01",
+    "min_dist_m": 34.71
+   },
+   {
+    "flight_id": "0d2b9bc3-7d0b-42ee-9f5c-9984ed0cd820",
+    "purpose": "DISORDERLY PERSON",
+    "external": "PD202600396979",
+    "takeoff_ct": "2026-05-28 19:56",
+    "landing_ct": "2026-05-28 20:11",
+    "min_dist_m": 37.35
+   },
+   {
+    "flight_id": "ff59bbd1-c052-40cf-b0b1-f9da36bd5b9b",
+    "purpose": "SAFETY HAZARD",
+    "external": "PD202600408592 / PD202600408612",
+    "takeoff_ct": "2026-06-02 07:34",
+    "landing_ct": "2026-06-02 07:48",
+    "min_dist_m": 73.71
+   },
+   {
+    "flight_id": "c291fea3-56b6-4b09-9267-036334de7afb",
+    "purpose": "BURGLARY - NON-RESIDENCE",
+    "external": "PD202600410436",
+    "takeoff_ct": "2026-06-02 20:55",
+    "landing_ct": "2026-06-02 21:11",
+    "min_dist_m": 64.36
+   },
+   {
+    "flight_id": "e415a24f-4749-46db-a0df-f46246f7f47b",
+    "purpose": "SUSPICIOUS PERSON",
+    "external": "PD202600410593",
+    "takeoff_ct": "2026-06-02 22:19",
+    "landing_ct": "2026-06-02 22:43",
+    "min_dist_m": 46.5
+   },
+   {
+    "flight_id": "2d975a04-829e-4d9b-822d-aeb654cda94e",
+    "purpose": "DOMESTIC DISTURBANCE",
+    "external": "PD202600412518",
+    "takeoff_ct": "2026-06-03 16:59",
+    "landing_ct": "2026-06-03 17:16",
+    "min_dist_m": 61.6
+   },
+   {
+    "flight_id": "a49b76db-65f9-402c-8da3-1f5903f96234",
+    "purpose": "SUSPICIOUS PERSON",
+    "external": "PD202600415825",
+    "takeoff_ct": "2026-06-04 20:10",
+    "landing_ct": "2026-06-04 20:21",
+    "min_dist_m": 37.54
+   },
+   {
+    "flight_id": "698637b4-c19f-43a9-b2fe-570855213eec",
+    "purpose": "FIGHT / ASSAULT",
+    "external": "PD202600415672",
+    "takeoff_ct": "2026-06-04 21:51",
+    "landing_ct": "2026-06-04 22:00",
+    "min_dist_m": 5.66
+   },
+   {
+    "flight_id": "a18e7aad-46fb-46c2-8ddb-65ca06fdd79e",
+    "purpose": "FIGHT / ASSAULT",
+    "external": "PD202600415672",
+    "takeoff_ct": "2026-06-04 21:58",
+    "landing_ct": "2026-06-04 22:18",
+    "min_dist_m": 64.74
+   },
+   {
+    "flight_id": "4ac4436e-e492-42e2-9401-c5bbf1434c97",
+    "purpose": "BURGLARY - NON-RESIDENCE",
+    "external": "PD202600418545",
+    "takeoff_ct": "2026-06-05 19:19",
+    "landing_ct": "2026-06-05 19:30",
+    "min_dist_m": 10.69
+   },
+   {
+    "flight_id": "ef7c84d5-374b-485b-80c6-0ea916d99dd6",
+    "purpose": "BURGLARY - NON-RESIDENCE",
+    "external": "PD202600430165",
+    "takeoff_ct": "2026-06-10 09:24",
+    "landing_ct": "2026-06-10 09:44",
+    "min_dist_m": 53.53
+   },
+   {
+    "flight_id": "04beb45e-ada4-4b08-bd6f-6f872016ee37",
+    "purpose": "VEHICLE ACCIDENT-PERSONAL INJURY",
+    "external": "PD202600504433",
+    "takeoff_ct": "2026-07-08 17:28",
+    "landing_ct": "2026-07-08 17:46",
+    "min_dist_m": 44.75
+   },
+   {
+    "flight_id": "c2006e86-13fa-4d66-a858-f586fa420a32",
+    "purpose": "FIGHT / ASSAULT",
+    "external": "PD202600507537",
+    "takeoff_ct": "2026-07-09 21:41",
+    "landing_ct": "2026-07-09 21:58",
+    "min_dist_m": 21.96
+   },
+   {
+    "flight_id": "15c2743b-e2cd-4c35-a206-46ab8e77a361",
+    "purpose": "PERSON WITH WEAPON",
+    "external": "PD202600509360",
+    "takeoff_ct": "2026-07-10 16:14",
+    "landing_ct": "2026-07-10 16:27",
+    "min_dist_m": 15.41
+   },
+   {
+    "flight_id": "13a5bd91-4784-4a22-b55e-a339038e0e0b",
+    "purpose": "SUSPICIOUS PERSON",
+    "external": "PD202600519074",
+    "takeoff_ct": "2026-07-14 16:34",
+    "landing_ct": "2026-07-14 16:45",
+    "min_dist_m": 81.53
+   },
+   {
+    "flight_id": "805325fd-7f24-4800-830c-d797151e9974",
+    "purpose": "VEHICLE ACCIDENT-PERSONAL INJURY",
+    "external": "PD202600522005",
+    "takeoff_ct": "2026-07-15 19:19",
+    "landing_ct": "2026-07-15 19:38",
+    "min_dist_m": 51.16
+   },
+   {
+    "flight_id": "63a30d1d-72de-4d54-97ce-d4d93d5d1fb0",
+    "purpose": "VEHICLE ACCIDENT-PERSONAL INJURY",
+    "external": "PD202600522005",
+    "takeoff_ct": "2026-07-15 19:31",
+    "landing_ct": "2026-07-15 19:50",
+    "min_dist_m": 3.53
+   },
+   {
+    "flight_id": "ac828447-d66c-4306-b5c1-46fff80d2237",
+    "purpose": "BURGLARY - NON-RESIDENCE",
+    "external": "PD202600522151",
+    "takeoff_ct": "2026-07-15 20:38",
+    "landing_ct": "2026-07-15 20:52",
+    "min_dist_m": 36.3
+   },
+   {
+    "flight_id": "deb78e70-e3f7-4860-b119-07590239898d",
+    "purpose": "DISORDERLY PERSON",
+    "external": "PD202600523108",
+    "takeoff_ct": "2026-07-16 08:02",
+    "landing_ct": "2026-07-16 08:12",
+    "min_dist_m": 39.6
+   },
+   {
+    "flight_id": "3b2346f7-7a12-400b-a7ca-de606a5e6b98",
+    "purpose": "DOMESTIC DISTURBANCE",
+    "external": "PD202600523183",
+    "takeoff_ct": "2026-07-16 08:28",
+    "landing_ct": "2026-07-16 08:47",
+    "min_dist_m": 58.44
+   },
+   {
+    "flight_id": "4f51a86c-4fff-4c59-915c-1cc126121810",
+    "purpose": "DISORDERLY PERSON",
+    "external": "PD202600523503",
+    "takeoff_ct": "2026-07-16 11:05",
+    "landing_ct": "2026-07-16 11:20",
+    "min_dist_m": 68.41
+   },
+   {
+    "flight_id": "cc5999e7-7b57-40d5-ae8b-766ce690967c",
+    "purpose": "HOLDUP / ROBBERY",
+    "external": "PD202600526037",
+    "takeoff_ct": "2026-07-17 10:50",
+    "landing_ct": "2026-07-17 11:02",
+    "min_dist_m": 21.48
+   },
+   {
+    "flight_id": "754b5418-2521-4408-8c28-d7a28ecfca7b",
+    "purpose": "FIGHT / ASSAULT",
+    "external": "PD202600526171",
+    "takeoff_ct": "2026-07-17 12:06",
+    "landing_ct": "2026-07-17 12:23",
+    "min_dist_m": 27.85
+   },
+   {
+    "flight_id": "d7abd4fa-29bc-4356-bc2c-a83dfcc33a75",
+    "purpose": "HOLDUP / ROBBERY",
+    "external": "PD202600526357",
+    "takeoff_ct": "2026-07-17 13:47",
+    "landing_ct": "2026-07-17 13:54",
+    "min_dist_m": 28.02
+   },
+   {
+    "flight_id": "166ab435-833b-4a86-93b9-19d44993e28a",
+    "purpose": "DISORDERLY PERSON",
+    "external": "PD202600526822",
+    "takeoff_ct": "2026-07-17 17:27",
+    "landing_ct": "2026-07-17 17:39",
+    "min_dist_m": 48.32
+   },
+   {
+    "flight_id": "27d93ec6-9088-4212-8c65-439ea1a847b9",
+    "purpose": "DISORDERLY PERSON",
+    "external": "PD202600537315",
+    "takeoff_ct": "2026-07-22 09:21",
+    "landing_ct": "2026-07-22 09:38",
+    "min_dist_m": 75.53
+   },
+   {
+    "flight_id": "fad4fa39-4021-41b0-bc65-59aa2d158dd2",
+    "purpose": "DISORDERLY PERSON",
+    "external": "PD202600537551",
+    "takeoff_ct": "2026-07-22 11:35",
+    "landing_ct": "2026-07-22 11:54",
+    "min_dist_m": 20.77
+   },
+   {
+    "flight_id": "98097b9d-5086-4620-a436-49717ba4af23",
+    "purpose": "DISORDERLY PERSON",
+    "external": "PD202600537952",
+    "takeoff_ct": "2026-07-22 14:53",
+    "landing_ct": "2026-07-22 15:08",
+    "min_dist_m": 10.54
+   },
+   {
+    "flight_id": "b3486bc8-a537-4f73-b4a7-12d60d54ba83",
+    "purpose": "DISORDERLY PERSON",
+    "external": "PD202600539984",
+    "takeoff_ct": "2026-07-23 12:15",
+    "landing_ct": "2026-07-23 12:35",
+    "min_dist_m": 43.93
+   },
+   {
+    "flight_id": "979f3591-515d-4898-86f6-09ab2c920f70",
+    "purpose": "SUSPICIOUS PERSON",
+    "external": "PD202600541038",
+    "takeoff_ct": "2026-07-23 20:51",
+    "landing_ct": "2026-07-23 21:08",
+    "min_dist_m": 20.87
+   },
+   {
+    "flight_id": "52b86b58-45ca-4e2c-b46b-5c7d4f858b0a",
+    "purpose": "PERSON INDECENTLY EXPOSED",
+    "external": "PD202600542105",
+    "takeoff_ct": "2026-07-24 07:50",
+    "landing_ct": "2026-07-24 08:12",
+    "min_dist_m": 74.53
+   },
+   {
+    "flight_id": "65e8fcd3-0876-47de-b9bc-087859366627",
+    "purpose": "DOMESTIC DISTURBANCE",
+    "external": "PD202600542551",
+    "takeoff_ct": "2026-07-24 12:03",
+    "landing_ct": "2026-07-24 12:24",
+    "min_dist_m": 75.54
+   },
+   {
+    "flight_id": "426a258c-bd0f-4b54-becc-5178209f3913",
+    "purpose": "INTOXICATED PERSON",
+    "external": "PD202600542555",
+    "takeoff_ct": "2026-07-24 12:22",
+    "landing_ct": "2026-07-24 12:42",
+    "min_dist_m": 56.77
+   },
+   {
+    "flight_id": "fabe3498-74d7-4d5b-bc88-738fa04206f6",
+    "purpose": "DISORDERLY PERSON",
+    "external": "PD202600548811",
+    "takeoff_ct": "2026-07-27 09:32",
+    "landing_ct": "2026-07-27 09:51",
+    "min_dist_m": 72.57
+   },
+   {
+    "flight_id": "2a1e9ab4-7c1f-4693-b8d5-2051d0d30a6f",
+    "purpose": "DISORDERLY PERSON",
+    "external": "PD202600548944",
+    "takeoff_ct": "2026-07-27 10:01",
+    "landing_ct": "2026-07-27 10:20",
+    "min_dist_m": 52.03
+   },
+   {
+    "flight_id": "01ed1b98-7a75-4da1-8add-1659f0dcf020",
+    "purpose": "VEHICLE ACCIDENT-PERSONAL INJURY",
+    "external": "PD202600549189",
+    "takeoff_ct": "2026-07-27 13:10",
+    "landing_ct": "2026-07-27 13:22",
+    "min_dist_m": 15.58
+   },
+   {
+    "flight_id": "9acf091d-c560-4093-9845-922e6f88a625",
+    "purpose": "DISORDERLY PERSON",
+    "external": "PD202600550008",
+    "takeoff_ct": "2026-07-27 19:20",
+    "landing_ct": "2026-07-27 19:32",
+    "min_dist_m": 52.86
+   },
+   {
+    "flight_id": "1b285ccc-ea3b-45ac-96db-7734e3ff04e0",
+    "purpose": "DISORDERLY PERSON",
+    "external": "PD202600552050",
+    "takeoff_ct": "2026-07-28 15:38",
+    "landing_ct": "2026-07-28 15:54",
+    "min_dist_m": 46.87
+   },
+   {
+    "flight_id": "0f9086c0-9bad-41e5-98fb-258f9e8bc12f",
+    "purpose": "DOMESTIC DISTURBANCE",
+    "external": "PD202600552325",
+    "takeoff_ct": "2026-07-28 17:29",
+    "landing_ct": "2026-07-28 17:50",
+    "min_dist_m": 62.78
+   },
+   {
+    "flight_id": "22aea509-0eab-45c6-a416-aad134ac5ac6",
+    "purpose": "DISORDERLY PERSON",
+    "external": "PD202600554281",
+    "takeoff_ct": "2026-07-29 13:17",
+    "landing_ct": "2026-07-29 13:34",
+    "min_dist_m": 33.37
+   },
+   {
+    "flight_id": "c12f7f9b-b2dd-4e11-ad1f-55fb4971bc39",
+    "purpose": "DOMESTIC DISTURBANCE",
+    "external": "PD202600554644",
+    "takeoff_ct": "2026-07-29 16:11",
+    "landing_ct": "2026-07-29 16:31",
+    "min_dist_m": 45.77
+   },
+   {
+    "flight_id": "bb42e9c0-58e7-486e-9e7f-d41dfced682c",
+    "purpose": "HOLDUP / ROBBERY",
+    "external": "PD202600554817",
+    "takeoff_ct": "2026-07-29 17:48",
+    "landing_ct": "2026-07-29 18:00",
+    "min_dist_m": 47.69
+   },
+   {
+    "flight_id": "1f95a292-7046-4e45-baf8-c8e24013d1ef",
+    "purpose": "DISORDERLY PERSON",
+    "external": "PD202600556279",
+    "takeoff_ct": "2026-07-30 08:22",
+    "landing_ct": "2026-07-30 08:34",
+    "min_dist_m": 7.6
+   },
+   {
+    "flight_id": "ac8c76ea-2ab9-4a06-afcc-36113a34f8ed",
+    "purpose": "SAFETY HAZARD",
+    "external": "PD202600559226",
+    "takeoff_ct": "2026-07-31 11:10",
+    "landing_ct": "2026-07-31 11:28",
+    "min_dist_m": 49.45
+   },
+   {
+    "flight_id": "03f1b2af-ddf0-4f75-b7d2-7c42ac7a506c",
+    "purpose": "BURGLARY - NON-RESIDENCE",
+    "external": "PD202600560434/PD202600560464",
+    "takeoff_ct": "2026-07-31 20:49",
+    "landing_ct": "2026-07-31 21:05",
+    "min_dist_m": 5.44
+   },
+   {
+    "flight_id": "51406c25-d307-4814-bcb5-fb4b7ef7f061",
+    "purpose": "DISORDERLY PERSON",
+    "external": "PD202600571335",
+    "takeoff_ct": "2026-08-05 13:02",
+    "landing_ct": "2026-08-05 13:14",
+    "min_dist_m": 48.86
+   },
+   {
+    "flight_id": "6d835598-88f7-48b7-a8e3-f9388867ff46",
+    "purpose": "VEHICLE ACCIDENT-PERSONAL INJURY",
+    "external": "PD202600572429",
+    "takeoff_ct": "2026-08-05 21:59",
+    "landing_ct": "2026-08-05 22:09",
+    "min_dist_m": 81.35
+   },
+   {
+    "flight_id": "e0d9e3ab-d486-4f20-9c7b-7c2f27aa8ebf",
+    "purpose": "HOLDUP / ROBBERY",
+    "external": "PD202600574268",
+    "takeoff_ct": "2026-08-06 16:10",
+    "landing_ct": "2026-08-06 16:15",
+    "min_dist_m": 61.32
+   },
+   {
+    "flight_id": "20be8130-f468-4e14-9d87-271ed572c632",
+    "purpose": "PERSON WITH WEAPON",
+    "external": "PD202600574551",
+    "takeoff_ct": "2026-08-06 18:04",
+    "landing_ct": "2026-08-06 18:21",
+    "min_dist_m": 43.39
+   },
+   {
+    "flight_id": "55e9c5c4-5bc1-416a-963c-827949150b90",
+    "purpose": "PERSON WITH WEAPON",
+    "external": "PD202600574551",
+    "takeoff_ct": "2026-08-06 18:17",
+    "landing_ct": "2026-08-06 18:34",
+    "min_dist_m": 63.1
+   },
+   {
+    "flight_id": "f248e3f6-a207-4893-a865-a1244657298f",
+    "purpose": "THEFT",
+    "external": "PD202600577227",
+    "takeoff_ct": "2026-08-07 20:29",
+    "landing_ct": "2026-08-07 20:43",
+    "min_dist_m": 60.81
    }
   ]
  },
@@ -787,9 +1184,9 @@
   "type": "school",
   "lat": 36.2578313,
   "lng": -86.7147194,
-  "n_flights": 31,
-  "n_flights_unique": 31,
-  "closest_pass_m": 0.54,
+  "n_flights": 28,
+  "n_flights_unique": 28,
+  "closest_pass_m": 0.94,
   "first_overflight_ct": "2026-05-26 14:03",
   "last_overflight_ct": "2026-08-07 20:43",
   "flights": [
@@ -879,7 +1276,7 @@
     "external": "PD202600503785",
     "takeoff_ct": "2026-07-08 11:59",
     "landing_ct": "2026-07-08 12:09",
-    "min_dist_m": 21.58
+    "min_dist_m": 21.88
    },
    {
     "flight_id": "d23ae024-a2fd-4c95-8d0d-13247676be63",
@@ -911,15 +1308,7 @@
     "external": "PD202600506338",
     "takeoff_ct": "2026-07-09 12:54",
     "landing_ct": "2026-07-09 13:13",
-    "min_dist_m": 20.53
-   },
-   {
-    "flight_id": "94bd6313-eaa0-482c-a4ea-5a8435957811",
-    "purpose": "FIGHT / ASSAULT",
-    "external": "PD202600506338",
-    "takeoff_ct": "2026-07-09 13:05",
-    "landing_ct": "2026-07-09 13:25",
-    "min_dist_m": 71.01
+    "min_dist_m": 81.98
    },
    {
     "flight_id": "ca7a19b4-bf5a-406e-b64e-40e2d66f948f",
@@ -927,7 +1316,7 @@
     "external": "PD202600508784",
     "takeoff_ct": "2026-07-10 11:43",
     "landing_ct": "2026-07-10 12:00",
-    "min_dist_m": 1.03
+    "min_dist_m": 28.85
    },
    {
     "flight_id": "705a5248-17cb-4ad0-911d-0c78c40b7e0d",
@@ -935,7 +1324,7 @@
     "external": "PD202600508784",
     "takeoff_ct": "2026-07-10 12:11",
     "landing_ct": "2026-07-10 12:30",
-    "min_dist_m": 45.44
+    "min_dist_m": 76.75
    },
    {
     "flight_id": "b7aa6242-1425-4975-b355-1cadfbf53ee3",
@@ -951,15 +1340,7 @@
     "external": "PD202600521549",
     "takeoff_ct": "2026-07-15 15:39",
     "landing_ct": "2026-07-15 15:56",
-    "min_dist_m": 0.54
-   },
-   {
-    "flight_id": "dffad99d-0138-4ea1-b90b-6261047b30f3",
-    "purpose": "PERSON WITH WEAPON",
-    "external": "PD202600521848",
-    "takeoff_ct": "2026-07-15 17:58",
-    "landing_ct": "2026-07-15 18:15",
-    "min_dist_m": 67.54
+    "min_dist_m": 10.57
    },
    {
     "flight_id": "d012e930-b151-4545-a243-f12632ee7046",
@@ -967,7 +1348,7 @@
     "external": "PD202600523032",
     "takeoff_ct": "2026-07-16 07:19",
     "landing_ct": "2026-07-16 07:38",
-    "min_dist_m": 32.33
+    "min_dist_m": 55.79
    },
    {
     "flight_id": "166ab435-833b-4a86-93b9-19d44993e28a",
@@ -1007,15 +1388,7 @@
     "external": "PD202600551999",
     "takeoff_ct": "2026-07-28 15:15",
     "landing_ct": "2026-07-28 15:34",
-    "min_dist_m": 21.24
-   },
-   {
-    "flight_id": "22aea509-0eab-45c6-a416-aad134ac5ac6",
-    "purpose": "DISORDERLY PERSON",
-    "external": "PD202600554281",
-    "takeoff_ct": "2026-07-29 13:17",
-    "landing_ct": "2026-07-29 13:34",
-    "min_dist_m": 0.61
+    "min_dist_m": 38.13
    },
    {
     "flight_id": "20be8130-f468-4e14-9d87-271ed572c632",
@@ -1044,747 +1417,12 @@
   ]
  },
  {
-  "name": "Madison Park Playground",
-  "type": "playground",
-  "lat": 36.2671064,
-  "lng": -86.7018365,
-  "n_flights": 60,
-  "n_flights_unique": 60,
-  "closest_pass_m": 0.75,
-  "first_overflight_ct": "2026-05-26 14:03",
-  "last_overflight_ct": "2026-08-07 20:43",
-  "flights": [
-   {
-    "flight_id": "04dc6f30-8911-4a26-b6e8-1fc047629206",
-    "purpose": "PERSON WITH WEAPON",
-    "external": "PD202600390493",
-    "takeoff_ct": "2026-05-26 14:03",
-    "landing_ct": "2026-05-26 14:18",
-    "min_dist_m": 77.67
-   },
-   {
-    "flight_id": "c4ee5275-12ee-46fc-9614-7d26be687a07",
-    "purpose": "PERSON WITH WEAPON",
-    "external": "PD202600390493",
-    "takeoff_ct": "2026-05-26 14:12",
-    "landing_ct": "2026-05-26 14:24",
-    "min_dist_m": 66.95
-   },
-   {
-    "flight_id": "e9b9b7d9-c682-4010-a878-c7bab142c7d4",
-    "purpose": "VEHICLE ACCIDENT - PROPERTY DAMAGE",
-    "external": "PD202600391211",
-    "takeoff_ct": "2026-05-26 18:51",
-    "landing_ct": "2026-05-26 19:05",
-    "min_dist_m": 58.67
-   },
-   {
-    "flight_id": "3adae817-5396-4d53-a40f-d315332eacc4",
-    "purpose": "SUSPICIOUS PERSON",
-    "external": "PD202600393042",
-    "takeoff_ct": "2026-05-27 12:01",
-    "landing_ct": "2026-05-27 12:21",
-    "min_dist_m": 0.75
-   },
-   {
-    "flight_id": "7cce8ded-bf3a-4571-b7f9-d889d46ab6c7",
-    "purpose": "DISORDERLY PERSON",
-    "external": "PD202600393114",
-    "takeoff_ct": "2026-05-27 12:47",
-    "landing_ct": "2026-05-27 13:07",
-    "min_dist_m": 78.23
-   },
-   {
-    "flight_id": "31fd8040-1f2d-41e0-9941-a5488cb3f158",
-    "purpose": "PERSON WITH WEAPON",
-    "external": "PD202600395605",
-    "takeoff_ct": "2026-05-28 10:55",
-    "landing_ct": "2026-05-28 11:13",
-    "min_dist_m": 8.25
-   },
-   {
-    "flight_id": "2cd5bd75-071f-46a1-b848-5fad175837a7",
-    "purpose": "FIGHT / ASSAULT",
-    "external": "PD202600396917",
-    "takeoff_ct": "2026-05-28 19:14",
-    "landing_ct": "2026-05-28 19:34",
-    "min_dist_m": 6.24
-   },
-   {
-    "flight_id": "3fa69387-24ec-43ab-a0c6-4c3d4dc12660",
-    "purpose": "DISORDERLY PERSON",
-    "external": "PD202600396979",
-    "takeoff_ct": "2026-05-28 19:40",
-    "landing_ct": "2026-05-28 20:01",
-    "min_dist_m": 34.71
-   },
-   {
-    "flight_id": "0d2b9bc3-7d0b-42ee-9f5c-9984ed0cd820",
-    "purpose": "DISORDERLY PERSON",
-    "external": "PD202600396979",
-    "takeoff_ct": "2026-05-28 19:56",
-    "landing_ct": "2026-05-28 20:11",
-    "min_dist_m": 37.35
-   },
-   {
-    "flight_id": "50e20911-3ef5-4b9e-a74b-758e1e1d00f0",
-    "purpose": "DISORDERLY PERSON",
-    "external": "PD202600399347",
-    "takeoff_ct": "2026-05-29 16:21",
-    "landing_ct": "2026-05-29 16:40",
-    "min_dist_m": 35.21
-   },
-   {
-    "flight_id": "ff59bbd1-c052-40cf-b0b1-f9da36bd5b9b",
-    "purpose": "SAFETY HAZARD",
-    "external": "PD202600408592 / PD202600408612",
-    "takeoff_ct": "2026-06-02 07:34",
-    "landing_ct": "2026-06-02 07:48",
-    "min_dist_m": 73.71
-   },
-   {
-    "flight_id": "c291fea3-56b6-4b09-9267-036334de7afb",
-    "purpose": "BURGLARY - NON-RESIDENCE",
-    "external": "PD202600410436",
-    "takeoff_ct": "2026-06-02 20:55",
-    "landing_ct": "2026-06-02 21:11",
-    "min_dist_m": 62.99
-   },
-   {
-    "flight_id": "e415a24f-4749-46db-a0df-f46246f7f47b",
-    "purpose": "SUSPICIOUS PERSON",
-    "external": "PD202600410593",
-    "takeoff_ct": "2026-06-02 22:19",
-    "landing_ct": "2026-06-02 22:43",
-    "min_dist_m": 46.5
-   },
-   {
-    "flight_id": "2d975a04-829e-4d9b-822d-aeb654cda94e",
-    "purpose": "DOMESTIC DISTURBANCE",
-    "external": "PD202600412518",
-    "takeoff_ct": "2026-06-03 16:59",
-    "landing_ct": "2026-06-03 17:16",
-    "min_dist_m": 61.6
-   },
-   {
-    "flight_id": "a49b76db-65f9-402c-8da3-1f5903f96234",
-    "purpose": "SUSPICIOUS PERSON",
-    "external": "PD202600415825",
-    "takeoff_ct": "2026-06-04 20:10",
-    "landing_ct": "2026-06-04 20:21",
-    "min_dist_m": 37.54
-   },
-   {
-    "flight_id": "698637b4-c19f-43a9-b2fe-570855213eec",
-    "purpose": "FIGHT / ASSAULT",
-    "external": "PD202600415672",
-    "takeoff_ct": "2026-06-04 21:51",
-    "landing_ct": "2026-06-04 22:00",
-    "min_dist_m": 5.62
-   },
-   {
-    "flight_id": "a18e7aad-46fb-46c2-8ddb-65ca06fdd79e",
-    "purpose": "FIGHT / ASSAULT",
-    "external": "PD202600415672",
-    "takeoff_ct": "2026-06-04 21:58",
-    "landing_ct": "2026-06-04 22:18",
-    "min_dist_m": 64.74
-   },
-   {
-    "flight_id": "4ac4436e-e492-42e2-9401-c5bbf1434c97",
-    "purpose": "BURGLARY - NON-RESIDENCE",
-    "external": "PD202600418545",
-    "takeoff_ct": "2026-06-05 19:19",
-    "landing_ct": "2026-06-05 19:30",
-    "min_dist_m": 10.69
-   },
-   {
-    "flight_id": "ef7c84d5-374b-485b-80c6-0ea916d99dd6",
-    "purpose": "BURGLARY - NON-RESIDENCE",
-    "external": "PD202600430165",
-    "takeoff_ct": "2026-06-10 09:24",
-    "landing_ct": "2026-06-10 09:44",
-    "min_dist_m": 8.73
-   },
-   {
-    "flight_id": "04beb45e-ada4-4b08-bd6f-6f872016ee37",
-    "purpose": "VEHICLE ACCIDENT-PERSONAL INJURY",
-    "external": "PD202600504433",
-    "takeoff_ct": "2026-07-08 17:28",
-    "landing_ct": "2026-07-08 17:46",
-    "min_dist_m": 33.57
-   },
-   {
-    "flight_id": "c2006e86-13fa-4d66-a858-f586fa420a32",
-    "purpose": "FIGHT / ASSAULT",
-    "external": "PD202600507537",
-    "takeoff_ct": "2026-07-09 21:41",
-    "landing_ct": "2026-07-09 21:58",
-    "min_dist_m": 21.96
-   },
-   {
-    "flight_id": "ca7a19b4-bf5a-406e-b64e-40e2d66f948f",
-    "purpose": "PERSON WITH WEAPON",
-    "external": "PD202600508784",
-    "takeoff_ct": "2026-07-10 11:43",
-    "landing_ct": "2026-07-10 12:00",
-    "min_dist_m": 2.05
-   },
-   {
-    "flight_id": "15c2743b-e2cd-4c35-a206-46ab8e77a361",
-    "purpose": "PERSON WITH WEAPON",
-    "external": "PD202600509360",
-    "takeoff_ct": "2026-07-10 16:14",
-    "landing_ct": "2026-07-10 16:27",
-    "min_dist_m": 15.41
-   },
-   {
-    "flight_id": "13a5bd91-4784-4a22-b55e-a339038e0e0b",
-    "purpose": "SUSPICIOUS PERSON",
-    "external": "PD202600519074",
-    "takeoff_ct": "2026-07-14 16:34",
-    "landing_ct": "2026-07-14 16:45",
-    "min_dist_m": 81.53
-   },
-   {
-    "flight_id": "805325fd-7f24-4800-830c-d797151e9974",
-    "purpose": "VEHICLE ACCIDENT-PERSONAL INJURY",
-    "external": "PD202600522005",
-    "takeoff_ct": "2026-07-15 19:19",
-    "landing_ct": "2026-07-15 19:38",
-    "min_dist_m": 51.16
-   },
-   {
-    "flight_id": "63a30d1d-72de-4d54-97ce-d4d93d5d1fb0",
-    "purpose": "VEHICLE ACCIDENT-PERSONAL INJURY",
-    "external": "PD202600522005",
-    "takeoff_ct": "2026-07-15 19:31",
-    "landing_ct": "2026-07-15 19:50",
-    "min_dist_m": 3.53
-   },
-   {
-    "flight_id": "ac828447-d66c-4306-b5c1-46fff80d2237",
-    "purpose": "BURGLARY - NON-RESIDENCE",
-    "external": "PD202600522151",
-    "takeoff_ct": "2026-07-15 20:38",
-    "landing_ct": "2026-07-15 20:52",
-    "min_dist_m": 4.15
-   },
-   {
-    "flight_id": "deb78e70-e3f7-4860-b119-07590239898d",
-    "purpose": "DISORDERLY PERSON",
-    "external": "PD202600523108",
-    "takeoff_ct": "2026-07-16 08:02",
-    "landing_ct": "2026-07-16 08:12",
-    "min_dist_m": 39.6
-   },
-   {
-    "flight_id": "3b2346f7-7a12-400b-a7ca-de606a5e6b98",
-    "purpose": "DOMESTIC DISTURBANCE",
-    "external": "PD202600523183",
-    "takeoff_ct": "2026-07-16 08:28",
-    "landing_ct": "2026-07-16 08:47",
-    "min_dist_m": 58.44
-   },
-   {
-    "flight_id": "4f51a86c-4fff-4c59-915c-1cc126121810",
-    "purpose": "DISORDERLY PERSON",
-    "external": "PD202600523503",
-    "takeoff_ct": "2026-07-16 11:05",
-    "landing_ct": "2026-07-16 11:20",
-    "min_dist_m": 68.41
-   },
-   {
-    "flight_id": "cc5999e7-7b57-40d5-ae8b-766ce690967c",
-    "purpose": "HOLDUP / ROBBERY",
-    "external": "PD202600526037",
-    "takeoff_ct": "2026-07-17 10:50",
-    "landing_ct": "2026-07-17 11:02",
-    "min_dist_m": 21.48
-   },
-   {
-    "flight_id": "754b5418-2521-4408-8c28-d7a28ecfca7b",
-    "purpose": "FIGHT / ASSAULT",
-    "external": "PD202600526171",
-    "takeoff_ct": "2026-07-17 12:06",
-    "landing_ct": "2026-07-17 12:23",
-    "min_dist_m": 27.85
-   },
-   {
-    "flight_id": "d7abd4fa-29bc-4356-bc2c-a83dfcc33a75",
-    "purpose": "HOLDUP / ROBBERY",
-    "external": "PD202600526357",
-    "takeoff_ct": "2026-07-17 13:47",
-    "landing_ct": "2026-07-17 13:54",
-    "min_dist_m": 28.02
-   },
-   {
-    "flight_id": "166ab435-833b-4a86-93b9-19d44993e28a",
-    "purpose": "DISORDERLY PERSON",
-    "external": "PD202600526822",
-    "takeoff_ct": "2026-07-17 17:27",
-    "landing_ct": "2026-07-17 17:39",
-    "min_dist_m": 21.76
-   },
-   {
-    "flight_id": "27d93ec6-9088-4212-8c65-439ea1a847b9",
-    "purpose": "DISORDERLY PERSON",
-    "external": "PD202600537315",
-    "takeoff_ct": "2026-07-22 09:21",
-    "landing_ct": "2026-07-22 09:38",
-    "min_dist_m": 75.53
-   },
-   {
-    "flight_id": "fad4fa39-4021-41b0-bc65-59aa2d158dd2",
-    "purpose": "DISORDERLY PERSON",
-    "external": "PD202600537551",
-    "takeoff_ct": "2026-07-22 11:35",
-    "landing_ct": "2026-07-22 11:54",
-    "min_dist_m": 14.28
-   },
-   {
-    "flight_id": "98097b9d-5086-4620-a436-49717ba4af23",
-    "purpose": "DISORDERLY PERSON",
-    "external": "PD202600537952",
-    "takeoff_ct": "2026-07-22 14:53",
-    "landing_ct": "2026-07-22 15:08",
-    "min_dist_m": 6.58
-   },
-   {
-    "flight_id": "b3486bc8-a537-4f73-b4a7-12d60d54ba83",
-    "purpose": "DISORDERLY PERSON",
-    "external": "PD202600539984",
-    "takeoff_ct": "2026-07-23 12:15",
-    "landing_ct": "2026-07-23 12:35",
-    "min_dist_m": 43.93
-   },
-   {
-    "flight_id": "979f3591-515d-4898-86f6-09ab2c920f70",
-    "purpose": "SUSPICIOUS PERSON",
-    "external": "PD202600541038",
-    "takeoff_ct": "2026-07-23 20:51",
-    "landing_ct": "2026-07-23 21:08",
-    "min_dist_m": 20.71
-   },
-   {
-    "flight_id": "52b86b58-45ca-4e2c-b46b-5c7d4f858b0a",
-    "purpose": "PERSON INDECENTLY EXPOSED",
-    "external": "PD202600542105",
-    "takeoff_ct": "2026-07-24 07:50",
-    "landing_ct": "2026-07-24 08:12",
-    "min_dist_m": 74.53
-   },
-   {
-    "flight_id": "65e8fcd3-0876-47de-b9bc-087859366627",
-    "purpose": "DOMESTIC DISTURBANCE",
-    "external": "PD202600542551",
-    "takeoff_ct": "2026-07-24 12:03",
-    "landing_ct": "2026-07-24 12:24",
-    "min_dist_m": 75.54
-   },
-   {
-    "flight_id": "426a258c-bd0f-4b54-becc-5178209f3913",
-    "purpose": "INTOXICATED PERSON",
-    "external": "PD202600542555",
-    "takeoff_ct": "2026-07-24 12:22",
-    "landing_ct": "2026-07-24 12:42",
-    "min_dist_m": 56.77
-   },
-   {
-    "flight_id": "fabe3498-74d7-4d5b-bc88-738fa04206f6",
-    "purpose": "DISORDERLY PERSON",
-    "external": "PD202600548811",
-    "takeoff_ct": "2026-07-27 09:32",
-    "landing_ct": "2026-07-27 09:51",
-    "min_dist_m": 53.28
-   },
-   {
-    "flight_id": "2a1e9ab4-7c1f-4693-b8d5-2051d0d30a6f",
-    "purpose": "DISORDERLY PERSON",
-    "external": "PD202600548944",
-    "takeoff_ct": "2026-07-27 10:01",
-    "landing_ct": "2026-07-27 10:20",
-    "min_dist_m": 32.85
-   },
-   {
-    "flight_id": "01ed1b98-7a75-4da1-8add-1659f0dcf020",
-    "purpose": "VEHICLE ACCIDENT-PERSONAL INJURY",
-    "external": "PD202600549189",
-    "takeoff_ct": "2026-07-27 13:10",
-    "landing_ct": "2026-07-27 13:22",
-    "min_dist_m": 15.58
-   },
-   {
-    "flight_id": "9acf091d-c560-4093-9845-922e6f88a625",
-    "purpose": "DISORDERLY PERSON",
-    "external": "PD202600550008",
-    "takeoff_ct": "2026-07-27 19:20",
-    "landing_ct": "2026-07-27 19:32",
-    "min_dist_m": 52.86
-   },
-   {
-    "flight_id": "1b285ccc-ea3b-45ac-96db-7734e3ff04e0",
-    "purpose": "DISORDERLY PERSON",
-    "external": "PD202600552050",
-    "takeoff_ct": "2026-07-28 15:38",
-    "landing_ct": "2026-07-28 15:54",
-    "min_dist_m": 8.23
-   },
-   {
-    "flight_id": "0f9086c0-9bad-41e5-98fb-258f9e8bc12f",
-    "purpose": "DOMESTIC DISTURBANCE",
-    "external": "PD202600552325",
-    "takeoff_ct": "2026-07-28 17:29",
-    "landing_ct": "2026-07-28 17:50",
-    "min_dist_m": 62.78
-   },
-   {
-    "flight_id": "22aea509-0eab-45c6-a416-aad134ac5ac6",
-    "purpose": "DISORDERLY PERSON",
-    "external": "PD202600554281",
-    "takeoff_ct": "2026-07-29 13:17",
-    "landing_ct": "2026-07-29 13:34",
-    "min_dist_m": 33.37
-   },
-   {
-    "flight_id": "c12f7f9b-b2dd-4e11-ad1f-55fb4971bc39",
-    "purpose": "DOMESTIC DISTURBANCE",
-    "external": "PD202600554644",
-    "takeoff_ct": "2026-07-29 16:11",
-    "landing_ct": "2026-07-29 16:31",
-    "min_dist_m": 45.77
-   },
-   {
-    "flight_id": "bb42e9c0-58e7-486e-9e7f-d41dfced682c",
-    "purpose": "HOLDUP / ROBBERY",
-    "external": "PD202600554817",
-    "takeoff_ct": "2026-07-29 17:48",
-    "landing_ct": "2026-07-29 18:00",
-    "min_dist_m": 47.69
-   },
-   {
-    "flight_id": "1f95a292-7046-4e45-baf8-c8e24013d1ef",
-    "purpose": "DISORDERLY PERSON",
-    "external": "PD202600556279",
-    "takeoff_ct": "2026-07-30 08:22",
-    "landing_ct": "2026-07-30 08:34",
-    "min_dist_m": 5.47
-   },
-   {
-    "flight_id": "ac8c76ea-2ab9-4a06-afcc-36113a34f8ed",
-    "purpose": "SAFETY HAZARD",
-    "external": "PD202600559226",
-    "takeoff_ct": "2026-07-31 11:10",
-    "landing_ct": "2026-07-31 11:28",
-    "min_dist_m": 49.45
-   },
-   {
-    "flight_id": "03f1b2af-ddf0-4f75-b7d2-7c42ac7a506c",
-    "purpose": "BURGLARY - NON-RESIDENCE",
-    "external": "PD202600560434/PD202600560464",
-    "takeoff_ct": "2026-07-31 20:49",
-    "landing_ct": "2026-07-31 21:05",
-    "min_dist_m": 5.44
-   },
-   {
-    "flight_id": "51406c25-d307-4814-bcb5-fb4b7ef7f061",
-    "purpose": "DISORDERLY PERSON",
-    "external": "PD202600571335",
-    "takeoff_ct": "2026-08-05 13:02",
-    "landing_ct": "2026-08-05 13:14",
-    "min_dist_m": 48.86
-   },
-   {
-    "flight_id": "6d835598-88f7-48b7-a8e3-f9388867ff46",
-    "purpose": "VEHICLE ACCIDENT-PERSONAL INJURY",
-    "external": "PD202600572429",
-    "takeoff_ct": "2026-08-05 21:59",
-    "landing_ct": "2026-08-05 22:09",
-    "min_dist_m": 81.35
-   },
-   {
-    "flight_id": "e0d9e3ab-d486-4f20-9c7b-7c2f27aa8ebf",
-    "purpose": "HOLDUP / ROBBERY",
-    "external": "PD202600574268",
-    "takeoff_ct": "2026-08-06 16:10",
-    "landing_ct": "2026-08-06 16:15",
-    "min_dist_m": 61.32
-   },
-   {
-    "flight_id": "20be8130-f468-4e14-9d87-271ed572c632",
-    "purpose": "PERSON WITH WEAPON",
-    "external": "PD202600574551",
-    "takeoff_ct": "2026-08-06 18:04",
-    "landing_ct": "2026-08-06 18:21",
-    "min_dist_m": 43.39
-   },
-   {
-    "flight_id": "55e9c5c4-5bc1-416a-963c-827949150b90",
-    "purpose": "PERSON WITH WEAPON",
-    "external": "PD202600574551",
-    "takeoff_ct": "2026-08-06 18:17",
-    "landing_ct": "2026-08-06 18:34",
-    "min_dist_m": 8.96
-   },
-   {
-    "flight_id": "f248e3f6-a207-4893-a865-a1244657298f",
-    "purpose": "THEFT",
-    "external": "PD202600577227",
-    "takeoff_ct": "2026-08-07 20:29",
-    "landing_ct": "2026-08-07 20:43",
-    "min_dist_m": 22.89
-   }
-  ]
- },
- {
-  "name": "City Road Chapel United Methodist Church",
-  "type": "worship",
-  "lat": 36.2558868,
-  "lng": -86.7138861,
-  "n_flights": 23,
-  "n_flights_unique": 23,
-  "closest_pass_m": 1.91,
-  "first_overflight_ct": "2026-05-26 14:03",
-  "last_overflight_ct": "2026-07-31 13:51",
-  "flights": [
-   {
-    "flight_id": "04dc6f30-8911-4a26-b6e8-1fc047629206",
-    "purpose": "PERSON WITH WEAPON",
-    "external": "PD202600390493",
-    "takeoff_ct": "2026-05-26 14:03",
-    "landing_ct": "2026-05-26 14:18",
-    "min_dist_m": 62.72
-   },
-   {
-    "flight_id": "c4ee5275-12ee-46fc-9614-7d26be687a07",
-    "purpose": "PERSON WITH WEAPON",
-    "external": "PD202600390493",
-    "takeoff_ct": "2026-05-26 14:12",
-    "landing_ct": "2026-05-26 14:24",
-    "min_dist_m": 62.39
-   },
-   {
-    "flight_id": "2be67a15-27db-40a9-b35c-d997df1a0371",
-    "purpose": "DISORDERLY PERSON",
-    "external": "PD202600393142",
-    "takeoff_ct": "2026-05-27 13:05",
-    "landing_ct": "2026-05-27 13:20",
-    "min_dist_m": 40.69
-   },
-   {
-    "flight_id": "31fd8040-1f2d-41e0-9941-a5488cb3f158",
-    "purpose": "PERSON WITH WEAPON",
-    "external": "PD202600395605",
-    "takeoff_ct": "2026-05-28 10:55",
-    "landing_ct": "2026-05-28 11:13",
-    "min_dist_m": 1.91
-   },
-   {
-    "flight_id": "f8e132b9-b53d-45bc-98c3-d8f77177f891",
-    "purpose": "PERSON WITH WEAPON",
-    "external": "PD202600395690",
-    "takeoff_ct": "2026-05-28 11:30",
-    "landing_ct": "2026-05-28 11:47",
-    "min_dist_m": 79.29
-   },
-   {
-    "flight_id": "77c1f152-7e43-4639-ac03-a9946ed17461",
-    "purpose": "HOLDUP / ROBBERY",
-    "external": "PD202600399692",
-    "takeoff_ct": "2026-05-29 18:47",
-    "landing_ct": "2026-05-29 18:56",
-    "min_dist_m": 68.87
-   },
-   {
-    "flight_id": "ff59bbd1-c052-40cf-b0b1-f9da36bd5b9b",
-    "purpose": "SAFETY HAZARD",
-    "external": "PD202600408592 / PD202600408612",
-    "takeoff_ct": "2026-06-02 07:34",
-    "landing_ct": "2026-06-02 07:48",
-    "min_dist_m": 36.76
-   },
-   {
-    "flight_id": "6d6baa03-f844-4f38-b9be-525b71b0cb44",
-    "purpose": "VEHICLE ACCIDENT - PROPERTY DAMAGE",
-    "external": "PD202600411782",
-    "takeoff_ct": "2026-06-03 10:26",
-    "landing_ct": "2026-06-03 10:37",
-    "min_dist_m": 81.77
-   },
-   {
-    "flight_id": "2d975a04-829e-4d9b-822d-aeb654cda94e",
-    "purpose": "DOMESTIC DISTURBANCE",
-    "external": "PD202600412518",
-    "takeoff_ct": "2026-06-03 16:59",
-    "landing_ct": "2026-06-03 17:16",
-    "min_dist_m": 25.68
-   },
-   {
-    "flight_id": "d23ae024-a2fd-4c95-8d0d-13247676be63",
-    "purpose": "PERSON WITH WEAPON",
-    "external": "PD202600504198",
-    "takeoff_ct": "2026-07-08 15:45",
-    "landing_ct": "2026-07-08 15:57",
-    "min_dist_m": 39.48
-   },
-   {
-    "flight_id": "04beb45e-ada4-4b08-bd6f-6f872016ee37",
-    "purpose": "VEHICLE ACCIDENT-PERSONAL INJURY",
-    "external": "PD202600504433",
-    "takeoff_ct": "2026-07-08 17:28",
-    "landing_ct": "2026-07-08 17:46",
-    "min_dist_m": 54.21
-   },
-   {
-    "flight_id": "efc404ee-40c5-4a72-8d3d-e3258d4a416f",
-    "purpose": "DISORDERLY PERSON",
-    "external": "PD202600505938",
-    "takeoff_ct": "2026-07-09 09:57",
-    "landing_ct": "2026-07-09 10:18",
-    "min_dist_m": 58.96
-   },
-   {
-    "flight_id": "207ab979-9a9a-41b2-b50a-29949fd95480",
-    "purpose": "FIGHT / ASSAULT",
-    "external": "PD202600506338",
-    "takeoff_ct": "2026-07-09 12:54",
-    "landing_ct": "2026-07-09 13:13",
-    "min_dist_m": 55.37
-   },
-   {
-    "flight_id": "705a5248-17cb-4ad0-911d-0c78c40b7e0d",
-    "purpose": "PERSON WITH WEAPON",
-    "external": "PD202600508784",
-    "takeoff_ct": "2026-07-10 12:11",
-    "landing_ct": "2026-07-10 12:30",
-    "min_dist_m": 55.94
-   },
-   {
-    "flight_id": "e3d90c34-7a46-4149-82df-0ce8f38ed9c1",
-    "purpose": "FIGHT / ASSAULT",
-    "external": "PD202600509182",
-    "takeoff_ct": "2026-07-10 14:53",
-    "landing_ct": "2026-07-10 15:12",
-    "min_dist_m": 51.72
-   },
-   {
-    "flight_id": "b7aa6242-1425-4975-b355-1cadfbf53ee3",
-    "purpose": "VEHICLE ACCIDENT-PERSONAL INJURY",
-    "external": "PD202600510039",
-    "takeoff_ct": "2026-07-10 20:55",
-    "landing_ct": "2026-07-10 21:06",
-    "min_dist_m": 69.05
-   },
-   {
-    "flight_id": "dffad99d-0138-4ea1-b90b-6261047b30f3",
-    "purpose": "PERSON WITH WEAPON",
-    "external": "PD202600521848",
-    "takeoff_ct": "2026-07-15 17:58",
-    "landing_ct": "2026-07-15 18:15",
-    "min_dist_m": 55.85
-   },
-   {
-    "flight_id": "e474e5d9-0dc9-4bcc-a75f-ae5e2c4ce576",
-    "purpose": "DISORDERLY PERSON",
-    "external": "PD202600537434",
-    "takeoff_ct": "2026-07-22 10:21",
-    "landing_ct": "2026-07-22 10:40",
-    "min_dist_m": 79.66
-   },
-   {
-    "flight_id": "65e8fcd3-0876-47de-b9bc-087859366627",
-    "purpose": "DOMESTIC DISTURBANCE",
-    "external": "PD202600542551",
-    "takeoff_ct": "2026-07-24 12:03",
-    "landing_ct": "2026-07-24 12:24",
-    "min_dist_m": 50.98
-   },
-   {
-    "flight_id": "514d80f0-4a66-44d3-8def-66544ca40e46",
-    "purpose": "SUSPICIOUS PERSON",
-    "external": "PD202600548944",
-    "takeoff_ct": "2026-07-27 10:48",
-    "landing_ct": "2026-07-27 11:07",
-    "min_dist_m": 26.28
-   },
-   {
-    "flight_id": "22aea509-0eab-45c6-a416-aad134ac5ac6",
-    "purpose": "DISORDERLY PERSON",
-    "external": "PD202600554281",
-    "takeoff_ct": "2026-07-29 13:17",
-    "landing_ct": "2026-07-29 13:34",
-    "min_dist_m": 41.88
-   },
-   {
-    "flight_id": "76c1aee6-b0a1-4c45-84e4-36555b3f3276",
-    "purpose": "FIRE",
-    "external": "FD202600114838  ",
-    "takeoff_ct": "2026-07-30 18:58",
-    "landing_ct": "2026-07-30 19:10",
-    "min_dist_m": 62.08
-   },
-   {
-    "flight_id": "99661603-b148-43fd-ac7c-ffd1f92c6555",
-    "purpose": "DISORDERLY PERSON",
-    "external": "PD202600559519",
-    "takeoff_ct": "2026-07-31 13:35",
-    "landing_ct": "2026-07-31 13:51",
-    "min_dist_m": 72.55
-   }
-  ]
- },
- {
-  "name": "Alta Loma Church",
-  "type": "worship",
-  "lat": 36.2941099,
-  "lng": -86.7027065,
-  "n_flights": 4,
-  "n_flights_unique": 4,
-  "closest_pass_m": 2.27,
-  "first_overflight_ct": "2026-06-02 14:50",
-  "last_overflight_ct": "2026-08-04 19:44",
-  "flights": [
-   {
-    "flight_id": "8521fb50-43b2-46c1-b92a-d804bd242dba",
-    "purpose": "SHOTS FIRED",
-    "external": "PD202600409571",
-    "takeoff_ct": "2026-06-02 14:50",
-    "landing_ct": "2026-06-02 15:07",
-    "min_dist_m": 2.27
-   },
-   {
-    "flight_id": "ab7a9340-3cb1-4477-8119-b706328cbad8",
-    "purpose": "THEFT",
-    "external": "PD202600537441",
-    "takeoff_ct": "2026-07-22 11:42",
-    "landing_ct": "2026-07-22 12:02",
-    "min_dist_m": 75.82
-   },
-   {
-    "flight_id": "d7b469ca-644e-4a45-8d38-72b05bcad2e3",
-    "purpose": "THEFT",
-    "external": "7/24/2026 8:14:27 PM",
-    "takeoff_ct": "2026-07-24 20:12",
-    "landing_ct": "2026-07-24 20:32",
-    "min_dist_m": 40.51
-   },
-   {
-    "flight_id": "3f7eb2f3-bd7b-4e0f-afd3-52305e74695d",
-    "purpose": "DISORDERLY PERSON",
-    "external": "PD202600569612",
-    "takeoff_ct": "2026-08-04 19:32",
-    "landing_ct": "2026-08-04 19:44",
-    "min_dist_m": 81.96
-   }
-  ]
- },
- {
   "name": "Salvation Army Church",
   "type": "worship",
   "lat": 36.2631087,
   "lng": -86.6788856,
-  "n_flights": 8,
-  "n_flights_unique": 8,
+  "n_flights": 7,
+  "n_flights_unique": 7,
   "closest_pass_m": 2.47,
   "first_overflight_ct": "2026-06-04 16:02",
   "last_overflight_ct": "2026-07-29 19:00",
@@ -1819,15 +1457,7 @@
     "external": "PD202600431168",
     "takeoff_ct": "2026-06-10 16:46",
     "landing_ct": "2026-06-10 17:07",
-    "min_dist_m": 15.18
-   },
-   {
-    "flight_id": "a0668049-3b33-49ad-a0f3-b052ca2ffe5e",
-    "purpose": "BURGLARY - RESIDENCE",
-    "external": "PD202600504135",
-    "takeoff_ct": "2026-07-08 15:08",
-    "landing_ct": "2026-07-08 15:25",
-    "min_dist_m": 16.2
+    "min_dist_m": 40.1
    },
    {
     "flight_id": "3b2346f7-7a12-400b-a7ca-de606a5e6b98",
@@ -1851,7 +1481,7 @@
     "external": "PD202600554872",
     "takeoff_ct": "2026-07-29 18:45",
     "landing_ct": "2026-07-29 19:00",
-    "min_dist_m": 20.82
+    "min_dist_m": 58.51
    }
   ]
  },
@@ -1860,8 +1490,8 @@
   "type": "school",
   "lat": 36.2553312,
   "lng": -86.6794411,
-  "n_flights": 9,
-  "n_flights_unique": 9,
+  "n_flights": 8,
+  "n_flights_unique": 8,
   "closest_pass_m": 3.31,
   "first_overflight_ct": "2026-06-02 13:50",
   "last_overflight_ct": "2026-08-05 18:27",
@@ -1889,14 +1519,6 @@
     "takeoff_ct": "2026-07-10 20:10",
     "landing_ct": "2026-07-10 20:28",
     "min_dist_m": 68.18
-   },
-   {
-    "flight_id": "9ffd9925-399a-4a26-a851-3d3db556bcab",
-    "purpose": "PERSON WITH WEAPON",
-    "external": "PD202600521069",
-    "takeoff_ct": "2026-07-15 10:58",
-    "landing_ct": "2026-07-15 11:12",
-    "min_dist_m": 72.09
    },
    {
     "flight_id": "6a037221-f0e2-4c3d-a256-7cb22387541f",
@@ -1941,90 +1563,13 @@
   ]
  },
  {
-  "name": "Rivergate Calvary Temple",
-  "type": "worship",
-  "lat": 36.3000951,
-  "lng": -86.6947689,
-  "n_flights": 8,
-  "n_flights_unique": 8,
-  "closest_pass_m": 3.44,
-  "first_overflight_ct": "2026-05-28 16:04",
-  "last_overflight_ct": "2026-08-06 08:31",
-  "flights": [
-   {
-    "flight_id": "91528ae7-86de-4abf-a40d-085547dfb978",
-    "purpose": "PERSON INDECENTLY EXPOSED",
-    "external": "PD202600396334",
-    "takeoff_ct": "2026-05-28 16:04",
-    "landing_ct": "2026-05-28 16:21",
-    "min_dist_m": 41.51
-   },
-   {
-    "flight_id": "64e386db-2c4c-429a-a344-9e5bf957afb5",
-    "purpose": "BURGLARY - NON-RESIDENCE",
-    "external": "PD202600413263 / FD202600085129",
-    "takeoff_ct": "2026-06-03 21:27",
-    "landing_ct": "2026-06-03 21:47",
-    "min_dist_m": 9.17
-   },
-   {
-    "flight_id": "26c55be9-e36f-4dcb-8ca4-1a30a11e4f2e",
-    "purpose": "DISORDERLY PERSON",
-    "external": "PD202600521239",
-    "takeoff_ct": "2026-07-15 12:58",
-    "landing_ct": "2026-07-15 13:13",
-    "min_dist_m": 3.44
-   },
-   {
-    "flight_id": "422058fe-ef6a-4f8c-a27c-5dac76d73aa2",
-    "purpose": "DISORDERLY PERSON",
-    "external": "PD202600521862",
-    "takeoff_ct": "2026-07-15 18:10",
-    "landing_ct": "2026-07-15 18:26",
-    "min_dist_m": 30.71
-   },
-   {
-    "flight_id": "504d5d7a-579e-48a2-8a8e-c158e3ec9dc0",
-    "purpose": "CUTTING / STABBING",
-    "external": "PD202600524500",
-    "takeoff_ct": "2026-07-16 19:12",
-    "landing_ct": "2026-07-16 19:30",
-    "min_dist_m": 69.74
-   },
-   {
-    "flight_id": "75ae7a8e-737d-4a55-93e2-79536465b8b3",
-    "purpose": "DISORDERLY PERSON",
-    "external": "PD202600542797",
-    "takeoff_ct": "2026-07-24 15:14",
-    "landing_ct": "2026-07-24 15:27",
-    "min_dist_m": 40.66
-   },
-   {
-    "flight_id": "2b61ef07-9404-403c-9410-134273770903",
-    "purpose": "BURGLARY - NON-RESIDENCE",
-    "external": "PD202600560431",
-    "takeoff_ct": "2026-07-31 20:47",
-    "landing_ct": "2026-07-31 20:59",
-    "min_dist_m": 48.55
-   },
-   {
-    "flight_id": "3f02807a-d19e-4a1e-9c43-c97a7c2fd883",
-    "purpose": "VEHICLE ACCIDENT - PROPERTY DAMAGE",
-    "external": "PD202600573261",
-    "takeoff_ct": "2026-08-06 08:11",
-    "landing_ct": "2026-08-06 08:31",
-    "min_dist_m": 42.65
-   }
-  ]
- },
- {
   "name": "Dry Creek Church",
   "type": "worship",
   "lat": 36.2836636,
   "lng": -86.7072192,
   "n_flights": 3,
   "n_flights_unique": 3,
-  "closest_pass_m": 4.96,
+  "closest_pass_m": 6.02,
   "first_overflight_ct": "2026-05-27 12:31",
   "last_overflight_ct": "2026-07-23 22:24",
   "flights": [
@@ -2034,7 +1579,7 @@
     "external": "PD202600393084",
     "takeoff_ct": "2026-05-27 12:31",
     "landing_ct": "2026-05-27 12:47",
-    "min_dist_m": 4.96
+    "min_dist_m": 6.02
    },
    {
     "flight_id": "d03eb144-b9e4-4a6e-ba4e-0f6c5d2c0872",
@@ -2042,7 +1587,7 @@
     "external": "PD202600524753",
     "takeoff_ct": "2026-07-16 20:49",
     "landing_ct": "2026-07-16 21:08",
-    "min_dist_m": 36.26
+    "min_dist_m": 54.19
    },
    {
     "flight_id": "27b5ef98-fc3f-42c2-a71a-3711d0b5bf7c",
@@ -2103,7 +1648,7 @@
     "external": "PD202600540238",
     "takeoff_ct": "2026-07-23 18:48",
     "landing_ct": "2026-07-23 19:05",
-    "min_dist_m": 40.55
+    "min_dist_m": 40.95
    },
    {
     "flight_id": "d99a7106-1779-4a66-bcd0-af573b93a98c",
@@ -2127,7 +1672,7 @@
     "external": "PD202600568842",
     "takeoff_ct": "2026-08-04 12:38",
     "landing_ct": "2026-08-04 12:54",
-    "min_dist_m": 7.09
+    "min_dist_m": 18.45
    },
    {
     "flight_id": "439ea100-bc53-45f6-b821-547bb89777d5",
@@ -2265,6 +1810,83 @@
   ]
  },
  {
+  "name": "Rivergate Calvary Temple",
+  "type": "worship",
+  "lat": 36.3000951,
+  "lng": -86.6947689,
+  "n_flights": 8,
+  "n_flights_unique": 8,
+  "closest_pass_m": 6.39,
+  "first_overflight_ct": "2026-05-28 16:04",
+  "last_overflight_ct": "2026-08-06 08:31",
+  "flights": [
+   {
+    "flight_id": "91528ae7-86de-4abf-a40d-085547dfb978",
+    "purpose": "PERSON INDECENTLY EXPOSED",
+    "external": "PD202600396334",
+    "takeoff_ct": "2026-05-28 16:04",
+    "landing_ct": "2026-05-28 16:21",
+    "min_dist_m": 41.51
+   },
+   {
+    "flight_id": "64e386db-2c4c-429a-a344-9e5bf957afb5",
+    "purpose": "BURGLARY - NON-RESIDENCE",
+    "external": "PD202600413263 / FD202600085129",
+    "takeoff_ct": "2026-06-03 21:27",
+    "landing_ct": "2026-06-03 21:47",
+    "min_dist_m": 9.17
+   },
+   {
+    "flight_id": "26c55be9-e36f-4dcb-8ca4-1a30a11e4f2e",
+    "purpose": "DISORDERLY PERSON",
+    "external": "PD202600521239",
+    "takeoff_ct": "2026-07-15 12:58",
+    "landing_ct": "2026-07-15 13:13",
+    "min_dist_m": 6.39
+   },
+   {
+    "flight_id": "422058fe-ef6a-4f8c-a27c-5dac76d73aa2",
+    "purpose": "DISORDERLY PERSON",
+    "external": "PD202600521862",
+    "takeoff_ct": "2026-07-15 18:10",
+    "landing_ct": "2026-07-15 18:26",
+    "min_dist_m": 30.71
+   },
+   {
+    "flight_id": "504d5d7a-579e-48a2-8a8e-c158e3ec9dc0",
+    "purpose": "CUTTING / STABBING",
+    "external": "PD202600524500",
+    "takeoff_ct": "2026-07-16 19:12",
+    "landing_ct": "2026-07-16 19:30",
+    "min_dist_m": 69.74
+   },
+   {
+    "flight_id": "75ae7a8e-737d-4a55-93e2-79536465b8b3",
+    "purpose": "DISORDERLY PERSON",
+    "external": "PD202600542797",
+    "takeoff_ct": "2026-07-24 15:14",
+    "landing_ct": "2026-07-24 15:27",
+    "min_dist_m": 40.66
+   },
+   {
+    "flight_id": "2b61ef07-9404-403c-9410-134273770903",
+    "purpose": "BURGLARY - NON-RESIDENCE",
+    "external": "PD202600560431",
+    "takeoff_ct": "2026-07-31 20:47",
+    "landing_ct": "2026-07-31 20:59",
+    "min_dist_m": 54.0
+   },
+   {
+    "flight_id": "3f02807a-d19e-4a1e-9c43-c97a7c2fd883",
+    "purpose": "VEHICLE ACCIDENT - PROPERTY DAMAGE",
+    "external": "PD202600573261",
+    "takeoff_ct": "2026-08-06 08:11",
+    "landing_ct": "2026-08-06 08:31",
+    "min_dist_m": 42.65
+   }
+  ]
+ },
+ {
   "name": "Shepherd Hills United Methodist Church",
   "type": "worship",
   "lat": 36.3000518,
@@ -2281,7 +1903,7 @@
     "external": "PD202600396334",
     "takeoff_ct": "2026-05-28 16:04",
     "landing_ct": "2026-05-28 16:21",
-    "min_dist_m": 23.28
+    "min_dist_m": 23.8
    },
    {
     "flight_id": "64e386db-2c4c-429a-a344-9e5bf957afb5",
@@ -2321,7 +1943,7 @@
     "external": "PD202600524500",
     "takeoff_ct": "2026-07-16 19:12",
     "landing_ct": "2026-07-16 19:30",
-    "min_dist_m": 8.62
+    "min_dist_m": 8.63
    },
    {
     "flight_id": "c2ec7eef-bc5d-4814-805e-8a5beb4613c8",
@@ -2329,7 +1951,7 @@
     "external": "PD202600525859,PD202600525874",
     "takeoff_ct": "2026-07-17 09:12",
     "landing_ct": "2026-07-17 09:27",
-    "min_dist_m": 63.98
+    "min_dist_m": 64.64
    },
    {
     "flight_id": "3d40fa10-3fdc-420b-878d-90ff1131e7b0",
@@ -2369,7 +1991,7 @@
     "external": "PD202600559979",
     "takeoff_ct": "2026-07-31 17:19",
     "landing_ct": "2026-07-31 17:38",
-    "min_dist_m": 14.98
+    "min_dist_m": 16.28
    },
    {
     "flight_id": "2b61ef07-9404-403c-9410-134273770903",
@@ -2377,7 +1999,7 @@
     "external": "PD202600560431",
     "takeoff_ct": "2026-07-31 20:47",
     "landing_ct": "2026-07-31 20:59",
-    "min_dist_m": 11.82
+    "min_dist_m": 14.11
    },
    {
     "flight_id": "3f02807a-d19e-4a1e-9c43-c97a7c2fd883",
@@ -2422,7 +2044,7 @@
     "external": "PD202600522005",
     "takeoff_ct": "2026-07-15 19:31",
     "landing_ct": "2026-07-15 19:50",
-    "min_dist_m": 51.0
+    "min_dist_m": 51.75
    },
    {
     "flight_id": "27b5ef98-fc3f-42c2-a71a-3711d0b5bf7c",
@@ -2438,7 +2060,7 @@
     "external": "PD202600554698",
     "takeoff_ct": "2026-07-29 16:35",
     "landing_ct": "2026-07-29 16:53",
-    "min_dist_m": 18.07
+    "min_dist_m": 41.37
    },
    {
     "flight_id": "1c3c2450-9d79-4f10-ba40-d68d1b2b78bd",
@@ -2455,20 +2077,12 @@
   "type": "school",
   "lat": 36.2739937,
   "lng": -86.7036152,
-  "n_flights": 7,
-  "n_flights_unique": 7,
+  "n_flights": 6,
+  "n_flights_unique": 6,
   "closest_pass_m": 7.65,
-  "first_overflight_ct": "2026-05-29 16:27",
+  "first_overflight_ct": "2026-06-05 15:14",
   "last_overflight_ct": "2026-08-04 21:48",
   "flights": [
-   {
-    "flight_id": "17bc3b8e-ccd7-494d-ad41-3c510993ab20",
-    "purpose": "BURGLARY - NON-RESIDENCE",
-    "external": "PD202600399345 / PD202600399347",
-    "takeoff_ct": "2026-05-29 16:27",
-    "landing_ct": "2026-05-29 16:48",
-    "min_dist_m": 10.18
-   },
    {
     "flight_id": "b027209a-9e0f-4f38-af4b-eea174334168",
     "purpose": "DISORDERLY PERSON",
@@ -2524,8 +2138,8 @@
   "type": "worship",
   "lat": 36.2697751,
   "lng": -86.6916636,
-  "n_flights": 35,
-  "n_flights_unique": 35,
+  "n_flights": 33,
+  "n_flights_unique": 33,
   "closest_pass_m": 7.67,
   "first_overflight_ct": "2026-05-27 13:17",
   "last_overflight_ct": "2026-08-06 16:41",
@@ -2576,7 +2190,7 @@
     "external": "PD202600415356",
     "takeoff_ct": "2026-06-04 16:53",
     "landing_ct": "2026-06-04 17:05",
-    "min_dist_m": 11.8
+    "min_dist_m": 12.56
    },
    {
     "flight_id": "a49b76db-65f9-402c-8da3-1f5903f96234",
@@ -2585,14 +2199,6 @@
     "takeoff_ct": "2026-06-04 20:10",
     "landing_ct": "2026-06-04 20:21",
     "min_dist_m": 14.92
-   },
-   {
-    "flight_id": "6bcee961-c690-4d38-9068-79598a986fa4",
-    "purpose": "VEHICLE ACCIDENT-PERSONAL INJURY",
-    "external": "PD202600418746",
-    "takeoff_ct": "2026-06-05 20:35",
-    "landing_ct": "2026-06-05 20:46",
-    "min_dist_m": 59.31
    },
    {
     "flight_id": "75f9d69e-4077-4f52-b529-0d8ff58837a7",
@@ -2624,15 +2230,7 @@
     "external": "PD202600508875",
     "takeoff_ct": "2026-07-10 12:25",
     "landing_ct": "2026-07-10 12:45",
-    "min_dist_m": 19.86
-   },
-   {
-    "flight_id": "3b2346f7-7a12-400b-a7ca-de606a5e6b98",
-    "purpose": "DOMESTIC DISTURBANCE",
-    "external": "PD202600523183",
-    "takeoff_ct": "2026-07-16 08:28",
-    "landing_ct": "2026-07-16 08:47",
-    "min_dist_m": 31.94
+    "min_dist_m": 20.26
    },
    {
     "flight_id": "26684034-f0a3-4764-a10f-78fce128f838",
@@ -2656,7 +2254,7 @@
     "external": "PD202600540489",
     "takeoff_ct": "2026-07-23 16:54",
     "landing_ct": "2026-07-23 17:09",
-    "min_dist_m": 20.24
+    "min_dist_m": 40.99
    },
    {
     "flight_id": "440881d4-ce8f-4555-a371-6b479a00af26",
@@ -2664,7 +2262,7 @@
     "external": "PD202600540238",
     "takeoff_ct": "2026-07-23 18:32",
     "landing_ct": "2026-07-23 18:52",
-    "min_dist_m": 22.35
+    "min_dist_m": 54.88
    },
    {
     "flight_id": "820f2c84-a4b5-4b77-a162-d61d691e1df8",
@@ -2672,7 +2270,7 @@
     "external": "PD202600540238",
     "takeoff_ct": "2026-07-23 18:48",
     "landing_ct": "2026-07-23 19:05",
-    "min_dist_m": 47.45
+    "min_dist_m": 53.65
    },
    {
     "flight_id": "27b5ef98-fc3f-42c2-a71a-3711d0b5bf7c",
@@ -2704,7 +2302,7 @@
     "external": "PD202600543341",
     "takeoff_ct": "2026-07-24 19:46",
     "landing_ct": "2026-07-24 20:07",
-    "min_dist_m": 18.52
+    "min_dist_m": 37.13
    },
    {
     "flight_id": "d99a7106-1779-4a66-bcd0-af573b93a98c",
@@ -2720,7 +2318,7 @@
     "external": "PD202600552325",
     "takeoff_ct": "2026-07-28 17:29",
     "landing_ct": "2026-07-28 17:50",
-    "min_dist_m": 8.74
+    "min_dist_m": 43.92
    },
    {
     "flight_id": "0a69512e-da61-447d-a5c3-6a98c21a8e86",
@@ -2736,7 +2334,7 @@
     "external": "PD202600554405",
     "takeoff_ct": "2026-07-29 14:17",
     "landing_ct": "2026-07-29 14:24",
-    "min_dist_m": 60.17
+    "min_dist_m": 60.48
    },
    {
     "flight_id": "3b445759-98d9-4907-afc7-89da3d493563",
@@ -2752,7 +2350,7 @@
     "external": "PD202600557192",
     "takeoff_ct": "2026-07-30 16:56",
     "landing_ct": "2026-07-30 17:05",
-    "min_dist_m": 32.42
+    "min_dist_m": 44.93
    },
    {
     "flight_id": "4144d3de-6d10-4f78-91b4-f1abfbe4a92f",
@@ -2813,27 +2411,6 @@
   ]
  },
  {
-  "name": "Aldersgate Church",
-  "type": "worship",
-  "lat": 36.2836637,
-  "lng": -86.7224972,
-  "n_flights": 1,
-  "n_flights_unique": 1,
-  "closest_pass_m": 7.95,
-  "first_overflight_ct": "2026-07-24 11:38",
-  "last_overflight_ct": "2026-07-24 11:55",
-  "flights": [
-   {
-    "flight_id": "e7998464-6db2-445d-9411-c036a49a1011",
-    "purpose": "BURGLARY - NON-RESIDENCE",
-    "external": "PD202600542498",
-    "takeoff_ct": "2026-07-24 11:38",
-    "landing_ct": "2026-07-24 11:55",
-    "min_dist_m": 7.95
-   }
-  ]
- },
- {
   "name": "Rivergate Church of Christ",
   "type": "worship",
   "lat": 36.2949713,
@@ -2859,20 +2436,12 @@
   "type": "school",
   "lat": 36.2642199,
   "lng": -86.7163861,
-  "n_flights": 3,
-  "n_flights_unique": 3,
+  "n_flights": 2,
+  "n_flights_unique": 2,
   "closest_pass_m": 11.54,
-  "first_overflight_ct": "2026-06-10 09:24",
+  "first_overflight_ct": "2026-07-15 21:07",
   "last_overflight_ct": "2026-07-27 09:04",
   "flights": [
-   {
-    "flight_id": "ef7c84d5-374b-485b-80c6-0ea916d99dd6",
-    "purpose": "BURGLARY - NON-RESIDENCE",
-    "external": "PD202600430165",
-    "takeoff_ct": "2026-06-10 09:24",
-    "landing_ct": "2026-06-10 09:44",
-    "min_dist_m": 35.79
-   },
    {
     "flight_id": "52a85056-0872-4eb6-8a82-b6bb8c733bd5",
     "purpose": "DOMESTIC DISTURBANCE",
@@ -2896,9 +2465,9 @@
   "type": "worship",
   "lat": 36.2728307,
   "lng": -86.704997,
-  "n_flights": 9,
-  "n_flights_unique": 9,
-  "closest_pass_m": 12.4,
+  "n_flights": 8,
+  "n_flights_unique": 8,
+  "closest_pass_m": 15.1,
   "first_overflight_ct": "2026-05-29 16:27",
   "last_overflight_ct": "2026-08-04 21:48",
   "flights": [
@@ -2908,7 +2477,7 @@
     "external": "PD202600399345 / PD202600399347",
     "takeoff_ct": "2026-05-29 16:27",
     "landing_ct": "2026-05-29 16:48",
-    "min_dist_m": 30.35
+    "min_dist_m": 52.5
    },
    {
     "flight_id": "06a965ed-3d49-43b6-8184-2b90f30b1f00",
@@ -2916,7 +2485,7 @@
     "external": "PD202600418796",
     "takeoff_ct": "2026-06-05 20:53",
     "landing_ct": "2026-06-05 21:13",
-    "min_dist_m": 40.37
+    "min_dist_m": 48.72
    },
    {
     "flight_id": "86178986-ed98-471c-942c-e8cbf38928c8",
@@ -2924,15 +2493,7 @@
     "external": "PD202600431187",
     "takeoff_ct": "2026-06-10 17:09",
     "landing_ct": "2026-06-10 17:20",
-    "min_dist_m": 20.33
-   },
-   {
-    "flight_id": "9947fc56-846c-4333-8c1f-baa42b4a380b",
-    "purpose": "DOMESTIC DISTURBANCE",
-    "external": "PD202600431187",
-    "takeoff_ct": "2026-06-10 17:18",
-    "landing_ct": "2026-06-10 17:44",
-    "min_dist_m": 48.45
+    "min_dist_m": 24.34
    },
    {
     "flight_id": "786f33f2-1c1d-4607-a776-95ac742fa3f2",
@@ -2948,7 +2509,7 @@
     "external": "PD202600537349",
     "takeoff_ct": "2026-07-22 09:43",
     "landing_ct": "2026-07-22 09:54",
-    "min_dist_m": 12.4
+    "min_dist_m": 15.1
    },
    {
     "flight_id": "80be694e-b552-4e51-8c60-51ac2b92d242",
@@ -3027,13 +2588,223 @@
   ]
  },
  {
+  "name": "Alta Loma Church",
+  "type": "worship",
+  "lat": 36.2941099,
+  "lng": -86.7027065,
+  "n_flights": 3,
+  "n_flights_unique": 3,
+  "closest_pass_m": 40.51,
+  "first_overflight_ct": "2026-07-22 11:42",
+  "last_overflight_ct": "2026-08-04 19:44",
+  "flights": [
+   {
+    "flight_id": "ab7a9340-3cb1-4477-8119-b706328cbad8",
+    "purpose": "THEFT",
+    "external": "PD202600537441",
+    "takeoff_ct": "2026-07-22 11:42",
+    "landing_ct": "2026-07-22 12:02",
+    "min_dist_m": 75.82
+   },
+   {
+    "flight_id": "d7b469ca-644e-4a45-8d38-72b05bcad2e3",
+    "purpose": "THEFT",
+    "external": "7/24/2026 8:14:27 PM",
+    "takeoff_ct": "2026-07-24 20:12",
+    "landing_ct": "2026-07-24 20:32",
+    "min_dist_m": 40.51
+   },
+   {
+    "flight_id": "3f7eb2f3-bd7b-4e0f-afd3-52305e74695d",
+    "purpose": "DISORDERLY PERSON",
+    "external": "PD202600569612",
+    "takeoff_ct": "2026-08-04 19:32",
+    "landing_ct": "2026-08-04 19:44",
+    "min_dist_m": 81.96
+   }
+  ]
+ },
+ {
+  "name": "City Road Chapel United Methodist Church",
+  "type": "worship",
+  "lat": 36.2558868,
+  "lng": -86.7138861,
+  "n_flights": 20,
+  "n_flights_unique": 20,
+  "closest_pass_m": 41.88,
+  "first_overflight_ct": "2026-05-26 14:03",
+  "last_overflight_ct": "2026-07-31 13:51",
+  "flights": [
+   {
+    "flight_id": "04dc6f30-8911-4a26-b6e8-1fc047629206",
+    "purpose": "PERSON WITH WEAPON",
+    "external": "PD202600390493",
+    "takeoff_ct": "2026-05-26 14:03",
+    "landing_ct": "2026-05-26 14:18",
+    "min_dist_m": 62.72
+   },
+   {
+    "flight_id": "c4ee5275-12ee-46fc-9614-7d26be687a07",
+    "purpose": "PERSON WITH WEAPON",
+    "external": "PD202600390493",
+    "takeoff_ct": "2026-05-26 14:12",
+    "landing_ct": "2026-05-26 14:24",
+    "min_dist_m": 62.39
+   },
+   {
+    "flight_id": "2be67a15-27db-40a9-b35c-d997df1a0371",
+    "purpose": "DISORDERLY PERSON",
+    "external": "PD202600393142",
+    "takeoff_ct": "2026-05-27 13:05",
+    "landing_ct": "2026-05-27 13:20",
+    "min_dist_m": 56.26
+   },
+   {
+    "flight_id": "31fd8040-1f2d-41e0-9941-a5488cb3f158",
+    "purpose": "PERSON WITH WEAPON",
+    "external": "PD202600395605",
+    "takeoff_ct": "2026-05-28 10:55",
+    "landing_ct": "2026-05-28 11:13",
+    "min_dist_m": 53.25
+   },
+   {
+    "flight_id": "f8e132b9-b53d-45bc-98c3-d8f77177f891",
+    "purpose": "PERSON WITH WEAPON",
+    "external": "PD202600395690",
+    "takeoff_ct": "2026-05-28 11:30",
+    "landing_ct": "2026-05-28 11:47",
+    "min_dist_m": 79.29
+   },
+   {
+    "flight_id": "77c1f152-7e43-4639-ac03-a9946ed17461",
+    "purpose": "HOLDUP / ROBBERY",
+    "external": "PD202600399692",
+    "takeoff_ct": "2026-05-29 18:47",
+    "landing_ct": "2026-05-29 18:56",
+    "min_dist_m": 68.87
+   },
+   {
+    "flight_id": "ff59bbd1-c052-40cf-b0b1-f9da36bd5b9b",
+    "purpose": "SAFETY HAZARD",
+    "external": "PD202600408592 / PD202600408612",
+    "takeoff_ct": "2026-06-02 07:34",
+    "landing_ct": "2026-06-02 07:48",
+    "min_dist_m": 51.34
+   },
+   {
+    "flight_id": "d23ae024-a2fd-4c95-8d0d-13247676be63",
+    "purpose": "PERSON WITH WEAPON",
+    "external": "PD202600504198",
+    "takeoff_ct": "2026-07-08 15:45",
+    "landing_ct": "2026-07-08 15:57",
+    "min_dist_m": 56.2
+   },
+   {
+    "flight_id": "04beb45e-ada4-4b08-bd6f-6f872016ee37",
+    "purpose": "VEHICLE ACCIDENT-PERSONAL INJURY",
+    "external": "PD202600504433",
+    "takeoff_ct": "2026-07-08 17:28",
+    "landing_ct": "2026-07-08 17:46",
+    "min_dist_m": 54.21
+   },
+   {
+    "flight_id": "efc404ee-40c5-4a72-8d3d-e3258d4a416f",
+    "purpose": "DISORDERLY PERSON",
+    "external": "PD202600505938",
+    "takeoff_ct": "2026-07-09 09:57",
+    "landing_ct": "2026-07-09 10:18",
+    "min_dist_m": 58.96
+   },
+   {
+    "flight_id": "207ab979-9a9a-41b2-b50a-29949fd95480",
+    "purpose": "FIGHT / ASSAULT",
+    "external": "PD202600506338",
+    "takeoff_ct": "2026-07-09 12:54",
+    "landing_ct": "2026-07-09 13:13",
+    "min_dist_m": 55.37
+   },
+   {
+    "flight_id": "705a5248-17cb-4ad0-911d-0c78c40b7e0d",
+    "purpose": "PERSON WITH WEAPON",
+    "external": "PD202600508784",
+    "takeoff_ct": "2026-07-10 12:11",
+    "landing_ct": "2026-07-10 12:30",
+    "min_dist_m": 55.94
+   },
+   {
+    "flight_id": "e3d90c34-7a46-4149-82df-0ce8f38ed9c1",
+    "purpose": "FIGHT / ASSAULT",
+    "external": "PD202600509182",
+    "takeoff_ct": "2026-07-10 14:53",
+    "landing_ct": "2026-07-10 15:12",
+    "min_dist_m": 55.1
+   },
+   {
+    "flight_id": "b7aa6242-1425-4975-b355-1cadfbf53ee3",
+    "purpose": "VEHICLE ACCIDENT-PERSONAL INJURY",
+    "external": "PD202600510039",
+    "takeoff_ct": "2026-07-10 20:55",
+    "landing_ct": "2026-07-10 21:06",
+    "min_dist_m": 69.05
+   },
+   {
+    "flight_id": "dffad99d-0138-4ea1-b90b-6261047b30f3",
+    "purpose": "PERSON WITH WEAPON",
+    "external": "PD202600521848",
+    "takeoff_ct": "2026-07-15 17:58",
+    "landing_ct": "2026-07-15 18:15",
+    "min_dist_m": 55.85
+   },
+   {
+    "flight_id": "65e8fcd3-0876-47de-b9bc-087859366627",
+    "purpose": "DOMESTIC DISTURBANCE",
+    "external": "PD202600542551",
+    "takeoff_ct": "2026-07-24 12:03",
+    "landing_ct": "2026-07-24 12:24",
+    "min_dist_m": 54.5
+   },
+   {
+    "flight_id": "514d80f0-4a66-44d3-8def-66544ca40e46",
+    "purpose": "SUSPICIOUS PERSON",
+    "external": "PD202600548944",
+    "takeoff_ct": "2026-07-27 10:48",
+    "landing_ct": "2026-07-27 11:07",
+    "min_dist_m": 54.29
+   },
+   {
+    "flight_id": "22aea509-0eab-45c6-a416-aad134ac5ac6",
+    "purpose": "DISORDERLY PERSON",
+    "external": "PD202600554281",
+    "takeoff_ct": "2026-07-29 13:17",
+    "landing_ct": "2026-07-29 13:34",
+    "min_dist_m": 41.88
+   },
+   {
+    "flight_id": "76c1aee6-b0a1-4c45-84e4-36555b3f3276",
+    "purpose": "FIRE",
+    "external": "FD202600114838  ",
+    "takeoff_ct": "2026-07-30 18:58",
+    "landing_ct": "2026-07-30 19:10",
+    "min_dist_m": 62.08
+   },
+   {
+    "flight_id": "99661603-b148-43fd-ac7c-ffd1f92c6555",
+    "purpose": "DISORDERLY PERSON",
+    "external": "PD202600559519",
+    "takeoff_ct": "2026-07-31 13:35",
+    "landing_ct": "2026-07-31 13:51",
+    "min_dist_m": 73.64
+   }
+  ]
+ },
+ {
   "name": "First Baptist Church",
   "type": "worship",
   "lat": 36.2550536,
   "lng": -86.7144416,
-  "n_flights": 13,
-  "n_flights_unique": 13,
-  "closest_pass_m": 50.5,
+  "n_flights": 11,
+  "n_flights_unique": 11,
+  "closest_pass_m": 56.32,
   "first_overflight_ct": "2026-05-26 14:03",
   "last_overflight_ct": "2026-07-31 13:51",
   "flights": [
@@ -3060,22 +2831,6 @@
     "takeoff_ct": "2026-05-27 13:05",
     "landing_ct": "2026-05-27 13:20",
     "min_dist_m": 75.33
-   },
-   {
-    "flight_id": "2d975a04-829e-4d9b-822d-aeb654cda94e",
-    "purpose": "DOMESTIC DISTURBANCE",
-    "external": "PD202600412518",
-    "takeoff_ct": "2026-06-03 16:59",
-    "landing_ct": "2026-06-03 17:16",
-    "min_dist_m": 50.5
-   },
-   {
-    "flight_id": "d23ae024-a2fd-4c95-8d0d-13247676be63",
-    "purpose": "PERSON WITH WEAPON",
-    "external": "PD202600504198",
-    "takeoff_ct": "2026-07-08 15:45",
-    "landing_ct": "2026-07-08 15:57",
-    "min_dist_m": 74.97
    },
    {
     "flight_id": "207ab979-9a9a-41b2-b50a-29949fd95480",
@@ -3123,7 +2878,7 @@
     "external": "PD202600548944",
     "takeoff_ct": "2026-07-27 10:48",
     "landing_ct": "2026-07-27 11:07",
-    "min_dist_m": 61.36
+    "min_dist_m": 74.34
    },
    {
     "flight_id": "9acf091d-c560-4093-9845-922e6f88a625",
@@ -3144,15 +2899,15 @@
   ]
  },
  {
-  "name": "Jehovah's Witnesses Kingdom Hall (Slayton Dr)",
+  "name": "Aldersgate Church",
   "type": "worship",
-  "lat": 36.2796864,
-  "lng": -86.7152419,
-  "n_flights": 2,
-  "n_flights_unique": 2,
-  "closest_pass_m": 58.2,
+  "lat": 36.2836637,
+  "lng": -86.7224972,
+  "n_flights": 1,
+  "n_flights_unique": 1,
+  "closest_pass_m": 66.44,
   "first_overflight_ct": "2026-07-24 11:38",
-  "last_overflight_ct": "2026-08-04 15:48",
+  "last_overflight_ct": "2026-07-24 11:55",
   "flights": [
    {
     "flight_id": "e7998464-6db2-445d-9411-c036a49a1011",
@@ -3160,15 +2915,7 @@
     "external": "PD202600542498",
     "takeoff_ct": "2026-07-24 11:38",
     "landing_ct": "2026-07-24 11:55",
-    "min_dist_m": 60.1
-   },
-   {
-    "flight_id": "3204e4af-0d45-41af-a854-6e2734bea0f9",
-    "purpose": "BURGLARY - RESIDENCE",
-    "external": "PD202600569155",
-    "takeoff_ct": "2026-08-04 15:36",
-    "landing_ct": "2026-08-04 15:48",
-    "min_dist_m": 58.2
+    "min_dist_m": 66.44
    }
   ]
  }

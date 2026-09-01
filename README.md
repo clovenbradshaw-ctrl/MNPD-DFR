@@ -22,9 +22,9 @@ python3 -m http.server
 
 Two tabs:
 
-- **Sensitive locations** (25 sites overflown) — 19 places of worship, 5
+- **Sensitive locations** (24 sites overflown) — 18 places of worship, 5
   schools, 1 playground.
-- **Every address** (10,536 of the 16,029 Metro address points in the trial
+- **Every address** (10,240 of the 16,029 Metro address points in the trial
   area were within 82 m of at least one flight). Addresses lazy-load: a light
   ~3 MB list renders instantly, then full per-flight detail is fetched from a
   gzipped binary in the background. Tap any row for date-and-time details.
@@ -33,12 +33,12 @@ Two tabs:
 
 | Path | What it is |
 |---|---|
-| `data/dfr_sensitive.json` | 25 sensitive locations overflown, with per-flight detail |
-| `data/dfr_addresses_light.json` | 10,536 overflown addresses (summary; loads first) |
-| `data/dfr_addresses.json.gz` | **Binary (gzip)** full address dataset — 10,536 records × per-flight detail (**29 MB JSON, 2.5 MB gz**) |
+| `data/dfr_sensitive.json` | 24 sensitive locations overflown, with per-flight detail |
+| `data/dfr_addresses_light.json` | 10,240 overflown addresses (summary; loads first) |
+| `data/dfr_addresses.json.gz` | **Binary (gzip)** full address dataset — 10,240 records × per-flight detail (**28 MB JSON, 2.3 MB gz**) |
 | `data/nashville_flights.geojson.gz` | Binary (gzip) 409-row deduped flight-path geometry (395 unique flights) |
 | `data/sensitive_sites.json` | All 1,743 Metro/OSM sensitive sites in the area |
-| `satellite/*.png` | 500×500 m satellite crops (Esri World Imagery), annotated with flight IDs; `manifest.json` ties images → flights. Predates the 17→25 correction below — covers the original 17, not the 8 sites found since. The live app no longer uses these; it fetches a satellite crop live per-record instead. |
+| `satellite/*.png` | 500×500 m satellite crops (Esri World Imagery), annotated with flight IDs; `manifest.json` ties images → flights. Predates the correction below — covers the original 17, not the 8 sites found since (one of which, on closer check, didn't hold up either — see below). The live app no longer uses these; it fetches a satellite crop live per-record instead. |
 
 The address data is stored **gzipped binary** to keep the repo lean; the
 explorer decompresses it in-browser with `DecompressionStream('gzip')`.
@@ -54,13 +54,35 @@ explorer decompresses it in-browser with `DecompressionStream('gzip')`.
   1,743 candidate schools/childcare/playgrounds/houses of worship.
 
 **Correction (Sep 2026):** earlier published counts said 17 sensitive sites
-were overflown. Re-running the intersection end to end — the previous run
-had never been fully scripted, see Reproduce below — found **25**: the same
-17 plus 8 real sites the original pass missed, including two schools
-(Amqui Elementary, Madison High) at 7.7 m and 11.5 m. Independently
-cross-checked with a second, simpler distance calculation before publishing
-the correction. All eight are 280 m+ from the nearest already-published
-site, so this is missed sites, not duplicates.
+were overflown. The intersection had never been fully scripted (see
+Reproduce below) — writing `scripts/intersect_sites.py` to do it for the
+first time found 25: the same 17 plus 8 real sites the original pass
+missed, including two schools (Amqui Elementary, Madison High) at 7.7 m and
+11.5 m. All eight are 280 m+ from the nearest already-published site, so
+this is missed sites, not duplicates.
+
+Checking that result surfaced a second bug, in the new script itself:
+`min_path_dist` measured distance against each flight's path flattened into
+one coordinate array, but 370 of 409 flights have multiple *disconnected*
+path segments (GPS gaps mid-flight) — flattening them creates a phantom
+segment bridging the end of one real segment to the start of the next,
+which the drone never actually flew. Fixed in both `intersect_sites.py` and
+`intersect_addresses.py` (same bug, same origin — copied verbatim between
+the two) to measure each real segment independently. That dropped one of
+the 25 (Jehovah's Witnesses Kingdom Hall, Slayton Dr — its reported 58 m
+pass was entirely a phantom segment) and corrected several other sites'
+distances, a few considerably: three sites previously shown within a few
+meters were actually 40–66 m out. **24** is the verified count.
+
+The same bug had been in `intersect_addresses.py` from the start (this
+repo's original script, copied into `intersect_sites.py` rather than the
+other way around), so it affected the main address dataset too. Re-run
+fixed: **10,240** addresses overflown, down from 10,536 — 296 false
+positives removed, 0 added, consistent with the fix only ever being able to
+remove a fabricated close pass, never hide a real one. Independently
+verified by brute-force checking a dropped address's true nearest flight
+point across all 395 flights (121 m — well outside 82 m — against a
+previously-reported 0.28 m, entirely a phantom segment).
 
 ## Reproduce
 

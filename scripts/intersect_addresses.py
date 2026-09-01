@@ -15,7 +15,8 @@ def gdist_vec(lat0, lon0, lats, lons):
     a = np.sin(dL/2)**2 + np.cos(lat0r)*np.cos(latr)*np.sin(dG/2)**2
     return R * 2 * np.arctan2(np.sqrt(a), np.sqrt(1-a))
 
-def min_path_dist(lat0, lon0, X, Y):
+def _min_seg_dist(lat0, lon0, X, Y):
+    """Distance to one connected polyline — never call across a part boundary."""
     n = len(X)
     if n == 1:
         return gdist_vec(lat0, lon0, np.array([Y[0]]), np.array([X[0]]))[0]
@@ -29,28 +30,45 @@ def min_path_dist(lat0, lon0, X, Y):
     px = ax + t*dx; py = ay + t*dy
     return gdist_vec(lat0, lon0, py, px).min()
 
+def min_path_dist(lat0, lon0, parts):
+    """Min distance across every disconnected part of a flight's path — each
+    part's own polyline only. A flight's geometry can be a MultiLineString
+    with dozens of disjoint fragments (GPS gaps); concatenating them into one
+    array (the previous approach) creates a phantom segment bridging the last
+    point of one fragment to the first point of the next, which doesn't
+    correspond to anywhere the drone actually flew."""
+    return min(_min_seg_dist(lat0, lon0, X, Y) for X, Y in parts)
+
 fcoll = json.load(open('nashville_flights.geojson'))
 seen = {}
 for f in fcoll['features']:
     p = f['properties']
     g = f['geometry']
     if g['type'] == 'LineString':
-        coords = g['coordinates']
+        part_coords = [g['coordinates']]
     elif g['type'] == 'MultiLineString':
-        coords = [c for part in g['coordinates'] for c in part]
+        part_coords = g['coordinates']
     else:
         continue
     fid = p['flight_id']
     if fid in seen:
         continue
+    parts = [(np.array([c[0] for c in part], dtype=float),
+              np.array([c[1] for c in part], dtype=float))
+             for part in part_coords if part]
+    if not parts:
+        continue
+    allX = np.concatenate([X for X, Y in parts])
+    allY = np.concatenate([Y for X, Y in parts])
     seen[fid] = {
         'id': fid,
         'purpose': (p.get('flight_purpose') or '').strip(),
         'external': p.get('external_id') or '',
         'takeoff': p.get('takeoff'),
         'landing': p.get('landing'),
-        'X': np.array([c[0] for c in coords], dtype=float),
-        'Y': np.array([c[1] for c in coords], dtype=float),
+        'parts': parts,      # kept separate — the actual distance calc
+        'X': allX,           # union only, for the coarse bbox pre-filter
+        'Y': allY,
     }
 flights = list(seen.values())
 print(f"flights: {len(flights)}")
@@ -87,7 +105,7 @@ for f in fc['features']:
         lo, hi, la, ha = fl['bbox']
         if not (lo <= lon <= hi and la <= lat <= ha):
             continue
-        d = min_path_dist(lat, lon, fl['X'], fl['Y'])
+        d = min_path_dist(lat, lon, fl['parts'])
         if d <= SWATH_M:
             fflights.append({
                 'flight_id': fl['id'], 'purpose': fl['purpose'],
